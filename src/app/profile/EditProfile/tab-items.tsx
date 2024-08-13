@@ -1,4 +1,4 @@
-import {UserProfile} from "@/Pages/Profile/EditProfile/TabPanels/UserProfile";
+import {UserProfile} from "@/app/profile/EditProfile/TabPanels/UserProfile";
 
 export const TabItems = [
     {

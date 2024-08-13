@@ -11,7 +11,7 @@ export const DataFrame = () =>{
         password:'',
         password_confirmation:'',
         email:'',
-        phone:'',
+        phone:0,
     });
 
     return {profileData, setProfileData}

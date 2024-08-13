@@ -1,11 +1,16 @@
+"use client"
 import './profile.css.scss'
 import React from "react";
+import {useDispatch} from "react-redux";
+import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
 
 export const ProfileRightBar: React.FC = () => {
+    const dispatch = useDispatch();
+    const handleClick = () => dispatch(updateSelectedComponent('EditProfile'))
     return <div className="profile-right-bar">
         <div className="profile-right-bar-heading">
             <span className="profile-right-bar-title">User Information</span>
-            <span className="edit-button">Edit Profile</span>
+            <button onClick={handleClick}><span className="edit-button">Edit Profile</span></button>
         </div>
 
         <div className="profile-right-bar-info">

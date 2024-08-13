@@ -32,7 +32,7 @@ COPY --from=builder /app/public public
 COPY --from=builder /app/package*.json ./
 
 # Install only production dependencies
-RUN npm install --only=production
+RUN npm ci --only=production
 
 # Expose the port the app will run on
 EXPOSE 80

@@ -1,3 +1,8 @@
+FROM ubuntu:latest
+LABEL authors="nalane"
+
+ENTRYPOINT ["top", "-b"]
+
 # Use the official Node.js image as the base image
 FROM node:18-alpine AS builder
 
@@ -27,8 +32,9 @@ COPY --from=builder /app/public public
 COPY --from=builder /app/package*.json ./
 
 # Install only production dependencies
-RUN npm ci --only=production
+RUN npm install --only=production
 
+# Expose the port the app will run on
 EXPOSE 80
 
 # Command to run the app

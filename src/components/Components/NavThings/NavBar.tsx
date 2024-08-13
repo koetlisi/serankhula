@@ -1,9 +1,14 @@
+"use client";
 import './nav.css.scss'
 import {Input} from "antd";
 import {ChatBubble, Notifications, Person, Search} from "@mui/icons-material";
 import {Badge} from "@mui/material";
+import {useDispatch} from "react-redux";
+import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
 
 export const NavBar = () => {
+    const dispatch = useDispatch();
+    const handleClick = () => dispatch(updateSelectedComponent('Profile'))
     return <div className='navbar-container'>
         <div className='navbar-left'>
             <span className='logo'>Serankhula</span>
@@ -29,7 +34,10 @@ export const NavBar = () => {
                     <Notifications color="action"/>
                 </Badge>
             </div>
-            <img src="/assets/person/1.jpeg" alt="" className="navbar-image"/>
+            <button onClick={handleClick}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/person/1.jpeg" alt="" className="navbar-image"/>
+            </button>
         </div>
     </div>
 }

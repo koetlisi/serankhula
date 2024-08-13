@@ -1,16 +1,17 @@
-import './css/home.scss'
-import {NavBar} from "@/components/Components/NavThings/NavBar";
-import {Sidebar} from "@/components/Components/SideBar/Sidebar";
-import {Feeds} from "@/components/Components/Feeds/Feeds";
-import {RightBar} from "@/components/Components/RightBar/RightBar";
+"use client"
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "@/app/GlobalRedux/store";
+import React from "react";
+import Home from "@/app/home/page";
+import {Profile} from "@/app/profile/Profile";
 
-export default function Home() {
-  return <div className='home'>
-        <NavBar/>
-        <div className="home-container">
-            <Sidebar/>
-            <Feeds stories={true}/>
-            <RightBar profile={false}/>
-        </div>
-    </div>
+const HomePage = () => {
+    const selectedContent = useSelector((state: RootState) => state.counter.selectedContent);
+    const pageMap: { [key: string]: JSX.Element } = {
+        Home: <Home/>,
+        Profile: <Profile/>
+    };
+    return pageMap[selectedContent] || <div>Page not found</div>;
 }
+
+export default HomePage

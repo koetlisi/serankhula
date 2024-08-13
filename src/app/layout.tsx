@@ -4,6 +4,7 @@ import "./css/globals.css";
 import {cn} from "@/lib/utils"
 import React from "react";
 import Head from "next/head";
+import {Providers} from "@/app/GlobalRedux/provider";
 
 const fontSans = FontSans({
     subsets: ["latin"],
@@ -27,7 +28,9 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         <body className={cn(
             "min-h-screen bg-background font-sans antialiased",
             fontSans.variable
-        )}>{children}</body>
+        )}><Providers>
+            {children}
+        </Providers></body>
         </html>
     );
 }

@@ -3,7 +3,7 @@ import './editprofile.css.scss'
 import {NavBar} from "@/components/Components/NavThings/NavBar";
 import {Sidebar} from "@/components/Components/SideBar/Sidebar";
 import { Button, Tabs } from 'antd';
-import {TabItems} from "@/app/[profile]/EditProfile/tab-items";
+import {TabItems} from "@/app/profile/EditProfile/tab-items";
 
 export const EditProfile = () => {
     const operations = <Button>Save Changes</Button>;

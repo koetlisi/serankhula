@@ -19,31 +19,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Authenticate with Google Cloud using the latest auth action
-      - id: "auth"
-        uses: "google-github-actions/auth@v1"
+      - id: auth
+        uses: google-github-actions/auth@v1
         with:
           credentials_json: "${{ secrets.CLOUD_RUN_SERVICE_ACCOUNT }}"
 
-      # Set up the latest gcloud SDK
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
-        with:
-          project_id: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
 
       - name: Authorize Docker push
         run: gcloud auth configure-docker
 
-      - name: Build and tag the Docker image
+      - name: Build and tag the docker image
         run: docker build . --tag gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
 
       - name: Push the image to the Google Container Registry (GCR)
         run: docker push gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
 
-      - name: Deploy to Cloud Run
+      - name: Deploy
         run: |-
           gcloud run deploy $REPO_NAME \
           --region $REGION \
           --image gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
           --platform "managed" \
+          --set-env-vars PORT=8080 \
           --quiet

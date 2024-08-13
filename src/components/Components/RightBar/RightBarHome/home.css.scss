@@ -1,0 +1,30 @@
+.right-bar-home{
+    .bd-container{
+        display: flex;
+        align-items: center;
+
+        .bd-image{
+            width: 90%;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .bd-text{
+            font-weight: 300;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+    }
+    .right-image-add{
+        width: 100%;
+        margin: 30px 0;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .right-bar-title{
+        display: flex;
+        margin-bottom: 20px;
+    }
+}

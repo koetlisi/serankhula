@@ -1,0 +1,97 @@
+.edit-profile {
+    .edit-profile-wrapper {
+        display: flex;
+
+        .profile-right {
+            flex: 11;
+
+            .profile-cover {
+                height: 230px;
+                position: relative;
+
+                .cover-image {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                }
+
+                .profile-image {
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                    top: 150px;
+                    object-fit: cover;
+                    border: 3px solid white;
+                }
+            }
+
+            .profile-info {
+                padding-top: 80px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .profile-info-name {
+                    font-size: 24px;
+                }
+
+                .profile-info-desc {
+                    font-weight: 300;
+                }
+            }
+
+            .edit-profile-right-bottom {
+                display: flex;
+                flex-direction: column;
+                height: calc(100vh - 50px);
+                position: sticky;
+                top: 5opx;
+                overflow-y: scroll;
+
+                .edit-top {
+                    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+                    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+                    margin: 20px;
+                    padding: 10px;
+                    display: flex;
+
+                    h1 {
+                        color: #666;
+                        font-size: 20px;
+                    }
+                }
+
+                .edit-bottom {
+                    display: flex;
+                    padding: 10px;
+                    .img-picker {
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                        right: 0;
+                        left: 0;
+                        margin-top: auto;
+                        margin-right: auto;
+                        margin-left: auto;
+                        object-fit: cover;
+                        border: 3px solid white;
+                    }
+                    .label-spacing {
+                        margin-bottom: 0.5rem; // Adds space below the label
+                        display: inline-block; // Ensures the label and TextField are on separate lines
+                    }
+
+                    .form-inputs {
+                        margin-bottom: 1.5rem; // Adds space between input fields
+                    }
+
+                }
+            }
+        }
+    }
+}

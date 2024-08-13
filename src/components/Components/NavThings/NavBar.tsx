@@ -19,7 +19,7 @@ export const NavBar = () => {
                 <span className="navbar-link">Timeline</span>
             </div>
             <div className="navbar-icons">
-                <Badge badgeContent={4} color="primary" className="navbar-icon-item">
+                <Badge sx={{color:"white"}} badgeContent={4} color="primary" className="navbar-icon-item">
                     <Person color="action"/>
                 </Badge>
                 <Badge badgeContent={4} color="primary" className="navbar-icon-item">

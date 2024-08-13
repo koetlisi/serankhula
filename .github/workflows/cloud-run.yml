@@ -9,7 +9,6 @@ on:
 env:
   PROJECT_ID: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
   REGION: us-east1
-  # project-name but it can be anything you want
   REPO_NAME: serankhula
 
 jobs:
@@ -22,13 +21,13 @@ jobs:
 
       # Authenticate with Google Cloud
       - id: "auth"
-        uses: "google-github-actions/auth@v0"
+        uses: "google-github-actions/auth@v1"  # Updated to v1
         with:
           credentials_json: "${{ secrets.CLOUD_RUN_SERVICE_ACCOUNT }}"
 
       # Setup gcloud CLI/SDK
       - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0
+        uses: google-github-actions/setup-gcloud@v1  # Updated to v1
 
       - name: Authorize Docker push
         run: gcloud auth configure-docker

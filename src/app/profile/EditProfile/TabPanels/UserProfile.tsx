@@ -19,6 +19,14 @@ export const UserProfile: React.FC = () => {
         console.log(profileData.phone);
     };
 
+    const handleDataChange_ = (field: string, value: number|null) => {
+        setProfileData((prevData) => ({
+            ...prevData,
+            [field]: value
+        }));
+        console.log(profileData.phone);
+    };
+
     // @ts-ignore
     return (
         <div className="edit-bottom">
@@ -98,7 +106,7 @@ export const UserProfile: React.FC = () => {
                 <div className="col col-6">
                     <div className="form-inputs">
                         <label className="label-spacing" htmlFor="phones">Phone Number: </label>
-                        <NumberInputAddonAfter data={profileData.phone} setData={handleDataChange} addonAfter="266" name="phone" />
+                        <NumberInputAddonAfter data={profileData.phone} setData={handleDataChange_} addonAfter="266" name="phone" />
                     </div>
                 </div>
 

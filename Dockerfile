@@ -32,4 +32,4 @@ RUN npm ci --only=production
 EXPOSE 80
 
 # Command to run the app
-CMD ["npm", "run", "start", "-p", "$PORT"]
+CMD ["npm", "run", "start"]

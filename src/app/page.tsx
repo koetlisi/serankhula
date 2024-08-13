@@ -7,7 +7,7 @@ import {Profile} from "@/app/profile/Profile";
 import {EditProfile} from "@/app/profile/EditProfile/EditProfile";
 
 const HomePage = () => {
-    const selectedContent = useSelector((state: RootState) => state.counter.selectedContent);
+    const selectedContent = useSelector((state: RootState) => state.pages.selectedContent);
     const pageMap: { [key: string]: JSX.Element } = {
         Home: <Home/>,
         Profile: <Profile/>,

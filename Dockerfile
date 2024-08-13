@@ -29,5 +29,7 @@ COPY --from=builder /app/package*.json ./
 # Install only production dependencies
 RUN npm ci --only=production
 
+EXPOSE 80
+
 # Command to run the app
 CMD ["npm", "run", "start", "-p", "$PORT"]

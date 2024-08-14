@@ -1,19 +1,18 @@
+"use client"
 import React, {useState} from 'react';
 import {Form, Select} from 'antd';
 import {useDispatch} from 'react-redux';
+import {changeFilter} from "@/app/GlobalRedux/Features/quali_instition/quali_institution";
 
 interface ArrayEmpTypeProps {
-    myArray: string;
-    label: string;
-    name: string;
     setData: React.Dispatch<React.SetStateAction<any>>;
-    data: any;
+    data: string;
     index: number;
     field: string;
     options?: { value: string; label: string }[];
 }
 
-const SelectOption: React.FC<ArrayEmpTypeProps> = ({myArray, setData, data, index, field, options}) => {
+const SelectOption: React.FC<ArrayEmpTypeProps> = ({setData, data, index, field, options}) => {
     const dispatch = useDispatch();
     const [previousEvent, setPreviousEvent] = useState<number | null>(null);
 
@@ -22,11 +21,13 @@ const SelectOption: React.FC<ArrayEmpTypeProps> = ({myArray, setData, data, inde
         const eventValue = parseInt(event as string, 10);
         if (!isNaN(eventValue)) {
             setPreviousEvent(eventValue); // Update previousEvent to the valid number
-            //dispatch(changeFilter(eventValue));
+            // @ts-ignore
+            dispatch(changeFilter(eventValue));
         } else {
             // Use previousEvent if the event is not a valid number
             if (previousEvent !== null) {
-                //dispatch(changeFilter(previousEvent));
+                // @ts-ignore
+                dispatch(changeFilter(previousEvent));
             }
         }
     };
@@ -38,12 +39,9 @@ const SelectOption: React.FC<ArrayEmpTypeProps> = ({myArray, setData, data, inde
         // Update the specific key in the course.description object
         setData((prevData: any) => ({
             ...prevData,
-            [myArray]: {
-                ...prevData[myArray],
-                [field]: {
-                    ...prevData[myArray][field],
-                    [key]: newValue,
-                },
+            [field]: {
+                ...prevData[field],
+                [key]: newValue,
             },
         }));
         console.log(event);

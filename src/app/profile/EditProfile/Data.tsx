@@ -1,4 +1,11 @@
 import {useState} from "react";
+interface CourseData {
+    name: { [key: string]: string };
+    qualification: { [key: string]: string };
+    interval: { [key: string]: { start: string; end: string } };
+    institution: { [key: string]: string };
+    description: { [key: string]: string };
+}
 
 export const DataFrame = () => {
     const [profileData, setProfileData] = useState({
@@ -15,12 +22,12 @@ export const DataFrame = () => {
     });
 
 
-    const [courseData, setCourseData] = useState({
-        name: [],
-        qualification: [],
-        interval: [],
-        institution: [],
-        description: []
+    const [courseData, setCourseData] = useState<CourseData>({
+        name: {},
+        qualification: {},
+        interval: {},
+        institution: {},
+        description: {}
     })
 
     return {profileData, setProfileData, courseData, setCourseData}

@@ -25,6 +25,7 @@ function ArrayTextAreaComponent({name, data, setData, index}) {
                   onChange={handleChange}
                   rows="4"
                   cols="50"
+                  style={{width:"100%"}}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="Type your message here..."
               />

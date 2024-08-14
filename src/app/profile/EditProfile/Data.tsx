@@ -1,18 +1,27 @@
 import {useState} from "react";
 
-export const DataFrame = () =>{
+export const DataFrame = () => {
     const [profileData, setProfileData] = useState({
         name: '',
         surname: '',
         nationality: '',
-        national_id:'',
-        dob:'',
-        gender:'other',
-        password:'',
-        password_confirmation:'',
-        email:'',
-        phone:0,
+        national_id: '',
+        dob: '',
+        gender: 'other',
+        password: '',
+        password_confirmation: '',
+        email: '',
+        phone: 0,
     });
 
-    return {profileData, setProfileData}
+
+    const [courseData, setCourseData] = useState({
+        name: [],
+        qualification: [],
+        interval: [],
+        institution: [],
+        description: []
+    })
+
+    return {profileData, setProfileData, courseData, setCourseData}
 }

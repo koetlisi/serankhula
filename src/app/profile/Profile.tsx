@@ -4,7 +4,7 @@ import {Sidebar} from "@/components/Components/SideBar/Sidebar";
 import {Feeds} from "@/components/Components/Feeds/Feeds";
 import {RightBar} from "@/components/Components/RightBar/RightBar";
 
-export const Profile = () =>{
+const Profile = () =>{
     return <div className="profile">
         <NavBar/>
         <div className="profile-wrapper">
@@ -28,3 +28,4 @@ export const Profile = () =>{
         </div>
     </div>
 }
+export default Profile

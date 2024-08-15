@@ -5,6 +5,7 @@ import {cn} from "@/lib/utils"
 import React from "react";
 import Head from "next/head";
 import {Providers} from "@/app/GlobalRedux/provider";
+import {Toaster} from "@/components/ui/toaster";
 
 const fontSans = FontSans({
     subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
             fontSans.variable
         )}><Providers>
             {children}
+            <Toaster />
         </Providers></body>
         </html>
     );

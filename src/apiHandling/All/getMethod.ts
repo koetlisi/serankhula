@@ -7,9 +7,8 @@ interface Params {
 
 
 
-export const HttpGetMethod = async <T>(endPoint: string, params: Params = {}): Promise<T | undefined> => {
+export const HttpGetMethod = async <T>(token:string,endPoint: string, params: Params = {}): Promise<T | undefined> => {
     try {
-        const token = "1|EtfIMdjIb85SoD8kI2Sgw08ocxvnYo2kkIYUtRvx3c99453f";
         const url = `${API_BASE_URL}/${endPoint}`;
 
         console.log('Making GET request to:', url);

@@ -9,7 +9,7 @@ export interface CounterState {
 
 // Define the initial state
 const initialState: CounterState = {
-    selectedContent: "Home",
+    selectedContent: "Login",
 };
 
 // Create the slice

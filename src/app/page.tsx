@@ -1,19 +1,30 @@
 "use client"
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
-import React from "react";
-import Home from "@/app/home/page";
-import {Profile} from "@/app/profile/Profile";
-import {EditProfile} from "@/app/profile/EditProfile/EditProfile";
+import React, { Suspense, lazy } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/app/GlobalRedux/store';
+import Loader from "@/app/loader";
+
+const Home = lazy(() => import('@/app/home/page'));
+const Profile = lazy(() => import('@/app/profile/Profile'));
+const EditProfile = lazy(() => import('@/app/profile/EditProfile/EditProfile'));
+const Login = lazy(() => import('@/app/auth/Login'));
 
 const HomePage = () => {
     const selectedContent = useSelector((state: RootState) => state.pages.selectedContent);
-    const pageMap: { [key: string]: JSX.Element } = {
-        Home: <Home/>,
-        Profile: <Profile/>,
-        EditProfile: <EditProfile/>
-    };
-    return pageMap[selectedContent] || <div>Page not found</div>;
-}
+    const { isLogin } = useSelector((state: RootState) => state.login);
 
-export default HomePage
+    const pageMap: { [key: string]: React.ReactNode } = {
+        Home: <Home />,
+        Profile: <Profile />,
+        EditProfile: <EditProfile />,
+        Login: <Login />
+    };
+
+    return (
+        <Suspense fallback={<Loader />}>
+            {isLogin && selectedContent === 'Login' ? pageMap['Home'] : (pageMap[selectedContent] || <div>Page not found</div>)}
+        </Suspense>
+    );
+};
+
+export default HomePage;

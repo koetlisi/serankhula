@@ -1,9 +1,11 @@
+"use client"
 import React, { useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
-import { Image, Upload } from 'antd';
-import type { GetProp, UploadFile, UploadProps } from 'antd';
+import { Image, Upload} from 'antd';
+import type { UploadFile, UploadProps } from 'antd';
+import {DataFrame} from "@/app/profile/EditProfile/Data";
 
-type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
+type FileType = NonNullable<UploadFile['originFileObj']>;
 
 const getBase64 = (file: FileType): Promise<string> =>
     new Promise((resolve, reject) => {
@@ -17,18 +19,29 @@ const ProfileUpload: React.FC = () => {
     const [previewOpen, setPreviewOpen] = useState(false);
     const [previewImage, setPreviewImage] = useState('');
     const [fileList, setFileList] = useState<UploadFile[]>([]);
+    const {selectedFiles, setSelectedFiles} = DataFrame();
 
     const handlePreview = async (file: UploadFile) => {
         if (!file.url && !file.preview) {
             file.preview = await getBase64(file.originFileObj as FileType);
         }
-
         setPreviewImage(file.url || (file.preview as string));
         setPreviewOpen(true);
     };
 
-    const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) =>
+    const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) => {
         setFileList(newFileList);
+        const files = newFileList.map((file) => file.originFileObj).filter(Boolean) as File[];
+        setSelectedFiles(files);
+    };
+
+    const handleUpload = () => {
+        // Log file paths here for the selected files
+        selectedFiles.forEach((file) => {
+            console.log(`Selected file: ${file.name}`);
+            // Add your custom upload logic here
+        });
+    };
 
     const uploadButton = (
         <button style={{ border: 0, background: 'none' }} type="button">
@@ -36,15 +49,16 @@ const ProfileUpload: React.FC = () => {
             <div style={{ marginTop: 8 }}>Upload</div>
         </button>
     );
+
     return (
         <>
             <Upload
                 className="img-picker"
-                action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
                 listType="picture-circle"
                 fileList={fileList}
                 onPreview={handlePreview}
                 onChange={handleChange}
+                beforeUpload={() => false} // Prevent auto-upload
             >
                 {fileList.length >= 1 ? null : uploadButton}
             </Upload>

@@ -27,16 +27,16 @@ interface UserData {
 export const DataFrame = () => {
     const {userData} = useSelector((state: RootState) => state.login);
     const [profileData, setProfileData] = useState<UserData>({
-        name: userData.name,
-        surname: userData.surname,
-        nationality: userData.nationality,
-        national_id: userData.national_id,
-        dob: userData.dob,
-        gender: userData.gender,
+        name: '',
+        surname: '',
+        nationality: '',
+        national_id: '',
+        dob: '',
+        gender: '',
         password: '',
         password_confirmation: '',
-        email: userData.email,
-        phone: userData.phone,
+        email: '',
+        phone:'',
     });
 
 

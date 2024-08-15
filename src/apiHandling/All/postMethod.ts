@@ -1,11 +1,14 @@
 import axios from 'axios';
 import {API_BASE_URL} from "@/apiHandling/consts";
 
-export const HttpPostMethod = async (endPoint: string, data: any) => {
+export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
     const headers = {
-        ...(data instanceof FormData ? {} : {
+        ...(data instanceof FormData ? {
+            'Authorization': `Bearer ${token}`,
+        } : {
             'Accept': 'application/vnd.api+json, application/json',
             'Content-Type': 'application/vnd.api+json, application/json',
+            'Authorization': `Bearer ${token}`,
         }),
     };
     const url = `${API_BASE_URL}/${endPoint}`;

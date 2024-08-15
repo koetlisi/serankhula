@@ -17,8 +17,7 @@ export const useProfileChanges = () => {
 
     // Access userData from the Redux store
     const { userData } = useSelector((state: RootState) => state.login);
-    // @ts-ignore
-    dispatch(updateUser(profileData));
+
 
     // Determine if there are changes between userData and profileData
     return hasChanges(userData, profileData);

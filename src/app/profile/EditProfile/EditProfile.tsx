@@ -5,9 +5,15 @@ import {Sidebar} from "@/components/Components/SideBar/Sidebar";
 import {Button, Tabs} from 'antd';
 import {TabItems} from "@/app/profile/EditProfile/tab-items";
 import {useProfileChanges} from "@/app/profile/EditProfile/TabPanels/handleChanges";
+import {updateUser} from "@/app/GlobalRedux/Features/auth/login";
+import {useDispatch, useSelector} from "react-redux";
+import {DataFrame} from "@/app/profile/EditProfile/Data";
+import {RootState} from "@/app/GlobalRedux/store";
 
 const EditProfile = () => {
     const anyChange = useProfileChanges();
+    const {userData} = useSelector((state: RootState) => state.login);
+    const dispatch = useDispatch();
     const check = () =>{
         if(anyChange){
             alert("data changed")
@@ -15,7 +21,8 @@ const EditProfile = () => {
             alert('no change')
         }
     }
-    const operations = <Button onClick={ check}>Save Changes</Button>;
+    // @ts-ignore
+    const operations = <Button onClick={()=>dispatch(updateUser(userData))}>Save Changes</Button>;
     return <div className="edit-profile">
         <NavBar/>
         <div className="edit-profile-wrapper">

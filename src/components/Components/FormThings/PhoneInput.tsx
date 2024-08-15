@@ -1,26 +1,22 @@
 import { InputNumber } from "antd";
 import React from "react";
+import {useDispatch} from "react-redux";
 
 interface Prop {
     addonAfter: string;
     name: string;
     data: number | null;  // Changed to number or null to match InputNumber type
-    setData: (name: string, value: number | null) => void;
+    onChange:any;
 }
 
-export const NumberInputAddonAfter: React.FC<Prop> = ({ addonAfter, name, data, setData }) => {
-    const handleChange = (value: number | null) => {
-        if (value !== null) {
-            setData(name, value); // Pass the numeric value
-        } else {
-            setData(name, null); // Handle null value
-        }
-    };
+export const NumberInputAddonAfter: React.FC<Prop> = ({ addonAfter, name, data, onChange }) => {
+    const dispatch = useDispatch()
+
 
     return (
         <InputNumber
             value={data}
-            onChange={handleChange}
+            onChange={(e)=>dispatch(onChange(e))}
             addonBefore={addonAfter} // Corrected usage of addonAfter
             style={{ width: '100%' }}
         />

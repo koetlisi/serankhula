@@ -11,7 +11,7 @@ export const Share = () =>{
     return <div className="share">
         <div className="share-wrapper">
             <div className="share-top">
-                <img alt="share-profile-image" src={!(userData.profileImage===''|| userData.profileImage===null)?userData.profileImage:'/assets/person/7.jpeg'} className=""/>
+                <img  alt="share-profile-image" src={!(userData.profileImage===''|| userData.profileImage===null)?userData.profileImage:'/assets/person/7.jpeg'} className="share-profile-image"/>
                 <Input onFocus={()=>setIsFocused(true)} onBlur={()=>setIsFocused(false)} placeholder={"what's in your mind "+userData.surname} className='share-input' suffix={!isFocused && <Edit className='edit-icon' />} name='all-search' onChange={(e) => {}} />
             </div>
             <hr className="share-hr"/>

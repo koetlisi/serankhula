@@ -19,7 +19,8 @@ export interface Login {
         dob:string,
         gender:string,
         phone:number,
-        id:number
+        id:number,
+        profileImage:string,
     };
 }
 
@@ -38,7 +39,8 @@ const initialState: Login = {
         dob:'',
         gender:'other',
         phone:0,
-        id:0
+        id:0,
+        profileImage:'',
     },
 };
 export const loginSlice = createSlice({
@@ -48,10 +50,9 @@ export const loginSlice = createSlice({
         updateUserData: (state, action: PayloadAction<Login['userData']>) => {
             state.userData = action.payload;
         },
-
         // Individual updates for each field in userData
-        updateUserToken: (state, action: PayloadAction<string>) => {
-            state.userData.token = action.payload;
+        updateUserProfileImage: (state, action: PayloadAction<{ profileImage: string }>) => {
+            state.userData.profileImage = action.payload.profileImage;
         },
         updateUserName: (state, action: PayloadAction<string>) => {
             state.userData.name = action.payload;
@@ -104,6 +105,7 @@ export const {
     updateUserDOB,
     updateUserGender,
     updateUserPhone,
+    updateUserProfileImage
 } = loginSlice.actions;
 
 
@@ -127,21 +129,28 @@ export const LoginFunction = (data: any) => {
     }
 }
 
-export const updateUser = (data: any) => {
+export const updateUser = (data: any,toast:any) => {
     return async (dispatch: Dispatch, getState: () => RootState) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {
             const response = await HttpPostMethod(getState().login.userData.token,'update-user', data);
             console.log(data)
-            if (response.code === 200) {
+            if (response.code === 201) {
+                toast({
+                    variant: "success group border-green-500 bg-green-500 text-neutral-50",
+                    description: "Successful updated.",
+                })
                 dispatch(loginSlice.actions.updateIsLogin(true));
                 dispatch(loginSlice.actions.updateUserData(response.data));
             }else{
-                alert(response.code)
+                toast({
+                    variant: "destructive",
+                    description: "Something went wrong.",
+                })
             }
         } catch (e) {
             console.log(e)
-            dispatch(loginSlice.actions.updateIsCatch(true))
+            dispatch(loginSlice.actions.updateIsCatch(false))
         } finally {
             dispatch(loginSlice.actions.updateIsLoading(false))
         }

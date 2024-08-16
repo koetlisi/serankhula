@@ -1,3 +1,4 @@
+"use client"
 import './sidebar.css.scss'
 import React from "react";
 import {MenuLink} from "@/components/Components/MenuLink/MenuLink";
@@ -9,7 +10,11 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import BadgeIcon from '@mui/icons-material/Badge';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import WalletIcon from '@mui/icons-material/Wallet';
+import {useSelector} from "react-redux";
+import {RootState} from "@/app/GlobalRedux/store";
 export const Sidebar = () => {
+    const { users } = useSelector((state: RootState) => state.users);
+    const { userData } = useSelector((state: RootState) => state.login);
     return <div className="sidebar">
         <div className="sidebar-wrapper">
             <MenuLink icon={AccountBalanceIcon} text='Students(10000)'/>
@@ -21,9 +26,12 @@ export const Sidebar = () => {
             <button className="sidebar-btn">Show More</button>
             <hr className="sidebar-hr"/>
             <ul className="sidebar-friend-list">
-                {Users.map(user=>(
-                    <Friends key={user.id}  user={user}/>
-                ))}
+                {users
+                    .filter(user => user.id !== userData.id)
+                    .map(user => (
+                        <Friends key={user.id} user={user} />
+                    ))
+                }
             </ul>
         </div>
     </div>

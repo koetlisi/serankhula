@@ -3,10 +3,12 @@ import './nav.css.scss'
 import {Input} from "antd";
 import {ChatBubble, Notifications, Person, Search} from "@mui/icons-material";
 import {Badge} from "@mui/material";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
+import {RootState} from "@/app/GlobalRedux/store";
 
 export const NavBar = () => {
+    const { userData } = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch();
     const handleClick = () => dispatch(updateSelectedComponent('Profile'))
     return <div className='navbar-container'>
@@ -36,7 +38,7 @@ export const NavBar = () => {
             </div>
             <button onClick={handleClick}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/person/1.jpeg" alt="" className="navbar-image"/>
+                <img src={userData.profileImage} alt="" className="navbar-image"/>
             </button>
         </div>
     </div>

@@ -1,9 +1,12 @@
-"use client"
+"use client";
+
 import React, { useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
-import { Image, Upload} from 'antd';
+import { Image, Upload } from 'antd';
 import type { UploadFile, UploadProps } from 'antd';
-import {DataFrame} from "@/app/profile/EditProfile/Data";
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUserProfileImage } from '@/app/GlobalRedux/Features/auth/login';
+import { RootState } from '@/app/GlobalRedux/store';
 
 type FileType = NonNullable<UploadFile['originFileObj']>;
 
@@ -19,7 +22,7 @@ const ProfileUpload: React.FC = () => {
     const [previewOpen, setPreviewOpen] = useState(false);
     const [previewImage, setPreviewImage] = useState('');
     const [fileList, setFileList] = useState<UploadFile[]>([]);
-    const {selectedFiles, setSelectedFiles} = DataFrame();
+    const dispatch = useDispatch();
 
     const handlePreview = async (file: UploadFile) => {
         if (!file.url && !file.preview) {
@@ -31,16 +34,13 @@ const ProfileUpload: React.FC = () => {
 
     const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) => {
         setFileList(newFileList);
-        const files = newFileList.map((file) => file.originFileObj).filter(Boolean) as File[];
-        setSelectedFiles(files);
-    };
 
-    const handleUpload = () => {
-        // Log file paths here for the selected files
-        selectedFiles.forEach((file) => {
-            console.log(`Selected file: ${file.name}`);
-            // Add your custom upload logic here
-        });
+        // Get the first file's URL or path and dispatch it
+        const file = newFileList[0]?.originFileObj;
+        if (file) {
+            const filePath = URL.createObjectURL(file);
+            dispatch(updateUserProfileImage({ profileImage: filePath }));
+        }
     };
 
     const uploadButton = (

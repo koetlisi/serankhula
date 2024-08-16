@@ -9,20 +9,25 @@ import {updateUser} from "@/app/GlobalRedux/Features/auth/login";
 import {useDispatch, useSelector} from "react-redux";
 import {DataFrame} from "@/app/profile/EditProfile/Data";
 import {RootState} from "@/app/GlobalRedux/store";
+import {useToast} from "@/components/ui/use-toast";
 
 const EditProfile = () => {
-    const anyChange = useProfileChanges();
     const {userData} = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch();
-    const check = () =>{
-        if(anyChange){
-            alert("data changed")
-        }else{
-            alert('no change')
+    const { toast } = useToast()
+
+    const operations = <Button onClick={async ()=>{
+        const file = await fetch(userData.profileImage).then(res => res.blob());
+        const formData = new FormData();
+        formData.append('file', file);
+        for (const [key, value] of Object.entries(userData)) {
+            if (value !== null && value !== undefined) {
+                formData.append(key, value.toString());
+            }
         }
-    }
-    // @ts-ignore
-    const operations = <Button onClick={()=>dispatch(updateUser(userData))}>Save Changes</Button>;
+        // @ts-ignore
+        dispatch(updateUser(formData, toast))
+    }}>Save Changes</Button>;
     return <div className="edit-profile">
         <NavBar/>
         <div className="edit-profile-wrapper">

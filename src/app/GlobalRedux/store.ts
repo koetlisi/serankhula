@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage';
 import pagesReducer from '@/app/GlobalRedux/Features/pageControl/pageControlSlice';
 import institutionReducer from '@/app/GlobalRedux/Features/quali_instition/quali_institution';
 import loginReducer from '@/app/GlobalRedux/Features/auth/login';
+import userReducer from '@/app/GlobalRedux/Features/user/users'
 
 // Persist configuration
 const persistConfig = {
@@ -17,7 +18,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
     pages: pagesReducer,
     institution: institutionReducer,
-    login:loginReducer
+    login:loginReducer,
+    users: userReducer
 });
 
 // Create a persisted reducer

@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/GlobalRedux/store';
 import Loader from "@/app/loader";
+import InactivityTracker from "@/app/auth/is_active";
 
 const Home = lazy(() => import('@/app/home/page'));
 const Profile = lazy(() => import('@/app/profile/Profile'));
@@ -22,6 +23,7 @@ const HomePage = () => {
 
     return (
         <Suspense fallback={<Loader />}>
+            <InactivityTracker/>
             {!isLogin?pageMap['Login']:(pageMap[selectedContent] || <div>Page not found</div>)}
         </Suspense>
     );

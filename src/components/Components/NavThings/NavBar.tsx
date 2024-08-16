@@ -10,9 +10,9 @@ import {RootState} from "@/app/GlobalRedux/store";
 export const NavBar = () => {
     const { userData } = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch();
-    const handleClick = () => dispatch(updateSelectedComponent('Profile'))
+    const handleClick = (e:string) => dispatch(updateSelectedComponent(e))
     return <div className='navbar-container'>
-        <div className='navbar-left'>
+        <div onClick={()=>handleClick('Home')} className='navbar-left'>
             <span className='logo'>Serankhula</span>
         </div>
         <div className='navbar-center'>
@@ -36,7 +36,7 @@ export const NavBar = () => {
                     <Notifications color="action"/>
                 </Badge>
             </div>
-            <button onClick={handleClick}>
+            <button onClick={()=>handleClick('Profile')}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={userData.profileImage} alt="" className="navbar-image"/>
             </button>

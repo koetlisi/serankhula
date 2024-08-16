@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'http://127.0.0.1:8000/api'; // Your Laravel API base URL
+export const API_BASE_URL = 'http://34.28.20.16:8000/api'; // Your Laravel API base URL

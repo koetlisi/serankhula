@@ -1,7 +1,6 @@
 'use client';
 
 import {createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit';
-import {pageControlSlice} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
 import {RootState} from "@/app/GlobalRedux/store";
 
@@ -78,9 +77,6 @@ export const loginSlice = createSlice({
         updateUserPhone: (state, action: PayloadAction<number>) => {
             state.userData.phone = action.payload;
         },
-        updateUserID: (state, action: PayloadAction<number>) => {
-            state.userData.id = action.payload;
-        },
 
         updateIsLoading: (state, action: PayloadAction<Login['isLoading']>) => {
             state.isLoading = action.payload
@@ -105,7 +101,8 @@ export const {
     updateUserDOB,
     updateUserGender,
     updateUserPhone,
-    updateUserProfileImage
+    updateUserProfileImage,
+    updateIsLogin
 } = loginSlice.actions;
 
 

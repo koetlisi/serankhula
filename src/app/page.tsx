@@ -22,7 +22,7 @@ const HomePage = () => {
 
     return (
         <Suspense fallback={<Loader />}>
-            {isLogin && selectedContent === 'Login' ? pageMap['Home'] : (pageMap[selectedContent] || <div>Page not found</div>)}
+            {!isLogin?pageMap['Login']:(pageMap[selectedContent] || <div>Page not found</div>)}
         </Suspense>
     );
 };

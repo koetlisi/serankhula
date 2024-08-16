@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {API_BASE_URL} from "@/apiHandling/consts";
+import {apiClient} from "@/apiHandling/consts";
 
 export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
     const headers = {
@@ -11,9 +11,9 @@ export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
             'Authorization': `Bearer ${token}`,
         }),
     };
-    const url = `${API_BASE_URL}/${endPoint}`;
+    const url = `${endPoint}`;
     try {
-        const response = await axios.post(url, data, { headers });
+        const response = await apiClient.post(url, data, { headers });
         console.log(response.data)
         return response.data;
     } catch (error) {

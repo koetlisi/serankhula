@@ -24,7 +24,7 @@ const HomePage = () => {
     return (
         <Suspense fallback={<Loader />}>
             <InactivityTracker/>
-            {!isLogin?pageMap['Login']:(pageMap[selectedContent] || <div>Page not found</div>)}
+            {!isLogin?pageMap['Home']:(pageMap[selectedContent] || <div>Page not found</div>)}
         </Suspense>
     );
 };

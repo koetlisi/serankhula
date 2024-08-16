@@ -1,5 +1,5 @@
 import axios, { AxiosResponse, AxiosError } from 'axios';
-import {API_BASE_URL} from "@/apiHandling/consts";
+import { apiClient} from "@/apiHandling/consts";
 
 interface Params {
     [key: string]: any;
@@ -9,12 +9,12 @@ interface Params {
 
 export const HttpGetMethod = async <T>(token:string,endPoint: string, params: Params = {}): Promise<T | undefined> => {
     try {
-        const url = `${API_BASE_URL}/${endPoint}`;
+        const url = `${endPoint}`;
 
         console.log('Making GET request to:', url);
         console.log('With params:', params);
 
-        const response: AxiosResponse<T> = await axios.get(url, {
+        const response: AxiosResponse<T> = await apiClient.get(url, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,

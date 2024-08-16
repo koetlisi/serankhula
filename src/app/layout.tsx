@@ -23,6 +23,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         <html lang="en">
         <Head>
             {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
             <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
                   as="style"/>
         </Head>

@@ -39,7 +39,7 @@ interface InstitutionsResponse {
 export const getInstitutions = () => {
     return async (dispatch: Dispatch, getState: () => RootState) => {
         try {
-            const response = await HttpGetMethod<InstitutionsResponse>(getState().login.userData.token,'get_all_institutions', {});
+            const response = await HttpGetMethod<InstitutionsResponse>(getState().login.userData.token,'get_all_institutions/', {});
 
             if (response && response.code === 200) {
                 dispatch(qualiInstSlice.actions.getInstitutions(response.data));

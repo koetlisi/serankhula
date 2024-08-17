@@ -10,6 +10,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {DataFrame} from "@/app/profile/EditProfile/Data";
 import {RootState} from "@/app/GlobalRedux/store";
 import {useToast} from "@/components/ui/use-toast";
+import {FilePost} from "@/apiHandling/All/file_post";
 
 const EditProfile = () => {
     const {userData} = useSelector((state: RootState) => state.login);

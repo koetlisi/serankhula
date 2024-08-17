@@ -3,6 +3,7 @@
 import {createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit';
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
 import {RootState} from "@/app/GlobalRedux/store";
+import {FilePost} from "@/apiHandling/All/file_post";
 
 export interface Login {
     isLogin: boolean;
@@ -130,7 +131,10 @@ export const updateUser = (data: any,toast:any) => {
     return async (dispatch: Dispatch, getState: () => RootState) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {
-            const response = await HttpPostMethod(getState().login.userData.token,'update-user/', data);
+            // @ts-ignore
+            const img_path = await FilePost(getState().login.userData.token,'api/upload',data);
+            data.append('profileImage',img_path)
+            const response = await HttpPostMethod(getState().login.userData.token,'update_user/', data);
             console.log(data)
             if (response.code === 201) {
                 toast({

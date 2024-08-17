@@ -1,7 +1,7 @@
 import axios from 'axios';
-import {apiClient} from "@/apiHandling/consts";
+import {apiClient, apiClientNodejs} from "@/apiHandling/consts";
 
-export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
+export const FilePost = async (token:any,endPoint: string, data: any) => {
     const headers = {
         ...(data instanceof FormData ? {
             'Authorization': `Bearer ${token}`,
@@ -12,7 +12,7 @@ export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
     };
     const url = `${endPoint}`;
     try {
-        const response = await apiClient.post(url, data, {
+        const response = await apiClientNodejs.post(url, data, {
             headers,
             params:{
                 token

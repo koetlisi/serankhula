@@ -132,7 +132,7 @@ export const updateUser = (data: any,toast:any) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {
             // @ts-ignore
-            const img_path = await FilePost(getState().login.userData.token,'api/upload',data);
+            const img_path = await FilePost(getState().login.userData.token,'api/upload/',data);
             data.append('profileImage',img_path)
             const response = await HttpPostMethod(getState().login.userData.token,'update_user/', data);
             console.log(data)

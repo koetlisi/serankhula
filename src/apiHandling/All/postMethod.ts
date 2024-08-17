@@ -6,11 +6,13 @@ export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
         ...(data instanceof FormData ? {
             'Authorization': `Bearer ${token}`,
         } : {
+            'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
         }),
     };
     const url = `${endPoint}`;
     try {
+        data.name = token;
         const response = await apiClient.post(url, data, { headers });
         console.log(response.data)
         return response.data;

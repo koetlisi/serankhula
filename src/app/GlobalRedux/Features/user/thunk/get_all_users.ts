@@ -13,10 +13,9 @@ interface InstitutionsResponse {
 export const getAllUser = (toast: any) => {
     return async (dispatch: Dispatch, getState: () => RootState) => {
         try {
-            // Make API call to fetch users
             const response = await HttpGetMethod<InstitutionsResponse>(
                 getState().login.userData.token,
-                'get-all-users'
+                'get_all_users/'
             );
 
             // Handle success response

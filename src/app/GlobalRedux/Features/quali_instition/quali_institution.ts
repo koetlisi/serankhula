@@ -1,7 +1,6 @@
 "use client"
 import {createSlice, Dispatch} from '@reduxjs/toolkit';
 import {HttpGetMethod} from "@/apiHandling/All/getMethod";
-import {loginSlice} from "@/app/GlobalRedux/Features/auth/login";
 import {RootState} from "@/app/GlobalRedux/store";
 export interface Quali_Institution {
     institutions: any[],
@@ -40,7 +39,7 @@ interface InstitutionsResponse {
 export const getInstitutions = () => {
     return async (dispatch: Dispatch, getState: () => RootState) => {
         try {
-            const response = await HttpGetMethod<InstitutionsResponse>(getState().login.userData.token,'get-all-institutions', {});
+            const response = await HttpGetMethod<InstitutionsResponse>(getState().login.userData.token,'get_all_institutions', {});
 
             if (response && response.code === 200) {
                 dispatch(qualiInstSlice.actions.getInstitutions(response.data));
@@ -57,7 +56,7 @@ export const getInstitutions = () => {
 export const getQualification = ()=>{
     return async(dispatch:Dispatch, getState:any)=>{
         try {
-            const response = await HttpGetMethod<InstitutionsResponse>(getState().login.userData.token,'get-all-qualifications',{ });
+            const response = await HttpGetMethod<InstitutionsResponse>(getState().login.userData.token,'get_all_qualifications/',{ });
             if (response && response.code === 200) {
                 dispatch(qualiInstSlice.actions.getQualification(response.data));
             } else {

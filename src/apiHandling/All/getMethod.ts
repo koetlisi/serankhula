@@ -19,7 +19,10 @@ export const HttpGetMethod = async <T>(token:string,endPoint: string, params: Pa
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
             },
-            params: params,
+            params: {
+                ...params,
+                token
+            },
         });
 
         console.log('Response received:', response.data);

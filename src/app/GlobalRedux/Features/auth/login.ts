@@ -133,6 +133,7 @@ export const updateUser = (data: any,toast:any) => {
         try {
             // @ts-ignore
             const img_path = await FilePost(getState().login.userData.token,'api/upload/',data);
+            alert(img_path)
             data.append('profileImage',img_path)
             const response = await HttpPostMethod(getState().login.userData.token,'update_user/', data);
             console.log(data)

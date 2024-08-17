@@ -110,7 +110,7 @@ export const LoginFunction = (data: any) => {
     return async (dispatch: Dispatch) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {
-            const response = await HttpPostMethod('','login', data);
+            const response = await HttpPostMethod('','login/', data);
             if (response.code === 200) {
                 dispatch(loginSlice.actions.updateIsLogin(true));
                 dispatch(loginSlice.actions.updateUserData(response.data));

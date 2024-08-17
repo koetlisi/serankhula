@@ -6,8 +6,6 @@ export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
         ...(data instanceof FormData ? {
             'Authorization': `Bearer ${token}`,
         } : {
-            'Accept': 'application/vnd.api+json, application/json',
-            'Content-Type': 'application/vnd.api+json, application/json',
             'Authorization': `Bearer ${token}`,
         }),
     };

@@ -131,10 +131,10 @@ export const updateUser = (data: any,toast:any) => {
     return async (dispatch: Dispatch, getState: () => RootState) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {
-            // @ts-ignore
+           /* // @ts-ignore
             const img_path = await FilePost(getState().login.userData.token,'api/upload/',data);
-            alert(img_path)
-            data.append('profileImage',img_path)
+            alert(img_path)*/
+
             const response = await HttpPostMethod(getState().login.userData.token,'update_user/', data);
             console.log(data)
             if (response.code === 201) {

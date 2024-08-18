@@ -21,7 +21,7 @@ export const Sidebar = () => {
     const handleClick = () => dispatch(updateSelectedComponent('Profile'))
     return <div className="sidebar">
         <div className="sidebar-wrapper">
-            <div className="menu-link">
+            <div onClick={handleClick} className="menu-link">
                 <img alt={userData.name} style={{width:"40px", height:"40px", borderRadius:"500%"}} src={(userData.profileImage===null|| userData.profileImage=='')?'assets/img.png':userData.profileImage} className="sidebar-icon" />
                 <span className="sidebar-list-item-text menu-link-text">{userData.name+' '+userData.surname}</span>
             </div>

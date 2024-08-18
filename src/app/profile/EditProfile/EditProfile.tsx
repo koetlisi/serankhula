@@ -37,11 +37,11 @@ const EditProfile = () => {
                 <div className="profile-right-top">
                     <div className="profile-cover">
                         <img src="/assets/profile-cover.png" alt="profile-cover" className="cover-image"/>
-                        <img src="/assets/profile.png" alt="" className="profile-image"/>
+                        <img src={userData.profileImage??'/assets/img.png'} alt="" className="profile-image"/>
                     </div>
                     <div className="profile-info">
-                        <h4 className="profile-info-name">Koetlisi Theko</h4>
-                        <span className="profile-info-desc">Hy I am using AI</span>
+                        <h4 className="profile-info-name">{userData.name+" "+userData.surname}</h4>
+                        <span className="profile-info-desc">{userData.email}</span>
                     </div>
                 </div>
                 <div className="edit-profile-right-bottom">

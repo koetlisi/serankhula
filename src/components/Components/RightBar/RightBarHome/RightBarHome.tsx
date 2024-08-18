@@ -1,6 +1,7 @@
 import './home.css.scss';
 import {OnlineFriends} from "@/components/Components/Fiends/OnlineFriends/OnlineFriends";
 import {Users} from "@/components/Components/Fiends/dummyData";
+import {PieChartPeople} from "@/components/Components/analytics/ageStatusPy";
 
 export const RightBarHome = () =>{
     return <div className="right-bar-home">
@@ -8,7 +9,7 @@ export const RightBarHome = () =>{
             <img className="bd-image" src="/assets/gift.png"  alt=""/>
             <span className="bd-text"><b>Nalane Koetlisi</b> and <b>other friends</b> have graduations</span>
         </div>
-        <img className="right-image-add" alt="" src="/assets/ad.png"/>
+        <img src="/assets/ad.png" className="right-image-add"/>
         <span className="right-bar-title">Online Friend</span>
 
         <ul className="rightbar-friend-list">

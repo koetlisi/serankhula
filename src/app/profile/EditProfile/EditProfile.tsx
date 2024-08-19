@@ -11,6 +11,7 @@ import {DataFrame} from "@/app/profile/EditProfile/Data";
 import {RootState} from "@/app/GlobalRedux/store";
 import {useToast} from "@/components/ui/use-toast";
 import {FilePost} from "@/apiHandling/All/file_post";
+import {fetchFileFromLocalStorage} from "@/app/auth/getFiles";
 
 const EditProfile = () => {
     const {userData} = useSelector((state: RootState) => state.login);
@@ -18,9 +19,11 @@ const EditProfile = () => {
     const { toast } = useToast()
 
     const operations = <Button onClick={async ()=>{
-        const file = await fetch(userData.profileImage).then(res => res.blob());
+        const file = await fetchFileFromLocalStorage('file_path');
         const formData = new FormData();
-        formData.append('file', file);
+        if(file !== null){
+            formData.append('file', file);
+        }
         for (const [key, value] of Object.entries(userData)) {
             if (value !== null && value !== undefined) {
                 formData.append(key, value.toString());

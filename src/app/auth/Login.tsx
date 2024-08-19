@@ -14,10 +14,8 @@ import {AlertDialogTrigger} from "@/components/ui/alert-dialog";
 import {AuthControls} from "@/app/auth/authControls";
 const Login = () => {
     const {form,setDialogOpen,setForm} = AuthControls()
-    const {toast} = useToast()
     const {isLoading} = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch()
-
     const handleLogin = () => {
         // @ts-ignore
         dispatch(LoginFunction(form))

@@ -3,8 +3,6 @@
 import {createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit';
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
 import {RootState} from "@/app/GlobalRedux/store";
-import {FilePost} from "@/apiHandling/All/file_post";
-import {AuthControls} from "@/app/auth/authControls";
 
 export interface Login {
     isLogin: boolean;
@@ -156,8 +154,8 @@ export const updateUser = (data: any,toast:any) => {
     }
 }
 
-export const createUser = (data: any,toast:any) => {
-    const {setDialogOpen} = AuthControls();
+export const createUser = (data: any,toast:any, setDialogOpen:any) => {
+
     return async (dispatch: Dispatch, getState: () => RootState) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {

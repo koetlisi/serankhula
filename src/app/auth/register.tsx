@@ -19,6 +19,7 @@ import {useToast} from "@/components/ui/use-toast";
 import {createUser} from "@/app/GlobalRedux/Features/auth/login";
 import {Button} from "@/components/ui/button";
 import {AuthControls} from "@/app/auth/authControls";
+import {fetchFileFromLocalStorage} from "@/app/auth/getFiles";
 
 interface Prop {
     children: React.ReactNode;
@@ -28,6 +29,7 @@ export const Register: React.FC<Prop> = ({children}) => {
     const {userData} = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch();
     const {toast} = useToast();
+    const formData = new FormData();
     const {form, isDialogOpen, setDialogOpen,setForm} = AuthControls()
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;
@@ -38,25 +40,17 @@ export const Register: React.FC<Prop> = ({children}) => {
     };
 
     const submitRegister = async () => {
-        if (!userData || !userData.profileImage || typeof userData.profileImage !== 'string') {
-            console.error('Invalid profile image URL');
-            return;
+        const file = await fetchFileFromLocalStorage('file_path');
+        if(file !== null){
+            formData.append('file', file);
         }
-        const formData = new FormData();
-        const response = await fetch(userData.profileImage);
         for (const [key, value] of Object.entries(form)) {
             if (value !== null && value !== undefined && key !== 'confirm_password') {
                 formData.append(key, value.toString());
             }
         }
-        if (!response.ok) {
-            // @ts-ignore
-            return dispatch(createUser(formData, toast));
-        }
-        const fileBlob = await response.blob();
-        formData.append('file', fileBlob);
         // @ts-ignore
-        dispatch(createUser(formData, toast));
+        dispatch(createUser(formData, toast, setDialogOpen));
     };
 
     return (

@@ -94,4 +94,29 @@
             }
         }
     }
+
 }
+
+.floating-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff; /* You can change the color */
+    color: white;
+    font-size: 24px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.floating-button:hover {
+    background-color: #0056b3; /* Hover color */
+}
+

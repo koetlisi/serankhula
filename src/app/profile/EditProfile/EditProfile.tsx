@@ -12,6 +12,8 @@ import {RootState} from "@/app/GlobalRedux/store";
 import {useToast} from "@/components/ui/use-toast";
 import {FilePost} from "@/apiHandling/All/file_post";
 import {fetchFileFromLocalStorage} from "@/app/auth/getFiles";
+import {IconButton} from "@mui/material";
+import {SaveAll} from "lucide-react";
 
 const EditProfile = () => {
     const {userData} = useSelector((state: RootState) => state.login);
@@ -37,21 +39,28 @@ const EditProfile = () => {
         <div className="edit-profile-wrapper">
             <Sidebar/>
             <div className="profile-right">
-                <div className="profile-right-top">
-                    <div className="profile-cover">
-                        <img src="/assets/profile-cover.png" alt="profile-cover" className="cover-image"/>
-                        <img src={userData.profileImage??'/assets/img.png'} alt="" className="profile-image"/>
-                    </div>
-                    <div className="profile-info">
-                        <h4 className="profile-info-name">{userData.name+" "+userData.surname}</h4>
-                        <span className="profile-info-desc">{userData.email}</span>
-                    </div>
-                </div>
                 <div className="edit-profile-right-bottom">
                     <Tabs className="edit-top" tabBarExtraContent={operations} items={TabItems}/>
                 </div>
             </div>
         </div>
+        <IconButton className="floating-button" onClick={async ()=>{
+            const file = await fetchFileFromLocalStorage('file_path');
+            const formData = new FormData();
+            if(file !== null){
+                formData.append('file', file);
+            }
+            for (const [key, value] of Object.entries(userData)) {
+                if (value !== null && value !== undefined) {
+                    formData.append(key, value.toString());
+                }
+            }
+            // @ts-ignore
+            dispatch(updateUser(formData, toast))
+        }}>
+            <SaveAll/>
+        </IconButton>
+        );
     </div>
 }
 

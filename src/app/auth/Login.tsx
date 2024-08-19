@@ -5,13 +5,15 @@ import {FaLock} from "react-icons/fa";
 import "./login.css.scss";
 import {Input} from "antd";
 import React, {useEffect, useState} from "react";
-import {HttpPostMethod} from "@/apiHandling/All/postMethod"; // Adjust this path accordingly
 import {useToast} from "@/components/ui/use-toast"
 import {useDispatch, useSelector} from "react-redux";
 import {LoginFunction} from "@/app/GlobalRedux/Features/auth/login";
 import {RootState} from "@/app/GlobalRedux/store";
+import {Register} from "@/app/auth/register";
+import {AlertDialogTrigger} from "@/components/ui/alert-dialog";
+import {AuthControls} from "@/app/auth/authControls";
 const Login = () => {
-    const [form, setForm] = useState({email: '', password: ''});
+    const {form,setDialogOpen,setForm} = AuthControls()
     const {toast} = useToast()
     const {isLoading} = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch()
@@ -66,7 +68,11 @@ const Login = () => {
                         </button>
 
                         <div className="register-link">
-                            <p>Dont have an account?<a href="#">Register</a></p>
+                            <p>Dont have an account?<Register>
+                                <AlertDialogTrigger onClick={()=>setDialogOpen(true)} className="text-blue-500 underline cursor-pointer bg-transparent border-none p-0 hover:text-blue-700 focus:outline-none" asChild>
+                                    <span>Register</span>
+                                </AlertDialogTrigger>
+                            </Register></p>
                         </div>
                     </div>
                 </div>

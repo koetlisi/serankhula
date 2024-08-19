@@ -4,6 +4,7 @@ import {createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit';
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
 import {RootState} from "@/app/GlobalRedux/store";
 import {FilePost} from "@/apiHandling/All/file_post";
+import {AuthControls} from "@/app/auth/authControls";
 
 export interface Login {
     isLogin: boolean;
@@ -131,10 +132,6 @@ export const updateUser = (data: any,toast:any) => {
     return async (dispatch: Dispatch, getState: () => RootState) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {
-           /* // @ts-ignore
-            const img_path = await FilePost(getState().login.userData.token,'api/upload/',data);
-            alert(img_path)*/
-
             const response = await HttpPostMethod(getState().login.userData.token,'update_user/', data);
             console.log(data)
             if (response.code === 201) {
@@ -143,6 +140,34 @@ export const updateUser = (data: any,toast:any) => {
                     description: "Successful updated.",
                 })
                 dispatch(loginSlice.actions.updateIsLogin(true));
+                dispatch(loginSlice.actions.updateUserData(response.data));
+            }else{
+                toast({
+                    variant: "destructive",
+                    description: "Something went wrong.",
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            dispatch(loginSlice.actions.updateIsCatch(false))
+        } finally {
+            dispatch(loginSlice.actions.updateIsLoading(false))
+        }
+    }
+}
+
+export const createUser = (data: any,toast:any) => {
+    const {setDialogOpen} = AuthControls();
+    return async (dispatch: Dispatch, getState: () => RootState) => {
+        dispatch(loginSlice.actions.updateIsLoading(true));
+        try {
+            const response = await HttpPostMethod(getState().login.userData.token,'register_user/', data);
+            if (response.code === 201) {
+                setDialogOpen(false)
+                toast({
+                    variant: "success group border-green-500 bg-green-500 text-neutral-50",
+                    description: "Successful updated.",
+                })
                 dispatch(loginSlice.actions.updateUserData(response.data));
             }else{
                 toast({

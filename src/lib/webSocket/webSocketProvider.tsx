@@ -17,8 +17,10 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     const [ws, setWs] = useState<WebSocket | null>(null);
 
     useEffect(() => {
-        if(isLogin){
-            const webSocket = isLocalhost? new WebSocket('ws://'+socketLocal+'/ws/'+userData.id): new WebSocket('wss://'+socketLocal+'/ws/'+userData.id)
+        if (isLogin && userData.id) {
+            const webSocket = isLocalhost
+                ? new WebSocket('ws://' + socketLocal + '/ws/' + userData.id)
+                : new WebSocket('wss://' + socketLocal + '/ws/' + userData.id);
 
             webSocket.onopen = () => {
                 console.log('WebSocket connected');
@@ -36,13 +38,28 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ chi
                 console.error('WebSocket error:', error);
             };
 
+            // Set the WebSocket in state
             setWs(webSocket);
 
+            // Cleanup function to close the WebSocket when the component unmounts or when user logs out
             return () => {
-                webSocket.close();
+                if (webSocket.readyState === WebSocket.OPEN || webSocket.readyState === WebSocket.CONNECTING) {
+                    webSocket.close();
+                    console.log('WebSocket connection closed');
+                }
             };
         }
+
+        // Cleanup function when `isLogin` becomes false (logout)
+        return () => {
+            if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
+                ws.close();
+                console.log('WebSocket connection closed due to logout');
+                setWs(null); // Clear the WebSocket state
+            }
+        };
     }, [isLogin, userData.id]);
+
 
     const handleReceiveMessage = (message: string) => {
         try {

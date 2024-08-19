@@ -46,6 +46,10 @@ export const loginSlice = createSlice({
     name: 'login',
     initialState,
     reducers: {
+        logout: (state) => {
+            state.isLogin = false;
+            state.userData = initialState.userData;
+        },
         updateUserData: (state, action: PayloadAction<Login['userData']>) => {
             state.userData = action.payload;
         },
@@ -102,7 +106,8 @@ export const {
     updateUserGender,
     updateUserPhone,
     updateUserProfileImage,
-    updateIsLogin
+    updateIsLogin,
+    logout
 } = loginSlice.actions;
 
 

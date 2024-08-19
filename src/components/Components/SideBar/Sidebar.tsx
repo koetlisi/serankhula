@@ -11,7 +11,7 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import WalletIcon from '@mui/icons-material/Wallet';
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/app/GlobalRedux/store";
-import {updateIsLogin} from "@/app/GlobalRedux/Features/auth/login";
+import {logout, updateIsLogin} from "@/app/GlobalRedux/Features/auth/login";
 import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
 
 export const Sidebar = () => {
@@ -30,7 +30,7 @@ export const Sidebar = () => {
             <MenuLink onClick={()=>{}} icon={BadgeIcon} text='Jobless'/>
             <MenuLink onClick={()=>{}} icon={AccountBalanceWalletIcon} text='Workers'/>
             <MenuLink onClick={()=>{}} icon={WalletIcon} text='Entrepreneurs'/>
-            <MenuLink onClick={()=>dispatch(updateIsLogin(false))} icon={LogoutOutlined} text='Logout'/>
+            <MenuLink onClick={()=>dispatch(logout())} icon={LogoutOutlined} text='Logout'/>
             <button className="sidebar-btn">Show More</button>
             <hr className="sidebar-hr"/>
             <ul className="sidebar-friend-list">

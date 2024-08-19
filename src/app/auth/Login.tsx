@@ -16,9 +16,10 @@ const Login = () => {
     const {form,setDialogOpen,setForm} = AuthControls()
     const {isLoading} = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch()
+    const { toast } = useToast()
     const handleLogin = () => {
         // @ts-ignore
-        dispatch(LoginFunction(form))
+        dispatch(LoginFunction(form,toast))
     }
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;

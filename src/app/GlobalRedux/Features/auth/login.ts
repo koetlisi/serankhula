@@ -106,7 +106,7 @@ export const {
 } = loginSlice.actions;
 
 
-export const LoginFunction = (data: any) => {
+export const LoginFunction = (data: any, toast:any) => {
     return async (dispatch: Dispatch) => {
         dispatch(loginSlice.actions.updateIsLoading(true));
         try {
@@ -114,8 +114,11 @@ export const LoginFunction = (data: any) => {
             if (response.code === 200) {
                 dispatch(loginSlice.actions.updateIsLogin(true));
                 dispatch(loginSlice.actions.updateUserData(response.data));
-            }else{
-                alert(response.code)
+            }else if(response.code === 401){
+                toast({
+                    variant: "destructive",
+                    description: response.msg,
+                })
             }
         } catch (e) {
             console.log(e)
@@ -137,17 +140,19 @@ export const updateUser = (data: any,toast:any) => {
                     variant: "success group border-green-500 bg-green-500 text-neutral-50",
                     description: "Successful updated.",
                 })
-                dispatch(loginSlice.actions.updateIsLogin(true));
                 dispatch(loginSlice.actions.updateUserData(response.data));
-            }else{
+            }else if(response.code === 422){
                 toast({
                     variant: "destructive",
-                    description: "Something went wrong.",
+                    description: response.msg,
                 })
             }
         } catch (e) {
             console.log(e)
-            dispatch(loginSlice.actions.updateIsCatch(false))
+            toast({
+                variant: "destructive",
+                description: e,
+            })
         } finally {
             dispatch(loginSlice.actions.updateIsLoading(false))
         }
@@ -166,10 +171,15 @@ export const createUser = (data: any,toast:any, setDialogOpen:any) => {
                     variant: "success group border-green-500 bg-green-500 text-neutral-50",
                     description: "Successful updated.",
                 })
+            }else if (response.code === 422){
+                toast({
+                    variant: "destructive",
+                    description: response.msg,
+                })
             }else{
                 toast({
                     variant: "destructive",
-                    description: "Something went wrong.",
+                    description: 'Unknown Error',
                 })
             }
         } catch (e) {

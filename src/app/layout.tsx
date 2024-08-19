@@ -6,6 +6,7 @@ import React from "react";
 import Head from "next/head";
 import {Providers} from "@/app/GlobalRedux/provider";
 import {Toaster} from "@/components/ui/toaster";
+import {WebSocketProvider} from "@/lib/webSocket/webSocketProvider";
 
 const fontSans = FontSans({
     subsets: ["latin"],
@@ -31,8 +32,10 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
             "min-h-screen bg-background font-sans antialiased",
             fontSans.variable
         )}><Providers>
-            {children}
-            <Toaster />
+            <WebSocketProvider>
+                {children}
+            </WebSocketProvider>
+            <Toaster/>
         </Providers></body>
         </html>
     );

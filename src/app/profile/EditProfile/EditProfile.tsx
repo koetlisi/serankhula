@@ -39,8 +39,8 @@ const EditProfile = () => {
         <div className="edit-profile-wrapper">
             <Sidebar/>
             <div className="profile-right">
-                <div className="edit-profile-right-bottom">
-                    <Tabs className="edit-top" tabBarExtraContent={operations} items={TabItems}/>
+                <div className="edit-profile-right-bottom floating-tabs-wrapper">
+                    <Tabs  className="edit-top floating-tabs" tabBarExtraContent={operations} items={TabItems}/>
                 </div>
             </div>
         </div>

@@ -4,7 +4,6 @@
 
         .profile-right {
             flex: 11;
-
             .profile-cover {
                 height: 230px;
                 position: relative;
@@ -118,5 +117,18 @@
 
 .floating-button:hover {
     background-color: #0056b3; /* Hover color */
+}
+.floating-tabs-wrapper {
+    position: fixed;
+    top: 0; /* Adjust as per your needs */
+    right: 0; /* Float on the right side */
+    width: 300px; /* Set the width to what you need */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white; /* Add a background to separate it from content */
+}
+
+.floating-tabs {
+    padding: 20px; /* Optional padding */
 }
 

@@ -1,5 +1,4 @@
 "use client"
-// context/WebSocketContext.tsx
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import {isLocalhost, socketLocal} from "@/apiHandling/consts";
 import {useSelector} from "react-redux";
@@ -13,41 +12,42 @@ interface WebSocketContextProps {
 const WebSocketContext = createContext<WebSocketContextProps | undefined>(undefined);
 
 export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const {userData} = useSelector((state: RootState) => state.login);
+    const {userData, isLogin} = useSelector((state: RootState) => state.login);
     const [notifications, setNotifications] = useState<string[]>([]);
     const [ws, setWs] = useState<WebSocket | null>(null);
 
     useEffect(() => {
-        const webSocket =isLocalhost? new WebSocket('ws://'+socketLocal+'/ws/'+userData.id): new WebSocket('wss://'+socketLocal+'/ws/'+userData.id)
+        if(isLogin){
+            const webSocket = isLocalhost? new WebSocket('ws://'+socketLocal+'/ws/'+userData.id): new WebSocket('wss://'+socketLocal+'/ws/'+userData.id)
 
-        webSocket.onopen = () => {
-            console.log('WebSocket connected');
-        };
+            webSocket.onopen = () => {
+                console.log('WebSocket connected');
+            };
 
-        webSocket.onmessage = (event) => {
-            handleReceiveMessage(event.data);
-        };
+            webSocket.onmessage = (event) => {
+                handleReceiveMessage(event.data);
+            };
 
-        webSocket.onclose = () => {
-            console.log('WebSocket disconnected');
-        };
+            webSocket.onclose = () => {
+                console.log('WebSocket disconnected');
+            };
 
-        webSocket.onerror = (error) => {
-            console.error('WebSocket error:', error);
-        };
+            webSocket.onerror = (error) => {
+                console.error('WebSocket error:', error);
+            };
 
-        setWs(webSocket);
+            setWs(webSocket);
 
-        return () => {
-            webSocket.close();
-        };
-    }, [userData.id]);
+            return () => {
+                webSocket.close();
+            };
+        }
+    }, [isLogin, userData.id]);
 
     const handleReceiveMessage = (message: string) => {
         try {
-            const parsedMessage = JSON.parse(message);
-            console.log(parsedMessage)
-            setNotifications((prev) => [...prev, parsedMessage]);
+            //const parsedMessage = JSON.parse(message);
+            console.log(message)
         } catch (error) {
             console.error('Failed to parse message:', error);
         }

@@ -10,7 +10,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {DataFrame} from "@/app/profile/EditProfile/Data";
 import {RootState} from "@/app/GlobalRedux/store";
 import {useToast} from "@/components/ui/use-toast";
-import {FilePost} from "@/apiHandling/All/file_post";
 import {fetchFileFromLocalStorage} from "@/app/auth/getFiles";
 import {IconButton} from "@mui/material";
 import {SaveAll} from "lucide-react";

@@ -7,6 +7,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+
 import React, {useState} from "react";
 import ProfileUpload from "@/components/Components/FormThings/ProfileUpload";
 import {Input} from "antd";
@@ -20,13 +21,14 @@ import {createUser} from "@/app/GlobalRedux/Features/auth/login";
 import {Button} from "@/components/ui/button";
 import {AuthControls} from "@/app/auth/authControls";
 import {fetchFileFromLocalStorage} from "@/app/auth/getFiles";
+import {FormSpinner} from "@/components/Components/FormThings/formSpinner";
 
 interface Prop {
     children: React.ReactNode;
 }
 
 export const Register: React.FC<Prop> = ({children}) => {
-    const {userData} = useSelector((state: RootState) => state.login);
+    const {isLoading} = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch();
     const {toast} = useToast();
     const formData = new FormData();
@@ -59,12 +61,13 @@ export const Register: React.FC<Prop> = ({children}) => {
             <AlertDialogContent>
                 <AlertDialogHeader>
                     <AlertDialogTitle>
-                        <div className="flex justify-center items-center">
+                        <div className="flex justify-center items-center" style={{display:isLoading?"none":""}}>
                             <ProfileUpload />
                         </div>
                     </AlertDialogTitle>
                     <AlertDialogDescription className="pt-4">
-                        <div className="row">
+                        {isLoading && <FormSpinner/>}
+                        <div className="row" style={{display:isLoading?"none":""}}>
                             <div className="col-6 col">
                                 <label className="label-spacing" htmlFor="first-name">First Name: </label>
                                 <div className="input-box">
@@ -138,7 +141,7 @@ export const Register: React.FC<Prop> = ({children}) => {
                         </div>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-                <div className="flex justify-between">
+                <div className="flex justify-between" style={{display:isLoading?"none":""}}>
                     <AlertDialogCancel>Login</AlertDialogCancel>
                     <Button  onClick={submitRegister}>Continue</Button>
                 </div>

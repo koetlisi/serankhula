@@ -166,7 +166,6 @@ export const createUser = (data: any,toast:any, setDialogOpen:any) => {
                     variant: "success group border-green-500 bg-green-500 text-neutral-50",
                     description: "Successful updated.",
                 })
-                dispatch(loginSlice.actions.updateUserData(response.data));
             }else{
                 toast({
                     variant: "destructive",

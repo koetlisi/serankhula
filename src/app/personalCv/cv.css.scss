@@ -1,0 +1,227 @@
+.cv{
+    .main-content{
+        min-height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+    }
+
+    .left-section{
+        grid-column: span 2;
+        height: 100%;
+        background-color: #00324A;
+    }
+
+    .right-section{
+        grid-column: span 5;
+        height: 100%;
+        background-color: #f7f7f7;
+    }
+
+    .left-content{
+        padding: 1rem 2rem;
+    }
+
+    .profile{
+        width: 100%;
+        border-bottom: 1px solid #f7f7f7;
+    }
+
+    .profile img{
+        width: 100%;
+        height: 220px;
+        border-radius: 50%;
+        border: 8px solid #f7f7f7;
+    }
+
+    .profile-name{
+        font-size: 1.5rem;
+        color: antiquewhite;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing:normal;
+        padding: 1.2rem 0;
+    }
+
+    .profile-career{
+        font-size: 1.5rem;
+        color: #94D9EA;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing:normal;
+        padding-bottom: 1rem;
+    }
+
+    .contacts-main-title{
+        font-size: 1.8rem;
+        text-align: start;
+        text-transform: uppercase;
+        color: #f7f7f7ec;
+        padding-top: 2rem;
+    }
+
+    .contacts-info{
+        border-bottom: 1px solid #f7f7f7;
+    }
+
+    .contacts-info ul{
+        padding: .9rem 0;
+    }
+
+    .contacts-info ul li{
+        padding: .4rem 0;
+        display: flex;
+        align-items: center;
+        color: #718096;
+    }
+
+    .contacts-info ul li i{
+        padding-right: 1rem;
+        font-size: 1.1rem;
+        color: #2D9CDB;
+    }
+
+    .skill-section{
+        border-bottom: 1px solid #f7f7f7;
+    }
+
+    .skill-section ul {
+        padding-top: 2rem;
+    }
+
+    .skill-section ul li{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: .4rem 0;
+    }
+
+    .progress-bar{
+        width: 100%;
+        height: .4rem;
+        background-color: #2D3748;
+        position: relative;
+        border-radius: 12px;
+    }
+
+    .progress{
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-color: #2D9CDB;
+        border-radius: 12px;
+    }
+
+    .js-progress{
+        width: 70%;
+    }
+
+    .py-progress{
+        width: 90%;
+    }
+
+    .nj-progress{
+        width: 85%;
+    }
+
+    .skill-title{
+        text-transform: capitalize;
+        color: #f7f7f7;
+        font-size: 1rem;
+    }
+
+    .sub-title{
+        padding-top: 2rem;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        color: #f7f7f7ec;
+    }
+
+    .profile-career-ref{
+        color: #ccc;
+        padding: .4rem 0;
+
+    }
+
+    .references-section ul li{
+        color: #ccc;
+        padding: .2rem 0;
+    }
+
+    .references-section ul li i{
+        padding-right: .5rem;
+        font-size: 1.1rem;
+        color: #2D9CDB;
+    }
+
+
+    .right-content{
+        padding: 2rem 3rem;
+    }
+
+    .right-title{
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #2F80ED;
+        margin-bottom: 1.2rem;
+        position: relative;
+    }
+
+    .right-title::after{
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: .3rem;
+        background-color: #2D9CDB;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 15px;
+    }
+
+    .about-me-para{
+        line-height: 1.5rem;
+        color: #718096;
+    }
+
+    .section{
+        padding-bottom: 2rem;
+    }
+
+    .timeline{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tl-title{
+        letter-spacing: 1px;
+        font-size: 1.4rem;
+        color: #002333;
+        text-transform: capitalize;
+    }
+
+    .tl-title-2{
+        letter-spacing: 1px;
+        font-size: 1.4rem;
+        color: #2D9CDB;
+        text-transform: capitalize;
+
+    }
+
+    .tl-content{
+        border-left: 1px solid #ccc;
+        padding-left: 2rem;
+        position: relative;
+        padding-bottom: 2rem;
+    }
+
+    .tl-title-2::before {
+        content: "";
+        position: absolute;
+        width: .7rem;
+        height: .7rem;
+        background-color: #2D9CDB;
+        transform: translateX(-50%) rotate(45deg);
+        left: 0;
+    }
+
+}

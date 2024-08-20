@@ -6,9 +6,15 @@ import {Badge} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
 import {RootState} from "@/app/GlobalRedux/store";
+import {CvDrawer} from "@/app/personalCv/cv_drawer";
+import {useState} from "react";
 
 export const NavBar = () => {
     const { userData } = useSelector((state: RootState) => state.login);
+    const [open, setOpen] = useState(false);
+    const isOpen = () => {
+        setOpen(prevState => !open);
+    };
     const dispatch = useDispatch();
     const handleClick = (e:string) => dispatch(updateSelectedComponent(e))
     return <div className='navbar-container'>
@@ -36,7 +42,8 @@ export const NavBar = () => {
                     <Notifications color="action"/>
                 </Badge>
             </div>
-            <button onClick={()=>handleClick('Profile')}>
+            <CvDrawer setOpen={isOpen} open={open}/>
+            <button onClick={isOpen}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={userData.profileImage} alt="" className="navbar-image"/>
             </button>

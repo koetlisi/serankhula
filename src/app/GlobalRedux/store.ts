@@ -7,6 +7,7 @@ import pagesReducer from '@/app/GlobalRedux/Features/pageControl/pageControlSlic
 import institutionReducer from '@/app/GlobalRedux/Features/quali_instition/quali_institution';
 import loginReducer from '@/app/GlobalRedux/Features/auth/login';
 import userReducer from '@/app/GlobalRedux/Features/user/users'
+import courseReducer from '@/app/GlobalRedux/Features/course/course'
 
 // Persist configuration
 const persistConfig = {
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     pages: pagesReducer,
     institution: institutionReducer,
     login:loginReducer,
-    users: userReducer
+    users: userReducer,
+    course: courseReducer
 });
 
 // Create a persisted reducer

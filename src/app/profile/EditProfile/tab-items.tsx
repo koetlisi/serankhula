@@ -5,11 +5,11 @@ export const TabItems = [
     {
         label: 'Edit User Profile',
         key: '1',
-        children: <UserProfile/>
+        content: <UserProfile/>
     },
     {
         label: 'User Qualifications',
         key: '2',
-        children: <UserQualification/>
+        content: <UserQualification/>
     },
 ]

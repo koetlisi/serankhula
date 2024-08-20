@@ -26,19 +26,6 @@ interface UserData {
 
 export const DataFrame = () => {
     const {userData} = useSelector((state: RootState) => state.login);
-    const [profileData, setProfileData] = useState<UserData>({
-        name: '',
-        surname: '',
-        nationality: '',
-        national_id: '',
-        dob: '',
-        gender: '',
-        password: '',
-        password_confirmation: '',
-        email: '',
-        phone:'',
-    });
-
 
     const [courseData, setCourseData] = useState<CourseData>({
         name: {},
@@ -50,5 +37,5 @@ export const DataFrame = () => {
 
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
 
-    return {profileData, setProfileData, courseData, setCourseData, selectedFiles, setSelectedFiles}
+    return {courseData, setCourseData, selectedFiles, setSelectedFiles}
 }

@@ -124,7 +124,7 @@ export const UserQualification: React.FC = () => {
                         </div>
                         <div className="col col-12 mb-2">
                             <div className="form-inputs">
-                                <label className="label-spacing" htmlFor="institution">Start and End Date</label>
+                                <label className="label-spacing" htmlFor="institution">Qualification Overview</label>
                                 <ArrayTextAreaComponent
                                     data={courseData.description[`description-${index}`]}
                                     setData={updateDescription}

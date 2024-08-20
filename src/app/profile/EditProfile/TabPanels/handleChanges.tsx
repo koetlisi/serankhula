@@ -1,24 +1,37 @@
 "use client";
-
+import {prepareFormData} from "@/function/prepareCourseData";
+import {SaveAll} from "lucide-react";
+import {IconButton} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import { RootState } from "@/app/GlobalRedux/store";
-import { DataFrame } from "@/app/profile/EditProfile/Data";
-import {updateUser} from "@/app/GlobalRedux/Features/auth/login";
+import {RootState} from "@/app/GlobalRedux/store";
+import {useToast} from "@/components/ui/use-toast";
+import React from "react";
+import {fetchFileFromLocalStorage} from "@/app/auth/getFiles";
 
-export const useProfileChanges = () => {
+// Rename the component to start with an uppercase letter
+const SaveEdition: React.FC = () => {
+    const {userData} = useSelector((state: RootState) => state.login);
+    const {courseData} = useSelector((state: RootState) => state.course);
     const dispatch = useDispatch();
-    // Function to compare two objects
-    const hasChanges = (data: any, data_: any): boolean => {
-        return JSON.stringify(data) !== JSON.stringify(data_);
-    };
+    const {toast} = useToast();
 
-    // Access profileData and setProfileData from the DataFrame hook
-    const { profileData } = DataFrame();
-
-    // Access userData from the Redux store
-    const { userData } = useSelector((state: RootState) => state.login);
-
-
-    // Determine if there are changes between userData and profileData
-    return hasChanges(userData, profileData);
+    return <IconButton className="floating-button" onClick={async () => {
+        const courseDataJson = prepareFormData(courseData)
+        const file = await fetchFileFromLocalStorage('file_path');
+        const formData = new FormData();
+        if (file !== null) {
+            formData.append('file', file);
+        }
+        for (const [key, value] of Object.entries(userData)) {
+            if (value !== null && value !== undefined) {
+                formData.append(key, value.toString());
+            }
+        }
+        // @ts-ignore
+        dispatch(updateUser(formData, toast))
+    }}>
+        <SaveAll/>
+    </IconButton>
 };
+
+export default SaveEdition;

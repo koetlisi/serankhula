@@ -1,11 +1,12 @@
 "use client"
 import React, {useState} from 'react';
 import {Form, Select} from 'antd';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {changeFilter} from "@/app/GlobalRedux/Features/quali_instition/quali_institution";
+import {RootState} from "@/app/GlobalRedux/store";
 
 interface ArrayEmpTypeProps {
-    setData: React.Dispatch<React.SetStateAction<any>>;
+    setData: any;
     data: string;
     index: number;
     field: string;
@@ -15,20 +16,16 @@ interface ArrayEmpTypeProps {
 const SelectOption: React.FC<ArrayEmpTypeProps> = ({setData, data, index, field, options}) => {
     const dispatch = useDispatch();
     const [previousEvent, setPreviousEvent] = useState<number | null>(null);
-
+    const {courseData} = useSelector((state: RootState) => state.course);
     const handleFilterChange = (event: string | number) => {
-        // Check if event is a number and not NaN
-        const eventValue = parseInt(event as string, 10);
+        const eventValue = typeof event === 'number' ? event : parseInt(event, 10);
         if (!isNaN(eventValue)) {
-            setPreviousEvent(eventValue); // Update previousEvent to the valid number
+            setPreviousEvent(eventValue);
             // @ts-ignore
-            dispatch(changeFilter(eventValue));
-        } else {
-            // Use previousEvent if the event is not a valid number
-            if (previousEvent !== null) {
-                // @ts-ignore
-                dispatch(changeFilter(previousEvent));
-            }
+            dispatch(changeFilter(eventValue)); // Assuming changeFilter accepts a number
+        } else if (previousEvent !== null) {
+            // @ts-ignore
+            dispatch(changeFilter(previousEvent));
         }
     };
 
@@ -36,15 +33,11 @@ const SelectOption: React.FC<ArrayEmpTypeProps> = ({setData, data, index, field,
         const newValue = event;
         const key = `${field}-${index}`;
         handleFilterChange(event);
-        // Update the specific key in the course.description object
-        setData((prevData: any) => ({
-            ...prevData,
+        dispatch(setData({
             [field]: {
-                ...prevData[field],
-                [key]: newValue,
-            },
+                [key]: newValue
+            }
         }));
-        console.log(event);
     };
 
     return (

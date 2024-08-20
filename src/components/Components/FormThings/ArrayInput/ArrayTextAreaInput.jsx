@@ -1,19 +1,17 @@
 import {Form} from 'antd';
 import React from 'react';
+import {useDispatch} from "react-redux";
 
 function ArrayTextAreaComponent({name, data, setData, index}) {
     // Handle change in text area value
+    const dispatch = useDispatch()
     const handleChange = (event) => {
         const newValue = event.target.value;
         const key = `description-${index}`;
-
-        // Update the specific key in the course.description object
-        setData((prevData) => ({
-            ...prevData,
+        dispatch(setData({
             description: {
-                ...prevData.description,
-                [key]: newValue,
-            },
+                [key]: newValue
+            }
         }));
     };
 

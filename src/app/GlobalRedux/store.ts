@@ -8,6 +8,7 @@ import institutionReducer from '@/app/GlobalRedux/Features/quali_instition/quali
 import loginReducer from '@/app/GlobalRedux/Features/auth/login';
 import userReducer from '@/app/GlobalRedux/Features/user/users'
 import courseReducer from '@/app/GlobalRedux/Features/course/course'
+import userCoursesReducer from '@/app/GlobalRedux/Features/course/userCourse/courses'
 
 // Persist configuration
 const persistConfig = {
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
     institution: institutionReducer,
     login:loginReducer,
     users: userReducer,
-    course: courseReducer
+    course: courseReducer,
+    userCourses: userCoursesReducer
 });
 
 // Create a persisted reducer

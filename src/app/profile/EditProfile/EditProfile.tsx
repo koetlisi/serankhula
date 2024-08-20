@@ -13,10 +13,12 @@ import {IconButton} from "@mui/material";
 import {SaveAll} from "lucide-react";
 import {TabDropdown} from "@/app/profile/EditProfile/tabDropdown";
 import {DataFrame} from "@/app/profile/EditProfile/Data";
+import {resetCourseData} from "@/app/GlobalRedux/Features/course/course";
+import {prepareFormData} from "@/function/prepareCourseData";
 
 const EditProfile = () => {
     const {userData} = useSelector((state: RootState) => state.login);
-    const {courseData, setCourseData} = DataFrame();
+    const { courseData } = useSelector((state: RootState) => state.course);
     const dispatch = useDispatch();
     const { toast } = useToast()
     return <div className="edit-profile">
@@ -32,7 +34,9 @@ const EditProfile = () => {
             </div>
         </div>
         <IconButton className="floating-button" onClick={async ()=>{
-            console.log(courseData)
+            const prepareFormData_ = prepareFormData(courseData)
+            console.log(JSON.stringify(prepareFormData_,null,2))
+            //dispatch(resetCourseData())
             /*const file = await fetchFileFromLocalStorage('file_path');
             const formData = new FormData();
             if(file !== null){

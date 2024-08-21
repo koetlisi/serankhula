@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/GlobalRedux/store';
+import Jobless from "@/app/profile/EditProfile/TabPanels/jobless";
 
 interface TabItem {
     label: string;
@@ -31,7 +32,7 @@ export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({ tabs }) => {
 
             if (hasJobless) {
                 newLabel = 'Jobless';
-                newContent = <div>Content related to Jobless</div>;
+                newContent =<Jobless/>;
             } else if (hasWorking) {
                 newLabel = 'Working';
                 newContent = <div>Content related to Working</div>;

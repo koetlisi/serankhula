@@ -38,6 +38,7 @@ const SkillForm: React.FC = () => {
                 [`ratting-${newIndex}`]: ""
             }
         };
+        console.log(JSON.stringify(skillData))
         dispatch(updateDumSkill(addNewSkill));
     };
 

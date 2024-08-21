@@ -13,6 +13,7 @@ import experienceReducer from '@/app/GlobalRedux/Features/dummyData/eperience';
 import aboutYouReducer from '@/app/GlobalRedux/Features/dummyData/aboutYou';
 import dumSkillsReducer from '@/app/GlobalRedux/Features/dummyData/dumSkill';
 import skillsReducer from '@/app/GlobalRedux/Features/skills/skill';
+import joblessReducer from '@/app/GlobalRedux/Features/jobless/jobless';
 
 
 // Persist configuration
@@ -32,7 +33,8 @@ const rootReducer = combineReducers({
     experience: experienceReducer,
     aboutYou: aboutYouReducer,
     skills: skillsReducer,
-    dumSkills: dumSkillsReducer
+    dumSkills: dumSkillsReducer,
+    jobless: joblessReducer
 });
 
 // Create a persisted reducer

@@ -6,9 +6,14 @@ import storage from 'redux-persist/lib/storage';
 import pagesReducer from '@/app/GlobalRedux/Features/pageControl/pageControlSlice';
 import institutionReducer from '@/app/GlobalRedux/Features/quali_instition/quali_institution';
 import loginReducer from '@/app/GlobalRedux/Features/auth/login';
-import userReducer from '@/app/GlobalRedux/Features/user/users'
-import courseReducer from '@/app/GlobalRedux/Features/course/course'
-import userCoursesReducer from '@/app/GlobalRedux/Features/course/userCourse/courses'
+import userReducer from '@/app/GlobalRedux/Features/user/users';
+import courseReducer from '@/app/GlobalRedux/Features/course/course';
+import userCoursesReducer from '@/app/GlobalRedux/Features/course/userCourse/courses';
+import experienceReducer from '@/app/GlobalRedux/Features/dummyData/eperience';
+import aboutYouReducer from '@/app/GlobalRedux/Features/dummyData/aboutYou';
+import dumSkillsReducer from '@/app/GlobalRedux/Features/dummyData/dumSkill';
+import skillsReducer from '@/app/GlobalRedux/Features/skills/skill';
+
 
 // Persist configuration
 const persistConfig = {
@@ -23,7 +28,11 @@ const rootReducer = combineReducers({
     login:loginReducer,
     users: userReducer,
     course: courseReducer,
-    userCourses: userCoursesReducer
+    userCourses: userCoursesReducer,
+    experience: experienceReducer,
+    aboutYou: aboutYouReducer,
+    skills: skillsReducer,
+    dumSkills: dumSkillsReducer
 });
 
 // Create a persisted reducer

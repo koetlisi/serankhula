@@ -19,6 +19,7 @@ export const TextField: React.FC<Prop> = ({ data, onChange, name, icon = <EditOu
             name={name}
             value={data}
             onChange={(e)=>dispatch(onChange(e.target.value))}
+            style={{ width: '100%' }}
         />
     );
 };

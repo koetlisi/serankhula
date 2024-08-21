@@ -5,10 +5,12 @@ import {useSelector} from 'react-redux';
 import {RootState} from "@/app/GlobalRedux/store";
 import TextAreaComponent from "@/components/Components/FormThings/TextAreaField";
 import {updateProfileStep} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
+import {updateLesothoJobReason, updateLesothoUnemploymentReason} from "@/app/GlobalRedux/Features/dummyData/eperience";
 
 const CheckboxGroup = Checkbox.Group;
 export const  EmploymentStatus = () =>{
     const profileSteps = useSelector((state: RootState) => state.pages.profileSteps??[]);
+    const {lesothoJobStruggle,lesothoUnemployment} = useSelector((state: RootState) => state.experience);
     const dispatch = useDispatch();
 
 
@@ -52,14 +54,14 @@ export const  EmploymentStatus = () =>{
                     <label className="block text-gray-700 text-sm font-bold mb-2 pl-4 pr-4">
                         Reasons for unemployment in Lesotho :
                     </label>
-                    <TextAreaComponent/>
+                    <TextAreaComponent name='rr' text={lesothoUnemployment} setText={updateLesothoUnemploymentReason}/>
 
                 </div>
                 <div className="col col-12">
                     <label className="block text-gray-700 text-sm font-bold mb-2 pl-4 pr-4">
                         What are the constraints of finding some job:
                     </label>
-                    <TextAreaComponent/>
+                    <TextAreaComponent text={lesothoJobStruggle} setText={updateLesothoJobReason} name="wew"/>
                 </div>
             </div>
         </Card>

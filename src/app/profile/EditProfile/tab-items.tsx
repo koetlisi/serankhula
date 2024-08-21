@@ -2,6 +2,8 @@ import {UserProfile} from "@/app/profile/EditProfile/TabPanels/UserProfile";
 import {UserQualification} from "@/app/profile/EditProfile/TabPanels/UserQualification";
 import {EmploymentStatus} from "@/app/profile/EditProfile/TabPanels/employmentStatus";
 import React from "react";
+import AboutYouPage from "@/app/profile/EditProfile/TabPanels/AboutYou";
+import SkillForm from "@/app/profile/EditProfile/TabPanels/skillForm";
 export interface TabItem {
     label: string;
     key: number;
@@ -34,7 +36,7 @@ export const TabItems = [
     {
         label: 'Skills',
         key: '7',
-        content: <EmploymentStatus/>
+        content: <SkillForm/>
     },
     {
         label: 'References',
@@ -42,8 +44,8 @@ export const TabItems = [
         content: <EmploymentStatus/>
     },
     {
-        label: 'About Me',
+        label: 'About You',
         key: '6',
-        content: <EmploymentStatus/>
+        content: <AboutYouPage/>
     },
 ]

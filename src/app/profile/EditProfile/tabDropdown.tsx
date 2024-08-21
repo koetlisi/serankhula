@@ -43,8 +43,6 @@ export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({ tabs }) => {
                 content: newContent,
             };
         }
-
-        // If the tab doesn't meet any conditions, return it unchanged
         return tab;
     }).filter(tab => tab.key !== '4' || (hasJobless || hasWorking)) // Filter out key '4' if no condition is met
 

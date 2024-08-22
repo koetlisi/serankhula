@@ -1,12 +1,12 @@
 import React, { createContext, useContext } from 'react';
 import './cv.css.scss';
 import ProfileImage from './components/profileImage';
-import SkillsInfo from './components/skills';
 import ReferencesInfo from './components/references';
-import AboutMe from './components/aboutMe';
 import ExperienceInfo from './components/experience';
 import ContactsInfo from "@/app/personalCv/components/contacts";
 import EducationInfo from "@/app/personalCv/components/education";
+import AboutMe from "@/app/personalCv/components/aboutMe";
+import SkillsInfo from "@/app/personalCv/components/skills";
 
 
 export default function CV({userInfo}) {

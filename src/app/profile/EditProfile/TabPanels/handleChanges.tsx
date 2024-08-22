@@ -14,18 +14,23 @@ import {prepareFormData} from "@/function/prepareCourseData";
 import {prepareUserProfileData} from "@/function/prepareUserProfileData";
 import {registerCourse} from "@/app/GlobalRedux/Features/course/userCourse/thunks/courseRegistration";
 import {AboutYorRegistration} from "@/app/GlobalRedux/Features/user/thunk/aboutYorRegistration";
+import {registerSkill} from "@/app/GlobalRedux/Features/skills/thunks/registerSkill";
+import {formatSkillsData} from "@/function/prepareSkillsData";
+import {resetSkill} from "@/app/GlobalRedux/Features/skills/skill";
 
 const SaveEdition: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [submit, setSubmit] = useState({
         userProfile: true,
         course: true,
-        aboutYou:true
+        aboutYou:true,
+        skill:true
     })
     const {userData} = useSelector((state: RootState) => state.login);
     const {courseData} = useSelector((state: RootState) => state.course);
     const aboutYou = useSelector((state: RootState) => state.aboutYou);
     const toSubmit = useSelector((state: RootState) => state.system);
+    const dumSkill = useSelector((state: RootState) => state.dumSkills);
     const dispatch = useDispatch();
     const {toast} = useToast();
     const submission = {
@@ -35,12 +40,22 @@ const SaveEdition: React.FC = () => {
             'whereAbout': 'About DaP',
             'internship': aboutYou.internshipSummary,
             'aboutYou': aboutYou.motivationalSummary,
-        }
+        },
+        'skills': formatSkillsData(dumSkill.skillData)
     }
     const singleSubmission = () =>{
         if(toSubmit.currentSubmission.toLowerCase() === 'about you'){
+            console.log(JSON.stringify(submission["about you"]))
             // @ts-ignore
-            dispatch(AboutYorRegistration(submission["about you"]))
+            dispatch(AboutYorRegistration(JSON.stringify(submission["about you"])))
+        }
+
+        if(toSubmit.currentSubmission.toLowerCase() === 'skills'){
+
+            // @ts-ignore
+            dispatch(resetSkill())
+            // @ts-ignore
+            dispatch(registerSkill(submission["skills"], toast))
         }
     }
     const submitAll = async () => {
@@ -57,6 +72,10 @@ const SaveEdition: React.FC = () => {
         if(submit.aboutYou){
             // @ts-ignore
             dispatch(AboutYorRegistration(submission["about you"]))
+        }
+        if(submit.skill){
+            // @ts-ignore
+            dispatch(registerSkill(submission["skill"]))
         }
     }
 

@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export interface Skill {
     id: any;
     name: string;
-    progressClass: string;
+    ratting: number;
     summary: string;
 }
 
@@ -27,9 +27,12 @@ export const skillsSlice = createSlice({
             if (index !== -1) {
                 state.skills[index] = action.payload;
             }
-        }
+        },
+        resetSkill:(state, action: PayloadAction<Skill>) => {
+            state.skills = initialState.skills
+        },
     }
 });
 
 export default skillsSlice.reducer;
-export const { addSkill, updateSkill } = skillsSlice.actions;
+export const { addSkill, updateSkill, resetSkill } = skillsSlice.actions;

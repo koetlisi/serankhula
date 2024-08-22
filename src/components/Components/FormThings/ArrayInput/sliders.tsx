@@ -23,7 +23,7 @@ export const Sliders: React.FC<Props> = ({setData,data,index,field})=> {
         if (value === undefined) {
             return '';
         }
-        const percentage = (value / 20) * 100; // Calculate percentage
+        const percentage = (value / 100) * 100; // Calculate percentage
         return `${percentage}%`;
     };
     const dispatch = useDispatch();
@@ -40,7 +40,7 @@ export const Sliders: React.FC<Props> = ({setData,data,index,field})=> {
     return <Slider
         style={{ width: "100%" }}
         min={0}
-        max={20}
+        max={100}
         onChange={handleInputChange}
         value={data.ratting[`ratting-${index}`]}
         trackStyle={{ backgroundColor: getSliderColor(data.ratting) }}

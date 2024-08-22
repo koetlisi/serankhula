@@ -1,19 +1,19 @@
 import {Dispatch} from "@reduxjs/toolkit";
 import {RootState} from "@/app/GlobalRedux/store";
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
-import {AboutUser, addAboutUser} from "@/app/GlobalRedux/Features/user/about";
+import {addSkill, Skill} from "@/app/GlobalRedux/Features/skills/skill";
 
-export const AboutYorRegistration = (data:any, toast:any) =>{
+export const registerSkill = (data:any, toast:any) =>{
     return async (dispatch: Dispatch, getState: () => RootState) => {
         try {
-            const response = await HttpPostMethod(getState().login.userData.token, 'register_about_user/', data);
+            const response = await HttpPostMethod(getState().login.userData.token, 'register_user_skills/', data);
             if (response.code === 201) {
                 toast({
-                    description: "Qualification Upgraded.",
+                    description: "Skill registered.",
                 })
-                const newData: AboutUser[] = response.data
-                newData.forEach(about => {
-                    dispatch(addAboutUser(about));
+                const newData: Skill[] = response.data
+                newData.forEach(skill => {
+                    dispatch(addSkill(skill));
                 });
             } else if (response.code === 422) {
                 toast({

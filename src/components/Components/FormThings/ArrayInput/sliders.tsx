@@ -37,7 +37,6 @@ export const Sliders: React.FC<Props> = ({setData,data,index,field})=> {
             }
         }));
     };
-
     return <Slider
         style={{ width: "100%" }}
         min={0}

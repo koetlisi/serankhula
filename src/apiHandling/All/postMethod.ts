@@ -18,7 +18,6 @@ export const HttpPostMethod = async (token:any,endPoint: string, data: any) => {
                 token
             }
         });
-        console.log(response.data)
         return response.data;
     } catch (error) {
         console.log(error)

@@ -31,7 +31,7 @@ const qualiInstSlice = createSlice({
 })
 
 export default qualiInstSlice.reducer;
-interface InstitutionsResponse {
+export interface InstitutionsResponse {
     code: number;
     msg: string;
     data: any[];

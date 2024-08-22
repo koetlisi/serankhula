@@ -1,15 +1,21 @@
-import React, { createContext, useContext } from 'react';
+import React, {createContext, useContext, useEffect} from 'react';
 import './cv.css.scss';
-import ProfileImage from './components/profileImage';
 import ReferencesInfo from './components/references';
 import ExperienceInfo from './components/experience';
 import ContactsInfo from "@/app/personalCv/components/contacts";
 import EducationInfo from "@/app/personalCv/components/education";
 import AboutMe from "@/app/personalCv/components/aboutMe";
 import SkillsInfo from "@/app/personalCv/components/skills";
+import {useDispatch} from "react-redux";
+import {getAllCourses} from "@/app/GlobalRedux/Features/course/userCourse/thunks/allCourse";
+import ProfileImage from "@/app/personalCv/components/profileImage";
 
 
 export default function CV({userInfo}) {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getAllCourses());
+    }, [dispatch]);
 
     return (
         <div className="cv">

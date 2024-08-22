@@ -2,12 +2,15 @@ import {Dispatch} from "@reduxjs/toolkit";
 import {RootState} from "@/app/GlobalRedux/store";
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
 import {addSkill, Skill} from "@/app/GlobalRedux/Features/skills/skill";
+import {resetDumSkill} from "@/app/GlobalRedux/Features/dummyData/dumSkill";
 
 export const registerSkill = (data:any, toast:any) =>{
     return async (dispatch: Dispatch, getState: () => RootState) => {
         try {
             const response = await HttpPostMethod(getState().login.userData.token, 'register_user_skills/', data);
             if (response.code === 201) {
+                // @ts-ignore
+                dispatch(resetDumSkill())
                 toast({
                     description: "Skill registered.",
                 })

@@ -2,6 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export interface Course {
     id: number;
+    user_id:number;
     name: string;
     interval_start: string;
     interval_end: string;
@@ -28,10 +29,13 @@ const coursesSlice = createSlice({
         setCourses: (state, action: PayloadAction<Course[]>) => {
             state.courses = action.payload;
         },
+        resetAllCourse:(state, action: PayloadAction<Course>) => {
+            state.courses = initialState.courses
+        },
     },
 });
 
-export const { addCourse, setCourses } = coursesSlice.actions;
+export const { addCourse, setCourses , resetAllCourse} = coursesSlice.actions;
 
 export default coursesSlice.reducer;
 

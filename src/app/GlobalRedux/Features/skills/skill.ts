@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Skill {
     id: any;
+    user_id:number;
     name: string;
     ratting: number;
     summary: string;
@@ -31,6 +32,9 @@ export const skillsSlice = createSlice({
         resetSkill:(state, action: PayloadAction<Skill>) => {
             state.skills = initialState.skills
         },
+        deleteSkill: (state, action: PayloadAction<any>) => {
+            state.skills = state.skills.filter(skill => skill.user_id !== action.payload);
+        }
     }
 });
 

@@ -53,9 +53,12 @@ const dumSkillSlice = createSlice({
                 ...state.skillData.description,
                 ...action.payload.description
             }
-        }
+        },
+        resetDumSkill: (state, action: PayloadAction<Partial<dumSkill>>) => {
+            state.skillData = initialState.skillData
+        },
     }
 });
 
-export const {updateSkillId,updateSkillName,updateSkillRatting,updateSkillDescription,updateDumSkill} = dumSkillSlice.actions;
+export const {updateSkillId,updateSkillName,updateSkillRatting,updateSkillDescription,updateDumSkill, resetDumSkill} = dumSkillSlice.actions;
 export default dumSkillSlice.reducer;

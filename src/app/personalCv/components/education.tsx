@@ -6,10 +6,11 @@ import {extractMonthAndYear} from "@/function/laravelDataToString";
 
 const EducationInfo: React.FC = () => {
     const {courses} = useSelector((state: RootState) => state.userCourses);
+    const {userData} = useSelector((state: RootState) => state.login);
     return (
         <section className="education-section">
             <h2 className="right-title pb-2">Education</h2>
-            {courses.map((course, index) => (
+            {courses.filter(course => course.user_id ===userData.id).map((course, index) => (
                 <div className="timeline" key={index}>
                     <div className="left-tl-content">
                         <h5 className="tl-title">{course.institution}</h5>

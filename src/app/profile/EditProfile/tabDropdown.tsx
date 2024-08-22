@@ -52,7 +52,7 @@ export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({ tabs }) => {
         modifiedTabs.push({
             label: 'Ex-employed',
             key: '8',
-            content: <div>Content related to Ex-employed</div>,
+            content: <Employed/>,
         });
     }
 

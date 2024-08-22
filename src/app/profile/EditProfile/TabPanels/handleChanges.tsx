@@ -1,18 +1,23 @@
+
 "use client";
-import {prepareFormData} from "@/function/prepareCourseData";
-import {SaveAll} from "lucide-react";
 import {IconButton} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/app/GlobalRedux/store";
 import {useToast} from "@/components/ui/use-toast";
-import React, {useState} from "react";
 import {fetchFileFromLocalStorage} from "@/app/auth/getFiles";
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
 import {loginSlice, updateUser} from "@/app/GlobalRedux/Features/auth/login";
 import {addCourse, Course} from "@/app/GlobalRedux/Features/course/userCourse/courses";
 
-// Rename the component to start with an uppercase letter
+import React, { useState } from 'react';
+import { CustomerServiceOutlined } from '@ant-design/icons';
+import { FloatButton, Switch } from 'antd';
+import {SaveAll} from "lucide-react";
+import {BiCurrentLocation} from "react-icons/bi";
+import {AllInbox} from "@mui/icons-material";
+import {prepareFormData} from "@/function/prepareCourseData";
 const SaveEdition: React.FC = () => {
+    const [open, setOpen] = useState<boolean>(false);
     const [submit, setSubmit] = useState({
         userProfile: true,
         course: true
@@ -22,7 +27,7 @@ const SaveEdition: React.FC = () => {
     const dispatch = useDispatch();
     const {toast} = useToast();
 
-    return <IconButton className="floating-button" onClick={async () => {
+    const submitAll = async () =>{
         if (!submit.userProfile) {
             const file = await fetchFileFromLocalStorage('file_path');
             const formData = new FormData();
@@ -65,9 +70,23 @@ const SaveEdition: React.FC = () => {
                 //dispatch(loginSlice.actions.updateIsLoading(false))
             }
         }
-    }}>
-        <SaveAll/>
-    </IconButton>
+    }
+
+    return (
+        <>
+            <Switch  onChange={setOpen} checked={open} style={{ margin: 16 }} />
+            <FloatButton.Group
+                open={open}
+                trigger="click"
+                onClick={() => setOpen(!open)}  // Toggle the open state on click
+                style={{ insetInlineEnd: 20}}
+                icon={open?<CustomerServiceOutlined />:<SaveAll />}
+            >
+                <FloatButton icon={<BiCurrentLocation />}/>
+                <FloatButton onClick={submitAll} icon={<AllInbox/>} />
+            </FloatButton.Group>
+        </>
+    );
 };
 
 export default SaveEdition;

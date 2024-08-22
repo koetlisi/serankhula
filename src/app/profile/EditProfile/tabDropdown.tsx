@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/app/GlobalRedux/store';
+"use client"
+import React, {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from '@/app/GlobalRedux/store';
 import Jobless from "@/app/profile/EditProfile/TabPanels/jobless";
 import Employed from "@/app/profile/EditProfile/TabPanels/employed";
+import {updateCurrentSubmission} from "@/app/GlobalRedux/Features/system";
 
 interface TabItem {
     label: string;
@@ -10,9 +12,9 @@ interface TabItem {
     content: React.ReactNode;
 }
 
-export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({ tabs }) => {
+export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({tabs}) => {
     const profileSteps = useSelector((state: RootState) => state.pages.profileSteps ?? []);
-
+    const dispatch = useDispatch()
     const hasJobless = profileSteps.includes('Jobless');
     const hasWorking = profileSteps.includes('Working');
     const hadWork = profileSteps.includes('Ex-employed');
@@ -20,7 +22,8 @@ export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({ tabs }) => {
 
     const [activeTab, setActiveTab] = useState(tabs[0]?.key || '');
 
-    const handleTabClick = (key: string) => {
+    const handleTabClick = (key: string, label:string) => {
+        dispatch(updateCurrentSubmission(label));
         setActiveTab(key);
     };
 
@@ -33,7 +36,7 @@ export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({ tabs }) => {
 
             if (hasJobless) {
                 newLabel = 'Jobless';
-                newContent =<Jobless/>;
+                newContent = <Jobless/>;
             } else if (hasWorking) {
                 newLabel = 'Working';
                 newContent = <Employed/>;
@@ -66,12 +69,13 @@ export const TabDropdown: React.FC<{ tabs: TabItem[] }> = ({ tabs }) => {
 
     return (
         <div className="tabContainer">
-            <div className="tabHeader flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+            <div
+                className="tabHeader flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
                 {modifiedTabs.map((tab) => (
                     <button
                         key={tab.key}
                         className={`tabButton me-2 ${activeTab === tab.key ? 'active' : ''}`}
-                        onClick={() => handleTabClick(tab.key)}
+                        onClick={() => handleTabClick(tab.key, tab.label)}
                     >
                         {tab.label}
                     </button>

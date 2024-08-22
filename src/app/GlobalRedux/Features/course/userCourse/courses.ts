@@ -1,6 +1,5 @@
 // slices/coursesSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
 export interface Course {
     id: number;
     name: string;
@@ -35,3 +34,4 @@ const coursesSlice = createSlice({
 export const { addCourse, setCourses } = coursesSlice.actions;
 
 export default coursesSlice.reducer;
+

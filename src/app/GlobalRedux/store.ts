@@ -15,6 +15,7 @@ import dumSkillsReducer from '@/app/GlobalRedux/Features/dummyData/dumSkill';
 import skillsReducer from '@/app/GlobalRedux/Features/skills/skill';
 import joblessReducer from '@/app/GlobalRedux/Features/jobless/jobless';
 import dumWorkReducer from '@/app/GlobalRedux/Features/dummyData/dummyWork';
+import systemReducer from '@/app/GlobalRedux/Features/system';
 
 
 // Persist configuration
@@ -36,7 +37,8 @@ const rootReducer = combineReducers({
     skills: skillsReducer,
     dumSkills: dumSkillsReducer,
     jobless: joblessReducer,
-    dumWork: dumWorkReducer
+    dumWork: dumWorkReducer,
+    system: systemReducer
 });
 
 // Create a persisted reducer

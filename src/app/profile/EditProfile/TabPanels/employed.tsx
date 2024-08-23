@@ -109,7 +109,7 @@ const Employed = () => {
         console.log(JSON.stringify(prepareDataForSubmission(WorkData)))
         dispatch(updateDumWorkData(addWork));
     };
-
+    Object.keys(WorkData.place).length===0?addSection():()=>{}
     return (
         <Badge.Ribbon text="Employment Info">
             <Card title="Create Profile" size="small">
@@ -220,13 +220,6 @@ const Employed = () => {
 
                 <Button onClick={addSection} block type="dashed">
                     <PlusOutlined /> Add Section
-                </Button>
-
-                <Button
-                    type="primary"
-                    onClick={() => prepareDataForSubmission(WorkData)}
-                    className="mt-4">
-                    Submit Data
                 </Button>
             </Card>
         </Badge.Ribbon>

@@ -12,6 +12,6 @@ interface Prop {
 export const CvDrawer: React.FC<Prop> = ({open = false, setOpen}) =>{
     const { userData } = useSelector((state: RootState) => state.login);
     return <Drawer  width="85vw"  onClose={setOpen}  open={open} styles={{body: {paddingBottom: 0}}}>
-        <CV userInfo={userData}/>
+        <CV/>
     </Drawer>
 }

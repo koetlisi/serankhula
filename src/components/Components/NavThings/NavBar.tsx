@@ -27,19 +27,19 @@ export const NavBar = () => {
             </div>
         </div>
         <div className='navbar-right'>
-            <div className="navbar-links">
-                <span className="navbar-link">Homepage</span>
+            <div className="navbar-links " >
+                <span className="navbar-link pr-5">Home</span>
                 <span className="navbar-link">Timeline</span>
             </div>
             <div className="navbar-icons">
                 <Badge sx={{color:"white"}} badgeContent={4} color="primary" className="navbar-icon-item">
-                    <Person color="action"/>
+                    <Person style={{backgroundColor:"white", color:"black", borderRadius:"50%"}}/>
                 </Badge>
                 <Badge badgeContent={4} color="primary" className="navbar-icon-item">
-                    <ChatBubble color="action"/>
+                    <ChatBubble style={{backgroundColor:"grey", color:"white", borderRadius:"50%"}}/>
                 </Badge>
                 <Badge badgeContent={4} color="primary" className="navbar-icon-item">
-                    <Notifications color="action"/>
+                    <Notifications style={{backgroundColor:"white", color:"black", borderRadius:"50%"}}/>
                 </Badge>
             </div>
             <CvDrawer setOpen={isOpen} open={open}/>

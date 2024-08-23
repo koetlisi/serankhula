@@ -17,6 +17,9 @@ import {AboutYorRegistration} from "@/GlobalRedux/Features/user/thunk/aboutYorRe
 import {registerSkill} from "@/GlobalRedux/Features/skills/thunks/registerSkill";
 import {formatSkillsData} from "@/function/prepareSkillsData";
 import {resetSkill} from "@/GlobalRedux/Features/skills/skill";
+import {prepareDataForSubmission} from "@/function/prepareWorkData";
+import {register_work} from "@/GlobalRedux/Features/work/thunks/register_work";
+import {resetAllWork} from "@/GlobalRedux/Features/work/work";
 
 const SaveEdition: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -31,6 +34,7 @@ const SaveEdition: React.FC = () => {
     const aboutYou = useSelector((state: RootState) => state.aboutYou);
     const toSubmit = useSelector((state: RootState) => state.system);
     const dumSkill = useSelector((state: RootState) => state.dumSkills);
+    const dumWork= useSelector((state: RootState) => state.dumWork);
     const dispatch = useDispatch();
     const {toast} = useToast();
     const submission = {
@@ -41,7 +45,8 @@ const SaveEdition: React.FC = () => {
             'internship': aboutYou.internshipSummary,
             'aboutYou': aboutYou.motivationalSummary,
         },
-        'skills': formatSkillsData(dumSkill.skillData)
+        'skills': formatSkillsData(dumSkill.skillData),
+        'working': prepareDataForSubmission(dumWork.WorkData)
     }
     const singleSubmission = () =>{
         if(toSubmit.currentSubmission.toLowerCase() === 'about you'){
@@ -56,6 +61,14 @@ const SaveEdition: React.FC = () => {
             dispatch(resetSkill())
             // @ts-ignore
             dispatch(registerSkill(submission["skills"], toast))
+        }
+
+        if(toSubmit.currentSubmission.toLowerCase() === 'working'){
+
+            // @ts-ignore
+            dispatch(resetAllWork())
+            // @ts-ignore
+            dispatch(register_work(submission["working"], toast))
         }
     }
     const submitAll = async () => {

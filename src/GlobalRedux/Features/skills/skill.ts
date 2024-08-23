@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Skill {
-    id: any;
+    id: number;
     user_id:number;
     name: string;
     ratting: number;
@@ -21,7 +21,12 @@ export const skillsSlice = createSlice({
     initialState,
     reducers: {
         addSkill: (state, action: PayloadAction<Skill>) => {
-            state.skills.push(action.payload);
+            const existingSkill = state.skills.find(skill => skill.id === action.payload.id);
+            if (!existingSkill) {
+                state.skills.push(action.payload);
+            } else {
+                console.warn(`Skill with id ${action.payload.id} already exists.`);
+            }
         },
         updateSkill: (state, action: PayloadAction<Skill>) => {
             const index = state.skills.findIndex(skill => skill.id === action.payload.id);

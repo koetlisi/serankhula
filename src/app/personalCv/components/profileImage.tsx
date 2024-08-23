@@ -1,8 +1,7 @@
 import React from "react"
 import {useSelector} from "react-redux";
 import {RootState} from "@/GlobalRedux/store";
-const ProfileImage: React.FC<{userInfo:any}> = ({userInfo})=>{
-    const {courses} = useSelector((state: RootState) => state.userCourses);
+const ProfileImage: React.FC<{userInfo:any,courses:any[]}> = ({userInfo, courses})=>{
     const smallestKeyObject =courses.reduce((min, current) => {
         return current.id < min.id ? current : min;
     }, courses[0]);

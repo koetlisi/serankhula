@@ -79,6 +79,7 @@ const workSlice = createSlice({
                 ...state.WorkData.emp_type,
                 ...action.payload.emp_type
             }
+            console.log(action.payload.emp_type)
         },
 
         updateDumWorkWorkStatus:(state, action: PayloadAction<{work_status: { [key: string]: any }}>) => {

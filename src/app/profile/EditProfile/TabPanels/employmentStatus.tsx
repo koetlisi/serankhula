@@ -38,12 +38,15 @@ export const  EmploymentStatus = () =>{
     };
 
     // Checkbox options for employment status
+    const isSingleProfileStep = (step:any) => profileSteps.length === 1 && profileSteps[0] === step;
+
     const plainOptions = [
-        { label: 'Jobless', value: 'Jobless', disabled: profileSteps.length === 1 && profileSteps[0] === 'JobLess' },
-        { label: 'Ex-employed', value: 'Ex-employed', disabled: profileSteps.length === 1 && profileSteps[0] === 'Ex-employed' },
-        { label: 'Working', value: 'Working', disabled: profileSteps.length === 1 && profileSteps[0] === 'Working' },
-        { label: 'Postgraduate', value: 'Postgraduate', disabled: profileSteps.length === 1 && profileSteps[0] === 'Postgraduate' },
+        { label: 'Jobless', value: 'Jobless', disabled: isSingleProfileStep('Jobless') },
+        { label: 'Ex-employed', value: 'Ex-employed', disabled: isSingleProfileStep('Ex-employed') },
+        { label: 'Working', value: 'Working', disabled: isSingleProfileStep('Working') },
+        { label: 'Postgraduate', value: 'Postgraduate', disabled: isSingleProfileStep('Postgraduate') },
     ];
+
     return <Badge.Ribbon
         text={<CheckboxGroup options={plainOptions} value={checkedList} onChange={onChange} />}
     >

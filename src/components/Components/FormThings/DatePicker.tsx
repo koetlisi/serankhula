@@ -1,8 +1,8 @@
 import React from 'react';
 import { DatePicker } from 'antd';
 import {useDispatch, useSelector} from "react-redux";
-import {updateUserDOB} from "@/app/GlobalRedux/Features/auth/login";
-import {RootState} from "@/app/GlobalRedux/store";
+import {updateUserDOB} from "@/GlobalRedux/Features/auth/login";
+import {RootState} from "@/GlobalRedux/store";
 import dayjs, { Dayjs } from 'dayjs';
 const FormDatePicker: React.FC = ()=> {
     const dispatch = useDispatch()

@@ -5,8 +5,8 @@ import {PlusOutlined} from '@ant-design/icons';
 import {Image, Upload} from 'antd';
 import type {UploadFile, UploadProps} from 'antd';
 import {useDispatch, useSelector} from 'react-redux';
-import {updateUserProfileImage} from '@/app/GlobalRedux/Features/auth/login';
-import {RootState} from '@/app/GlobalRedux/store';
+import {updateUserProfileImage} from '@/GlobalRedux/Features/auth/login';
+import {RootState} from '@/GlobalRedux/store';
 import {AuthControls} from "@/app/auth/authControls";
 
 type FileType = NonNullable<UploadFile['originFileObj']>;

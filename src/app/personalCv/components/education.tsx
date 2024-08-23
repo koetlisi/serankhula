@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import {extractMonthAndYear} from "@/function/laravelDataToString";
 
 

@@ -5,9 +5,9 @@ import jobless, {
     updateJoblessDescription,
     updateSinceWhen,
     updateTillWhen
-} from "@/app/GlobalRedux/Features/jobless/jobless";
+} from "@/GlobalRedux/Features/jobless/jobless";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import IntervalDateTime from "@/components/Components/FormThings/IntervalDateTime";
 import Employed from "@/app/profile/EditProfile/TabPanels/employed";
 interface Props{

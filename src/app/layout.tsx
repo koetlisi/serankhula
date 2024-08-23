@@ -4,7 +4,7 @@ import "./css/globals.css";
 import {cn} from "@/lib/utils"
 import React from "react";
 import Head from "next/head";
-import {Providers} from "@/app/GlobalRedux/provider";
+import {Providers} from "@/GlobalRedux/provider";
 import {Toaster} from "@/components/ui/toaster";
 import {WebSocketProvider} from "@/lib/webSocket/webSocketProvider";
 

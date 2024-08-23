@@ -2,7 +2,7 @@
 
 import {createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit';
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 
 export interface Login {
     isLogin: boolean;

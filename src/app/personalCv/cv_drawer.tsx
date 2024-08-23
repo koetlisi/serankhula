@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import {Drawer} from "antd";
 import CV from "@/app/personalCv/personal";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 
 interface Prop {
     open:boolean

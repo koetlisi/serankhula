@@ -3,7 +3,7 @@
 import React from "react";
 import { Spin } from "antd";
 import { useSelector } from "react-redux";
-import { RootState } from "@/app/GlobalRedux/store";
+import { RootState } from "@/GlobalRedux/store";
 
 const Loader: React.FC = () => {
     const { userData } = useSelector((state: RootState) => state.login);

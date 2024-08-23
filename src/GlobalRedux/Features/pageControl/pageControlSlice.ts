@@ -1,7 +1,7 @@
 'use client';
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {AppDispatch, RootState} from "@/app/GlobalRedux/store";
+import {AppDispatch, RootState} from "@/GlobalRedux/store";
 
 // Define the initial state type
 export interface CounterState {

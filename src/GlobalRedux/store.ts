@@ -3,19 +3,20 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import pagesReducer from '@/app/GlobalRedux/Features/pageControl/pageControlSlice';
-import institutionReducer from '@/app/GlobalRedux/Features/quali_instition/quali_institution';
-import loginReducer from '@/app/GlobalRedux/Features/auth/login';
-import userReducer from '@/app/GlobalRedux/Features/user/users';
-import courseReducer from '@/app/GlobalRedux/Features/course/course';
-import userCoursesReducer from '@/app/GlobalRedux/Features/course/userCourse/courses';
-import experienceReducer from '@/app/GlobalRedux/Features/dummyData/eperience';
-import aboutYouReducer from '@/app/GlobalRedux/Features/dummyData/aboutYou';
-import dumSkillsReducer from '@/app/GlobalRedux/Features/dummyData/dumSkill';
-import skillsReducer from '@/app/GlobalRedux/Features/skills/skill';
-import joblessReducer from '@/app/GlobalRedux/Features/jobless/jobless';
-import dumWorkReducer from '@/app/GlobalRedux/Features/dummyData/dummyWork';
-import systemReducer from '@/app/GlobalRedux/Features/system';
+import pagesReducer from '@/GlobalRedux/Features/pageControl/pageControlSlice';
+import institutionReducer from '@/GlobalRedux/Features/quali_instition/quali_institution';
+import loginReducer from '@/GlobalRedux/Features/auth/login';
+import userReducer from '@/GlobalRedux/Features/user/users';
+import aboutUserReducer from '@/GlobalRedux/Features/user/about';
+import courseReducer from '@/GlobalRedux/Features/course/course';
+import userCoursesReducer from '@/GlobalRedux/Features/course/userCourse/courses';
+import experienceReducer from '@/GlobalRedux/Features/dummyData/eperience';
+import aboutYouReducer from '@/GlobalRedux/Features/dummyData/aboutYou';
+import dumSkillsReducer from '@/GlobalRedux/Features/dummyData/dumSkill';
+import skillsReducer from '@/GlobalRedux/Features/skills/skill';
+import joblessReducer from '@/GlobalRedux/Features/jobless/jobless';
+import dumWorkReducer from '@/GlobalRedux/Features/dummyData/dummyWork';
+import systemReducer from '@/GlobalRedux/Features/system';
 
 
 // Persist configuration
@@ -34,6 +35,7 @@ const rootReducer = combineReducers({
     userCourses: userCoursesReducer,
     experience: experienceReducer,
     aboutYou: aboutYouReducer,
+    aboutUser: aboutUserReducer,
     skills: skillsReducer,
     dumSkills: dumSkillsReducer,
     jobless: joblessReducer,

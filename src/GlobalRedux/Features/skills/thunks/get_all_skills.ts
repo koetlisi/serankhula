@@ -1,35 +1,37 @@
 import {Dispatch} from "@reduxjs/toolkit";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
-import {addSkill, Skill} from "@/app/GlobalRedux/Features/skills/skill";
-import {resetDumSkill} from "@/app/GlobalRedux/Features/dummyData/dumSkill";
+import {addSkill, Skill} from "@/GlobalRedux/Features/skills/skill";
+import {resetDumSkill} from "@/GlobalRedux/Features/dummyData/dumSkill";
+import {InstitutionsResponse} from "@/GlobalRedux/Features/quali_instition/quali_institution";
+import {HttpGetMethod} from "@/apiHandling/All/getMethod";
 
-export const registerSkill = (data:any, toast:any) =>{
+export const AllSkill = () =>{
     return async (dispatch: Dispatch, getState: () => RootState) => {
         try {
-            const response = await HttpPostMethod(getState().login.userData.token, 'register_user_skills/', data);
-            if (response.code === 201) {
+            const response = await HttpGetMethod<InstitutionsResponse>(getState().login.userData.token,'get_all_skills/',{ });
+            if (response &&response.code === 200) {
                 // @ts-ignore
                 dispatch(resetDumSkill())
-                toast({
+                /*toast({
                     description: "Skill registered.",
-                })
+                })*/
                 const newData: Skill[] = response.data
                 newData.forEach(skill => {
                     dispatch(addSkill(skill));
                 });
-            } else if (response.code === 422) {
-                toast({
+            } else if (response&& response.code === 422) {
+               /* toast({
                     variant: "destructive",
                     description: response.msg,
-                })
+                })*/
             }
         } catch (e) {
             console.log(e)
-            toast({
+            /*toast({
                 variant: "destructive",
                 description: "Something went wrong",
-            })
+            })*/
         } finally {
             //dispatch(loginSlice.actions.updateIsLoading(false))
         }

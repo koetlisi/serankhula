@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {Card, Badge, Checkbox, Divider} from 'antd';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import TextAreaComponent from "@/components/Components/FormThings/TextAreaField";
-import {updateProfileStep} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
-import {updateLesothoJobReason, updateLesothoUnemploymentReason} from "@/app/GlobalRedux/Features/dummyData/eperience";
+import {updateProfileStep} from "@/GlobalRedux/Features/pageControl/pageControlSlice";
+import {updateLesothoJobReason, updateLesothoUnemploymentReason} from "@/GlobalRedux/Features/dummyData/eperience";
 
 const CheckboxGroup = Checkbox.Group;
 export const  EmploymentStatus = () =>{

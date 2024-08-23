@@ -101,9 +101,30 @@ const workSlice = createSlice({
                 ...action.payload.description
             }
         },
-
+        removeWorkSection:(state, action)=> {
+            const { index } = action.payload;
+            const key = `place-${index}`;
+            const title = `title-${index}`;
+            const term = `term-${index}`;
+            const ratting = `ratting-${index}`;
+            const id = `id-${index}`;
+            const emp_type = `emp_type-${index}`;
+            const description = `description-${index}`;
+            const interval = `interval-${index}`;
+            const work_status = `work_status-${index}`;
+            // Remove the specific section from the state
+            delete state.WorkData.place[key]
+            delete state.WorkData.title[title]
+            delete state.WorkData.term[term]
+            delete state.WorkData.ratting[ratting];
+            delete state.WorkData.id[id];
+            delete state.WorkData.emp_type[emp_type];
+            delete state.WorkData.interval[interval];
+            delete state.WorkData.description[description];
+            delete state.WorkData.work_status[work_status];
+        }
     }
 })
 
 export default workSlice.reducer;
-export const {updateDumWorkWorkStatus,updateDumWorkEmpType,updateDumWorkInterval,updateDumWorkDescription,updateDumWorkRatting,updateDumWorkPlace,updateDumWorkTerm,updateDumWorkTitle,updateDumWorkId,updateDumWorkData,setDumWorkData} = workSlice.actions
+export const {removeWorkSection,updateDumWorkWorkStatus,updateDumWorkEmpType,updateDumWorkInterval,updateDumWorkDescription,updateDumWorkRatting,updateDumWorkPlace,updateDumWorkTerm,updateDumWorkTitle,updateDumWorkId,updateDumWorkData,setDumWorkData} = workSlice.actions

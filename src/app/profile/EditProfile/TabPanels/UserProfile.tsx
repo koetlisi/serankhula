@@ -7,14 +7,14 @@ import {MailOutlined} from "@mui/icons-material";
 import {NumberInputAddonAfter} from "@/components/Components/FormThings/PhoneInput";
 import {Card,Badge} from "antd";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import {
     updateUserDOB, updateUserEmail, updateUserGender,
     updateUserName,
     updateUserNationalID,
     updateUserNationality, updateUserPhone,
     updateUserSurname
-} from "@/app/GlobalRedux/Features/auth/login";
+} from "@/GlobalRedux/Features/auth/login";
 
 export const UserProfile: React.FC = () => {
     const {userData} = useSelector((state: RootState) => state.login);

@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import {isLocalhost, socketLocal} from "@/apiHandling/consts";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 
 interface WebSocketContextProps {
     notifications: string[];

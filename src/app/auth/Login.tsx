@@ -7,8 +7,8 @@ import {Input} from "antd";
 import React, {useEffect, useState} from "react";
 import {useToast} from "@/components/ui/use-toast"
 import {useDispatch, useSelector} from "react-redux";
-import {LoginFunction} from "@/app/GlobalRedux/Features/auth/login";
-import {RootState} from "@/app/GlobalRedux/store";
+import {LoginFunction} from "@/GlobalRedux/Features/auth/login";
+import {RootState} from "@/GlobalRedux/store";
 import {Register} from "@/app/auth/register";
 import {AlertDialogTrigger} from "@/components/ui/alert-dialog";
 import {AuthControls} from "@/app/auth/authControls";

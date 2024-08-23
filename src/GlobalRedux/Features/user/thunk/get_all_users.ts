@@ -1,7 +1,7 @@
-import { RootState } from "@/app/GlobalRedux/store";
+import { RootState } from "@/GlobalRedux/store";
 import { HttpGetMethod } from "@/apiHandling/All/getMethod";
 import {Dispatch} from '@reduxjs/toolkit';
-import {setAllUsers} from "@/app/GlobalRedux/Features/user/users";
+import {setAllUsers} from "@/GlobalRedux/Features/user/users";
 
 interface InstitutionsResponse {
     code: number;

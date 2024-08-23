@@ -1,7 +1,7 @@
 import React from "react";
-import {Login} from "@/app/GlobalRedux/Features/auth/login";
+import {Login} from "@/GlobalRedux/Features/auth/login";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 
 const ContactsInfo: React.FC = ()=>{
     const { userData } = useSelector((state: RootState) => state.login);

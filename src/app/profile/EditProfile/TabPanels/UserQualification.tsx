@@ -1,8 +1,8 @@
 "use client"
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
-import {getInstitutions, getQualification} from "@/app/GlobalRedux/Features/quali_instition/quali_institution";
+import {RootState} from "@/GlobalRedux/store";
+import {getInstitutions, getQualification} from "@/GlobalRedux/Features/quali_instition/quali_institution";
 import {DataFrame} from "@/app/profile/EditProfile/Data";
 import {Button, Badge, Card} from "antd";
 import {EditOutlined, PlusOutlined} from '@ant-design/icons';
@@ -15,7 +15,7 @@ import {
     updateCourseName, updateDateInterval, updateDescription,
     updateInstitution,
     updateQualification
-} from "@/app/GlobalRedux/Features/course/course";
+} from "@/GlobalRedux/Features/course/course";
 
 export const UserQualification: React.FC = () => {
     const dispatch = useDispatch();

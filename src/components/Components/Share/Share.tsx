@@ -4,7 +4,7 @@ import {Edit, EmojiEmotions, PermMedia, PictureAsPdf, VideoCameraFront} from "@m
 import {Input} from "antd";
 import {useState} from "react";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 export const Share = () =>{
     const [isFocused, setIsFocused] = useState(false);
     const { userData } = useSelector((state: RootState) => state.login);

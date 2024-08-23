@@ -2,8 +2,8 @@
 import './profile.css.scss'
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
-import {RootState} from "@/app/GlobalRedux/store";
+import {updateSelectedComponent} from "@/GlobalRedux/Features/pageControl/pageControlSlice";
+import {RootState} from "@/GlobalRedux/store";
 
 export const ProfileRightBar: React.FC = () => {
     const dispatch = useDispatch();

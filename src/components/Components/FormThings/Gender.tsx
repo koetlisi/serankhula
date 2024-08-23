@@ -1,7 +1,7 @@
 import React from "react";
 import { Radio } from "antd";
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 
 interface Prop {
     onChange: (value: string) => any; // Define onChange as a function that accepts a string

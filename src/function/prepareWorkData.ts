@@ -1,4 +1,4 @@
-import {WorkData} from "@/app/GlobalRedux/Features/dummyData/dummyWork";
+import {WorkData} from "@/GlobalRedux/Features/dummyData/dummyWork";
 
 interface CourseInterval {
     start: string;

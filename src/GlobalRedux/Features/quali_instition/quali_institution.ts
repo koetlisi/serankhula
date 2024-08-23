@@ -1,7 +1,7 @@
 "use client"
 import {createSlice, Dispatch} from '@reduxjs/toolkit';
 import {HttpGetMethod} from "@/apiHandling/All/getMethod";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 export interface Quali_Institution {
     institutions: any[],
     qualifications: any[],

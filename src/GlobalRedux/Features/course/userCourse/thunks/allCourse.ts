@@ -1,7 +1,7 @@
 import {Dispatch} from "@reduxjs/toolkit";
 import {HttpGetMethod} from "@/apiHandling/All/getMethod";
-import {InstitutionsResponse} from "@/app/GlobalRedux/Features/quali_instition/quali_institution";
-import {addCourse, Course, resetAllCourse} from "@/app/GlobalRedux/Features/course/userCourse/courses";
+import {InstitutionsResponse} from "@/GlobalRedux/Features/quali_instition/quali_institution";
+import {addCourse, Course, resetAllCourse} from "@/GlobalRedux/Features/course/userCourse/courses";
 
 export const getAllCourses = ()=>{
     return async(dispatch:Dispatch, getState:any)=>{

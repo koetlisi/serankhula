@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {Badge, Button, Card} from 'antd';
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import {
     updateDumSkill,
     updateSkillDescription,
     updateSkillName,
     updateSkillRatting
-} from "@/app/GlobalRedux/Features/dummyData/dumSkill";
+} from "@/GlobalRedux/Features/dummyData/dumSkill";
 import {EditOutlined, PlusOutlined} from "@ant-design/icons";
 import {ArrayTextField} from "@/components/Components/FormThings/ArrayInput/TextInput";
 import {Sliders} from "@/components/Components/FormThings/ArrayInput/sliders";

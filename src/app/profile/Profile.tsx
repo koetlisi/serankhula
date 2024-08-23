@@ -5,7 +5,7 @@ import {Sidebar} from "@/components/Components/SideBar/Sidebar";
 import {Feeds} from "@/components/Components/Feeds/Feeds";
 import {RightBar} from "@/components/Components/RightBar/RightBar";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 
 const Profile = () =>{
     const { userData } = useSelector((state: RootState) => state.login);

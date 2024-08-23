@@ -2,7 +2,7 @@ import React from "react";
 import { SvgIconComponent } from "@mui/icons-material";
 import "./menulink.css.scss";
 import { useSelector } from "react-redux";
-import { RootState } from "@/app/GlobalRedux/store";
+import { RootState } from "@/GlobalRedux/store";
 
 // Define the type for the component props
 interface MenuLinkProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import './friends.css.scss'
-import type { User } from "@/app/GlobalRedux/Features/user/users"
+import type { User } from "@/GlobalRedux/Features/user/users"
 import {Button, Popover} from "antd";
 import {ActionOnPerson} from "@/components/Components/Fiends/actionOnPerson";
 export const Friends: React.FC<{ user: User }> = ({ user }) =>{

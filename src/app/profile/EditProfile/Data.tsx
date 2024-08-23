@@ -1,7 +1,7 @@
 "use client"
 import {useState} from "react";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 interface CourseData {
     name: { [key: string]: string };
     qualification: { [key: string]: string };

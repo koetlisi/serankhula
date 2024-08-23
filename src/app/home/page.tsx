@@ -6,8 +6,11 @@ import {Feeds} from "@/components/Components/Feeds/Feeds";
 import {RightBar} from "@/components/Components/RightBar/RightBar";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react"
-import {getAllUser} from "@/app/GlobalRedux/Features/user/thunk/get_all_users";
+import {getAllUser} from "@/GlobalRedux/Features/user/thunk/get_all_users";
 import {useToast} from "@/components/ui/use-toast";
+import {getAllCourses} from "@/GlobalRedux/Features/course/userCourse/thunks/allCourse";
+import {getAllAboutUsers} from "@/GlobalRedux/Features/user/thunk/get_all_about";
+import {AllSkill} from "@/GlobalRedux/Features/skills/thunks/get_all_skills";
 
 export default function Home() {
     const { toast } = useToast()
@@ -15,6 +18,12 @@ export default function Home() {
     useEffect(() => {
         // @ts-ignore
         dispatch(getAllUser(toast));
+        // @ts-ignore
+        dispatch(getAllCourses());
+        // @ts-ignore
+        dispatch(getAllAboutUsers());
+        // @ts-ignore
+        dispatch(AllSkill());
     }, [dispatch]);
   return <div className='home'>
         <NavBar/>

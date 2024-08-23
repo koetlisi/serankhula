@@ -1,7 +1,7 @@
 import {Dispatch} from "@reduxjs/toolkit";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
-import {addCourse, Course} from "@/app/GlobalRedux/Features/course/userCourse/courses";
+import {addCourse, Course} from "@/GlobalRedux/Features/course/userCourse/courses";
 
 export const registerCourse = (data:any, toast:any) =>{
     return async (dispatch: Dispatch, getState: () => RootState) => {

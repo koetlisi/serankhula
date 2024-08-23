@@ -2,8 +2,8 @@
 import React, {useState} from 'react';
 import {Form, Select} from 'antd';
 import {useDispatch, useSelector} from 'react-redux';
-import {changeFilter} from "@/app/GlobalRedux/Features/quali_instition/quali_institution";
-import {RootState} from "@/app/GlobalRedux/store";
+import {changeFilter} from "@/GlobalRedux/Features/quali_instition/quali_institution";
+import {RootState} from "@/GlobalRedux/store";
 
 interface ArrayEmpTypeProps {
     setData: any;

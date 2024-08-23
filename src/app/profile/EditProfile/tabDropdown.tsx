@@ -1,10 +1,10 @@
 "use client"
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '@/app/GlobalRedux/store';
+import {RootState} from '@/GlobalRedux/store';
 import Jobless from "@/app/profile/EditProfile/TabPanels/jobless";
 import Employed from "@/app/profile/EditProfile/TabPanels/employed";
-import {updateCurrentSubmission} from "@/app/GlobalRedux/Features/system";
+import {updateCurrentSubmission} from "@/GlobalRedux/Features/system";
 
 interface TabItem {
     label: string;

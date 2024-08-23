@@ -3,7 +3,7 @@ import {Button} from "antd";
 import React from "react";
 import {HttpPostMethod} from "@/apiHandling/All/postMethod";
 import {useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import {useToast} from "@/components/ui/use-toast";
 import {useWebSocket} from "@/lib/webSocket/webSocketProvider";
 

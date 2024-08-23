@@ -4,8 +4,8 @@ import {Input} from "antd";
 import {ChatBubble, Notifications, Person, Search} from "@mui/icons-material";
 import {Badge} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
-import {RootState} from "@/app/GlobalRedux/store";
+import {updateSelectedComponent} from "@/GlobalRedux/Features/pageControl/pageControlSlice";
+import {RootState} from "@/GlobalRedux/store";
 import {CvDrawer} from "@/app/personalCv/cv_drawer";
 import {useState} from "react";
 

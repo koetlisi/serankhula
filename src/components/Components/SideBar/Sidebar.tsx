@@ -10,9 +10,9 @@ import BadgeIcon from '@mui/icons-material/Badge';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import WalletIcon from '@mui/icons-material/Wallet';
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
-import {logout, updateIsLogin} from "@/app/GlobalRedux/Features/auth/login";
-import {updateSelectedComponent} from "@/app/GlobalRedux/Features/pageControl/pageControlSlice";
+import {RootState} from "@/GlobalRedux/store";
+import {logout, updateIsLogin} from "@/GlobalRedux/Features/auth/login";
+import {updateSelectedComponent} from "@/GlobalRedux/Features/pageControl/pageControlSlice";
 
 export const Sidebar = () => {
     const dispatch = useDispatch();

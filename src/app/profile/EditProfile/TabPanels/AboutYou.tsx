@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Card, Badge, Checkbox, Divider } from 'antd';
 import { useSelector } from 'react-redux';
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import TextAreaComponent from "@/components/Components/FormThings/TextAreaField";
-import {updateInternshipSummary, updateMotivationSummary} from "@/app/GlobalRedux/Features/dummyData/aboutYou";
+import {updateInternshipSummary, updateMotivationSummary} from "@/GlobalRedux/Features/dummyData/aboutYou";
 
 const AboutYouPage = () => {
     const {motivationalSummary,internshipSummary} = useSelector((state: RootState) => state.aboutYou);

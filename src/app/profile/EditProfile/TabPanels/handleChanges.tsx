@@ -1,8 +1,8 @@
 "use client";
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/app/GlobalRedux/store";
+import {RootState} from "@/GlobalRedux/store";
 import {useToast} from "@/components/ui/use-toast";
-import {loginSlice, updateUser} from "@/app/GlobalRedux/Features/auth/login";
+import {loginSlice, updateUser} from "@/GlobalRedux/Features/auth/login";
 
 import React, {useState} from 'react';
 import {CustomerServiceOutlined} from '@ant-design/icons';
@@ -12,11 +12,11 @@ import {BiCurrentLocation} from "react-icons/bi";
 import {AllInbox} from "@mui/icons-material";
 import {prepareFormData} from "@/function/prepareCourseData";
 import {prepareUserProfileData} from "@/function/prepareUserProfileData";
-import {registerCourse} from "@/app/GlobalRedux/Features/course/userCourse/thunks/courseRegistration";
-import {AboutYorRegistration} from "@/app/GlobalRedux/Features/user/thunk/aboutYorRegistration";
-import {registerSkill} from "@/app/GlobalRedux/Features/skills/thunks/registerSkill";
+import {registerCourse} from "@/GlobalRedux/Features/course/userCourse/thunks/courseRegistration";
+import {AboutYorRegistration} from "@/GlobalRedux/Features/user/thunk/aboutYorRegistration";
+import {registerSkill} from "@/GlobalRedux/Features/skills/thunks/registerSkill";
 import {formatSkillsData} from "@/function/prepareSkillsData";
-import {resetSkill} from "@/app/GlobalRedux/Features/skills/skill";
+import {resetSkill} from "@/GlobalRedux/Features/skills/skill";
 
 const SaveEdition: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);

@@ -3,7 +3,6 @@ export async function fetchFileFromLocalStorage(file_path:any): Promise<Blob | n
     const filePath: string | null = localStorage.getItem(file_path);
 
     if (!filePath) {
-        console.error("No file path found in local storage");
         return null;
     }
 

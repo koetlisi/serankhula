@@ -177,7 +177,7 @@ export const createUser = (data: any,toast:any, setDialogOpen:any) => {
                     variant: "success group border-green-500 bg-green-500 text-neutral-50",
                     description: "Successful updated.",
                 })
-                localStorage.removeItem('file_path');
+
             }else if (response.code === 422){
                 toast({
                     variant: "destructive",

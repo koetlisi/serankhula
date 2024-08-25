@@ -18,10 +18,10 @@ export const Sidebar = () => {
     const dispatch = useDispatch();
     const {users} = useSelector((state: RootState) => state.users);
     const {userData} = useSelector((state: RootState) => state.login);
-    const handleClick = () => dispatch(updateSelectedComponent('Profile'))
+    const handleClick = (page:string) => dispatch(updateSelectedComponent(page))
     return <div className="sidebar">
         <div className="sidebar-wrapper">
-            <div onClick={handleClick} className="menu-link">
+            <div onClick={()=>handleClick('Profile')} className="menu-link">
                 <img alt={userData.name} style={{width:"40px", height:"40px", borderRadius:"500%"}} src={(userData.profileImage===null|| userData.profileImage=='')?'assets/img.png':userData.profileImage} className="sidebar-icon" />
                 <span className="sidebar-list-item-text menu-link-text">{userData.name+' '+userData.surname}</span>
             </div>
@@ -31,7 +31,7 @@ export const Sidebar = () => {
             <MenuLink onClick={()=>{}} icon={AccountBalanceWalletIcon} text='Workers'/>
             <MenuLink onClick={()=>{}} icon={WalletIcon} text='Entrepreneurs'/>
             <MenuLink onClick={()=>dispatch(logout())} icon={LogoutOutlined} text='Logout'/>
-            <button className="sidebar-btn">Show More</button>
+            <button onClick={()=>handleClick('Cv_template')} className="sidebar-btn">CV Templates</button>
             <hr className="sidebar-hr"/>
             <ul className="sidebar-friend-list">
                 {users

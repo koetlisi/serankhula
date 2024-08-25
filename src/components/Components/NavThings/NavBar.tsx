@@ -8,6 +8,7 @@ import {updateSelectedComponent} from "@/GlobalRedux/Features/pageControl/pageCo
 import {RootState} from "@/GlobalRedux/store";
 import {CvDrawer} from "@/app/personalCv/cv_drawer";
 import {useState} from "react";
+import SeoHeader from "@/components/seoHeader/SeoHeader";
 
 export const NavBar = () => {
     const { userData } = useSelector((state: RootState) => state.login);
@@ -18,8 +19,9 @@ export const NavBar = () => {
     const dispatch = useDispatch();
     const handleClick = (e:string) => dispatch(updateSelectedComponent(e))
     return <div className='navbar-container'>
+        <SeoHeader />
         <div onClick={()=>handleClick('Home')} className='navbar-left'>
-            <span className='logo'>Serankhula</span>
+            <span className='logo logo-name'>Serankhula</span>
         </div>
         <div className='navbar-center'>
             <div className="search-bar">

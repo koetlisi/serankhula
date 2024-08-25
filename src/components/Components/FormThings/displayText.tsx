@@ -34,7 +34,7 @@ const Description: React.FC<DescriptionProps> = ({ text }) => {
         <div className="text-display">
             <p
                 className="about-me-para"
-                dangerouslySetInnerHTML={{ __html: displayText }}
+                dangerouslySetInnerHTML={{__html: displayText }}
             />
             {text.length > firstNewlineIndex && (
                 <button className="see-more-btn pr-0" onClick={toggleExpansion}>

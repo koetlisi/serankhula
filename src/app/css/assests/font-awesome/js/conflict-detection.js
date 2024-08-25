@@ -656,7 +656,7 @@
       showProgress = _ref$showProgress === void 0 ? false : _ref$showProgress,
       progressIndicator = _ref.progressIndicator;
     return new Promise(function (resolve, reject) {
-      // eslint-disable-line compat/compat
+
       function poll(duration, cumulativeDuration) {
         setTimeout(function () {
           var result = fn();

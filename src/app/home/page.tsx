@@ -27,7 +27,7 @@ export default function Home() {
         dispatch(AllSkill());
         // @ts-ignore
         dispatch(get_all_work(toast));
-    }, [dispatch]);
+    }, [dispatch, toast]);
   return <div className='home'>
         <NavBar/>
         <div className="home-container">

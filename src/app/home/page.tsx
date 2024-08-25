@@ -20,11 +20,11 @@ export default function Home() {
         // @ts-ignore
         dispatch(getAllUser(toast));
         // @ts-ignore
-        dispatch(getAllCourses());
+        dispatch(getAllCourses(toast));
         // @ts-ignore
-        dispatch(getAllAboutUsers());
+        dispatch(getAllAboutUsers(toast));
         // @ts-ignore
-        dispatch(AllSkill());
+        dispatch(AllSkill(toast));
         // @ts-ignore
         dispatch(get_all_work(toast));
     }, [dispatch, toast]);

@@ -3,7 +3,8 @@ import { createSlice} from '@reduxjs/toolkit';
 
 
 const initialState = {
-    currentSubmission:''
+    currentSubmission:'',
+    selectedResume:""
 }
 
 export const systemSlice = createSlice({
@@ -13,8 +14,11 @@ export const systemSlice = createSlice({
         updateCurrentSubmission: (state, action) => {
             state.currentSubmission = action.payload;
         },
+        updateSelectedResume:(state, action)=>{
+            state.selectedResume = action.payload
+        }
     }
 })
 
 export default systemSlice.reducer;
-export const { updateCurrentSubmission } = systemSlice.actions;
+export const { updateSelectedResume, updateCurrentSubmission } = systemSlice.actions;

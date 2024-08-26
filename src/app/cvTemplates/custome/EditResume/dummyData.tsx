@@ -53,7 +53,7 @@ export const DummyData = () =>{
             phone:'(266) '+userData.phone,
             email:userData.email,
             themeColor:"#ff6666",
-            summery:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            summery:'I’m a full-stack developer with a strong passion for backend development, particularly in logic analysis and design. My expertise includes Node.js, Python, C++, JavaScript, TypeScript, Django, React, Flutter, and Laravel, enabling me to handle both frontend and backend seamlessly. I thrive on tackling complex backend challenges and am skilled in building robust, scalable, and secure applications using tools like Google Cloud services, containers, and databases. I’m constantly exploring new technologies, including AI, and I prioritize best practices to deliver efficient, well-designed solutions.',
             experience:[
                 {
                     id:1,

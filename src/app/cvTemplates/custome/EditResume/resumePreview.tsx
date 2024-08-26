@@ -1,7 +1,9 @@
-import {useContext} from "react";
+import React, {useContext} from "react";
 import ResumeInfoContext from "@/app/cvTemplates/context/resumeInfoContext";
 import {PersonalDetails} from "@/app/cvTemplates/custome/EditResume/preview/personalDetails";
 import {Summery} from "@/app/cvTemplates/custome/EditResume/preview/summery";
+import {ProfessionalExperience} from "@/app/cvTemplates/custome/EditResume/preview/professionalExperience";
+import {Education} from "@/app/cvTemplates/custome/EditResume/preview/education";
 
 export const ResumePreview = () =>{
     const context = useContext(ResumeInfoContext);
@@ -19,5 +21,11 @@ export const ResumePreview = () =>{
 
         {/*summery info*/}
         <Summery resumeInfo={resumeInfo}/>
+
+        {/*Professional Experience*/}
+        <ProfessionalExperience resumeInfo={resumeInfo}/>
+        
+        {/*Educational Preview*/}
+        <Education resumeInfo={resumeInfo}/>
     </div>
 }

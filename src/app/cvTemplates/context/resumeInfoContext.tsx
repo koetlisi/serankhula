@@ -6,9 +6,6 @@ export interface ResumeInfoContextType {
     setResumeInfo: Dispatch<SetStateAction<ResumeInfo>>;
 }
 
-import { createContext } from "react";
-import { ResumeInfoContextType } from "./resumeInfoContextType"; // Adjust the path as needed
-
 const ResumeInfoContext = createContext<ResumeInfoContextType | null>(null);
 
 export default ResumeInfoContext;

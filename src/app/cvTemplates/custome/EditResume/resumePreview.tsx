@@ -4,6 +4,7 @@ import {PersonalDetails} from "@/app/cvTemplates/custome/EditResume/preview/pers
 import {Summery} from "@/app/cvTemplates/custome/EditResume/preview/summery";
 import {ProfessionalExperience} from "@/app/cvTemplates/custome/EditResume/preview/professionalExperience";
 import {Education} from "@/app/cvTemplates/custome/EditResume/preview/education";
+import {Skill} from "@/app/cvTemplates/custome/EditResume/preview/skill";
 
 export const ResumePreview = () =>{
     const context = useContext(ResumeInfoContext);
@@ -14,7 +15,6 @@ export const ResumePreview = () =>{
 
     const { resumeInfo, setResumeInfo } = context;
 
-    console.log(resumeInfo);
     return <div style={{borderBlockColor:resumeInfo.themeColor}}  className="shadow-lg h-full m-5 p-14 border-t-[20px]">
         {/*personal resume info*/}
         <PersonalDetails resumeInfo={resumeInfo}/>
@@ -27,5 +27,8 @@ export const ResumePreview = () =>{
         
         {/*Educational Preview*/}
         <Education resumeInfo={resumeInfo}/>
+        
+        {/*Skill Preview*/}
+        <Skill resumeInfo={resumeInfo}/>
     </div>
 }

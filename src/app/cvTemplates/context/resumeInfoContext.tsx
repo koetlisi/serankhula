@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, createContext } from "react";
 import { ResumeInfo } from "@/app/cvTemplates/custome/EditResume/dummyData"; // Adjust the path as needed
 
 export interface ResumeInfoContextType {

@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@google/generative-ai": "^0.17.1",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
     "@mui/x-charts": "^7.12.1",
@@ -21,6 +22,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
     "@reduxjs/toolkit": "^2.2.7",
+    "@shadcn/ui": "^0.0.4",
     "@types/formidable": "^3.4.5",
     "antd": "^5.20.1",
     "axios": "^1.7.4",

@@ -2,9 +2,9 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export interface Resume{
     uid:string,
+    user_id:number,
     id:number,
     title:string,
-    selectedResume:string
 }
 export interface ResumeState {
     resumes:Resume[]
@@ -20,6 +20,7 @@ const resumeSlice = createSlice({
     reducers:{
         addResume: (state, action: PayloadAction<Resume>) => {
             state.resumes.push(action.payload);
+            console.log(JSON.stringify(action.payload))
         },
         setResume: (state, action: PayloadAction<Resume[]>)=>{
             state.resumes = action.payload

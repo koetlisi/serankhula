@@ -25,9 +25,9 @@ const SaveEdition: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [submit, setSubmit] = useState({
         userProfile: true,
-        course: true,
-        aboutYou:true,
-        skill:true
+        course: false,
+        aboutYou:false,
+        skill:false
     })
     const {userData} = useSelector((state: RootState) => state.login);
     const {courseData} = useSelector((state: RootState) => state.course);
@@ -88,7 +88,7 @@ const SaveEdition: React.FC = () => {
         }
         if(submit.skill){
             // @ts-ignore
-            dispatch(registerSkill(submission["skill"]))
+            dispatch(registerSkill(submission.skill))
         }
     }
 

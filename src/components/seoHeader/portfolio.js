@@ -7,13 +7,13 @@ const settings = {
 
 //SEO Related settings
 const seo = {
-  title: "Theko's Portfolio",
+  title: "Serankhula",
   description:
     "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
   og: {
     title: "Ashutosh Hathidara Portfolio",
     type: "website",
-    url: "http://ashutoshhathidara.com/",
+    url: "http://serankhula.com/",
   },
 };
 

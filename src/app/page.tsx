@@ -6,6 +6,7 @@ import { RootState } from "@/GlobalRedux/store";
 import Loader from "@/app/loader";
 import InactivityTracker from "@/app/auth/is_active";
 import CreateTemplate from "@/app/cvTemplates/CreateTempate";
+import {EditResume} from "@/app/cvTemplates/custome/editResume";
 
 // Lazy-loaded components
 const Home = lazy(() => import("@/app/home/page"));
@@ -25,6 +26,7 @@ const HomePage: React.FC = () => {
         EditProfile: <EditProfile />,
         Login: <Login />,
         Cv_template: <CreateTemplate />,
+        EditResume: <EditResume/>
     };
 
     // Determine the content to display

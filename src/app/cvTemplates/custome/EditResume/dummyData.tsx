@@ -48,10 +48,10 @@ export const DummyData = () =>{
         {
             firstName: userData.name,
             lastName:userData.surname,
-            jobTitle:'full stack developer',
-            address:'525 N tryon Street, NC 28117',
-            phone:'(123)-456-7890',
-            email:'exmaple@gmail.com',
+            jobTitle:'Full stack developer',
+            address:'Matlameng, Leribe Pitseng 320, Box 114',
+            phone:'(266) '+userData.phone,
+            email:userData.email,
             themeColor:"#ff6666",
             summery:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             experience:[

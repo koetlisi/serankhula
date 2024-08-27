@@ -85,7 +85,7 @@ export const Experience: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: any }
                                 </div>
                                 <div>
                                     <label>Start Date</label>
-                                    <Input type="date" name='startDate' defaultValue={item.startDate}
+                                    <Input type="date" name='startDate' value={item.startDate} defaultValue={item.startDate}
                                            onChange={(event) => onChange(index, event)}/>
                                 </div>
                                 <div>
@@ -104,7 +104,7 @@ export const Experience: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: any }
                                                 experience: updatedExperience,
                                             });
                                         }}
-                                    />
+                                     resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>
                                 </div>
                             </div>
                         </div>

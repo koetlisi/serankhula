@@ -11,7 +11,8 @@ export const ProfessionalExperience : React.FC<{ resumeInfo: ResumeInfo }> = ({r
                 <h2 className="text-xs flex justify-between">{experience.companyName},{experience.country}, {experience.address}
                     <span>{experience.startDate} {experience.currentlyWorking ? 'Present' : experience.endDate}</span>
                 </h2>
-                <p className="text-xs my-2">{experience.workSummery}</p>
+                {/*<p className="text-xs my-2">{experience.workSummery}</p>*/}
+                <p className="text-xs my-2" dangerouslySetInnerHTML={{__html:experience.workSummery}}></p>
             </div>
         ))}
     </div>

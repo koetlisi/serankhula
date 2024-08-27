@@ -5,7 +5,7 @@ import {Textarea} from "@/components/ui/textarea";
 import {Brain} from "lucide-react";
 import {AIChatSession} from "../../../../../../service/AIModel";
 import {Spin} from "antd";
-interface SummaryData {
+export interface SummaryData {
     summary: string;
     experience_level: string;
 }

@@ -5,8 +5,8 @@ interface Experience {
     id: number;
     title: string;
     companyName: string;
-    city: string;
-    state: string;
+    country: string;
+    address:string
     startDate: string;
     endDate: string;
     currentlyWorking: boolean;
@@ -58,10 +58,10 @@ export const DummyData = () =>{
                 {
                     id:1,
                     title:'Full Stack Developer',
-                    companyName:'Amazon',
-                    city:'New York',
-                    state:'NY',
+                    companyName:'Serankhula',
+                    country:'Lesotho',
                     startDate:'Jan 2021',
+                    address:"Leribe Lesotho Box 114",
                     endDate:'',
                     currentlyWorking:true,
                     workSummery:' Designed, developed, and maintained full-stack applications using React and Node.js.\n'+
@@ -74,10 +74,10 @@ export const DummyData = () =>{
                 {
                     id:2,
                     title:'Frontend Developer',
-                    companyName:'Google',
-                    city:'Charlotte',
-                    state:'NC',
+                    companyName:'MAMA',
+                    country:'Lesotho',
                     startDate:'May 2019',
+                    address:"Leribe Lesotho Box 114",
                     endDate:'Jan 2021',
                     currentlyWorking:false,
                     workSummery:' Designed, developed, and maintained full-stack applications using React and Node.js.'+

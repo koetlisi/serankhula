@@ -6,6 +6,7 @@ import {IconButton} from "@mui/material";
 import {ArrowBack, ArrowForward} from "@mui/icons-material";
 import {LayoutGrid} from "lucide-react";
 import {Summery} from "@/app/cvTemplates/custome/EditResume/form/summery";
+import {Experience} from "@/app/cvTemplates/custome/EditResume/form/experience";
 
 export const FormSections = () =>{
     const context = useContext(ResumeInfoContext);
@@ -38,7 +39,7 @@ export const FormSections = () =>{
         {activeIndex ===2 && <Summery resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
 
         {/*Experience*/}
-
+        {activeIndex===3&&<Experience resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
         {/*Educational Details*/}
 
 

@@ -8,7 +8,7 @@ export const ProfessionalExperience : React.FC<{ resumeInfo: ResumeInfo }> = ({r
         {resumeInfo?.experience.map((experience,index)=>(
             <div key={index}>
                 <h2 style={{color:resumeInfo.themeColor}} className="text-sm font-bold">{experience.title}</h2>
-                <h2 className="text-xs flex justify-between">{experience.companyName},{experience.city} {experience.state}
+                <h2 className="text-xs flex justify-between">{experience.companyName},{experience.country}, {experience.address}
                     <span>{experience.startDate} {experience.currentlyWorking ? 'Present' : experience.endDate}</span>
                 </h2>
                 <p className="text-xs my-2">{experience.workSummery}</p>

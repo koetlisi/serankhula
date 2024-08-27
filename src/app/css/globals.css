@@ -59,6 +59,15 @@
         --chart-5: 340 75% 55%;
     }
 }
+.rsw-ce ul {
+    list-style: disc;
+    padding-left: 2em;
+}
+
+.rsw-ce ol {
+    list-style: decimal;
+    padding-left: 2em;
+}
 
 body{
     font-family: "Mooli", sans-serif, system-ui, -apple-system, BlinkMackSystemFont, 'Segoe UI', "Roboto", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";

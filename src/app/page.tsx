@@ -8,6 +8,7 @@ import InactivityTracker from "@/app/auth/is_active";
 import CreateTemplate from "@/app/cvTemplates/CreateTempate";
 import {EditResume} from "@/app/cvTemplates/custome/editResume";
 import {ReviewResume} from "@/app/cvTemplates/custome/review/reviewResume";
+import PreventBackButton from "@/app/preventBack";
 
 // Lazy-loaded components
 const Home = lazy(() => import("@/app/home/page"));

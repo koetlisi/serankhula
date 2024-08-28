@@ -23,7 +23,7 @@ export const FormSections = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [activeIndex, setActiveIndex] = useState(1);
     const handleClick = (e: string) => dispatch(updateSelectedComponent(e))
-    return <div>
+    return <div className="form-scroll">
         <div className="justify-between flex items-center m-5">
             <Button variant="outline" className="flex gap-2" size="sm"><LayoutGrid/>Theme</Button>
             <div className="flex gap-2">

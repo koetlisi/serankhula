@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  .temp-dashboard-body{
+  .temp-dashboard-body {
     @apply p-10 md:px-20 lg:px-32;
 
-    .temp-body-add{
+    .temp-body-add {
       @apply mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-12;
 
       .resume-add {
@@ -15,4 +15,12 @@
     }
   }
 
+}
+
+.form-scroll {
+  flex: 3;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 5opx;
+  overflow-y: scroll;
 }

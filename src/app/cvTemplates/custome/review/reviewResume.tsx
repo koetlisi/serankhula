@@ -34,7 +34,7 @@ export const ReviewResume = () => {
                 <ResumePreview />
             </div>
             {/* Floating Buttons */}
-            <div className="fixed bottom-5 right-5 flex space-x-4">
+            <div className="fixed bottom-5 right-5 flex space-x-4" id="no-print">
                 <IconButton
                     onClick={handleDownload}
                     className="bg-blue-500 text-white hover:bg-blue-700 transition duration-300"

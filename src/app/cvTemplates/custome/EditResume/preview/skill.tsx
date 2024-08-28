@@ -1,6 +1,6 @@
 import React from "react";
-import { ResumeInfo } from "@/app/cvTemplates/custome/EditResume/dummyData";
 import { Flex, Progress } from 'antd';
+import {ResumeInfo} from "@/GlobalRedux/Features/resume/templateOne";
 export const Skill: React.FC<{ resumeInfo: ResumeInfo }> = ({ resumeInfo }) => {
     return (
         <div className="my-6">

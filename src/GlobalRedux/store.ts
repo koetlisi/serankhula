@@ -19,6 +19,7 @@ import dumWorkReducer from '@/GlobalRedux/Features/dummyData/dummyWork';
 import systemReducer from '@/GlobalRedux/Features/system';
 import userWorkReducer from '@/GlobalRedux/Features/work/work';
 import resumeReducer from '@/GlobalRedux/Features/resume/resume';
+import templateOneReducer from '@/GlobalRedux/Features/resume/templateOne';
 
 
 // Persist configuration
@@ -44,7 +45,8 @@ const rootReducer = combineReducers({
     dumWork: dumWorkReducer,
     system: systemReducer,
     userWork: userWorkReducer,
-    resume: resumeReducer
+    resume: resumeReducer,
+    templateOne: templateOneReducer
 });
 
 // Create a persisted reducer

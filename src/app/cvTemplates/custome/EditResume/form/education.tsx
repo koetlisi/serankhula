@@ -1,11 +1,10 @@
 import React from "react";
-import {ResumeInfo} from "@/app/cvTemplates/custome/EditResume/dummyData";
-import {keys} from "@mui/system";
 import {Input} from "@/components/ui/input";
 import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
 import {Add, Cancel} from "@mui/icons-material";
 import {SaveAll} from "lucide-react";
+import {ResumeInfo} from "@/GlobalRedux/Features/resume/templateOne";
 
 export const Education: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: any }> = ({resumeInfo, setResumeInfo}) => {
     const onChange = (event: any,index: number) => {

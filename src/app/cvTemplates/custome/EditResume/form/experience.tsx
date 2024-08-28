@@ -1,10 +1,10 @@
 import React from "react";
-import { ResumeInfo } from "@/app/cvTemplates/custome/EditResume/dummyData";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {Add, Cancel, Delete} from "@mui/icons-material";
 import { SaveAll } from "lucide-react";
 import { RichTextEditor } from "@/components/Components/FormThings/richTextEditor";
+import {ResumeInfo} from "@/GlobalRedux/Features/resume/templateOne";
 
 export const Experience: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: any }> = ({ resumeInfo, setResumeInfo }) => {
     const onChange = (index: number, event: any) => {

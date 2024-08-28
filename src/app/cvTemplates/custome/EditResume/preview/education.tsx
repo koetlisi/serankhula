@@ -1,9 +1,9 @@
 import React from "react";
-import {ResumeInfo} from "@/app/cvTemplates/custome/EditResume/dummyData";
+import {ResumeInfo} from "@/GlobalRedux/Features/resume/templateOne";
 
 export const Education: React.FC<{ resumeInfo: ResumeInfo }> = ({resumeInfo})=>{
     return <div className="my-6">
-        <h2 className="text-center font-bold text-sm mb-2">Education</h2>
+        <h2 className="text-center font-bold text-sm mb-2" style={{color:resumeInfo.themeColor}}>Education</h2>
         <hr className="border-dashed my-2" style={{borderBlockColor: resumeInfo.themeColor}}/>
         {resumeInfo?.education.map((education, key)=>(
             <div key={key} className="my-5">

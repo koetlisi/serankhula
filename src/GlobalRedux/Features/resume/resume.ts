@@ -5,6 +5,7 @@ export interface Resume{
     user_id:number,
     id:number,
     title:string,
+    template:string
 }
 export interface ResumeState {
     resumes:Resume[]

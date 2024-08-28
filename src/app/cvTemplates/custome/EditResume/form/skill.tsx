@@ -1,11 +1,11 @@
 import React from "react";
-import { ResumeInfo } from "@/app/cvTemplates/custome/EditResume/dummyData";
 import { Input } from "@/components/ui/input";
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import {Button} from "@/components/ui/button";
 import {Add, Cancel} from "@mui/icons-material";
 import {SaveAll} from "lucide-react";
+import {ResumeInfo} from "@/GlobalRedux/Features/resume/templateOne";
 
 export const Skill: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: (info: ResumeInfo) => void }> = ({ resumeInfo, setResumeInfo }) => {
 

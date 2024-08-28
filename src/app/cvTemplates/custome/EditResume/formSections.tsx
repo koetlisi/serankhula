@@ -4,7 +4,7 @@ import ResumeInfoContext from "@/app/cvTemplates/context/resumeInfoContext";
 import {Button} from "@/components/ui/button";
 import {IconButton} from "@mui/material";
 import {ArrowBack, ArrowForward, ViewAgenda} from "@mui/icons-material";
-import {LayoutGrid} from "lucide-react";
+import {EyeIcon, LayoutGrid} from "lucide-react";
 import {Summery} from "@/app/cvTemplates/custome/EditResume/form/summery";
 import {Experience} from "@/app/cvTemplates/custome/EditResume/form/experience";
 import {Education} from "@/app/cvTemplates/custome/EditResume/form/education";
@@ -33,7 +33,7 @@ export const FormSections = () => {
                 </IconButton>}
                 {activeIndex === 5 ? <IconButton onClick={() => handleClick('ViewResume')}
                                                  className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 shadow-md transition-all">
-                    <ViewAgenda/>
+                    <EyeIcon/>
                 </IconButton> : <IconButton onClick={() => setActiveIndex(activeIndex + 1)}
                                             className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 shadow-md transition-all">
                     <ArrowForward/>

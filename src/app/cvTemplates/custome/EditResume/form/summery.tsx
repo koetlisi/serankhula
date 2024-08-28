@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import {ResumeInfo} from "@/app/cvTemplates/custome/EditResume/dummyData";
 import {Button} from "@/components/ui/button";
 import {Textarea} from "@/components/ui/textarea";
 import {Brain} from "lucide-react";
 import {AIChatSession} from "../../../../../../service/AIModel";
 import {Spin} from "antd";
+import {ResumeInfo} from "@/GlobalRedux/Features/resume/templateOne";
 export interface SummaryData {
     summary: string;
     experience_level: string;

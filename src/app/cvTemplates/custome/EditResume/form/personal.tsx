@@ -1,7 +1,7 @@
 import React from "react";
-import { ResumeInfo } from "@/app/cvTemplates/custome/EditResume/dummyData";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import {ResumeInfo} from "@/GlobalRedux/Features/resume/templateOne";
 
 export const Personal: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: any }> = ({ resumeInfo, setResumeInfo }) => {
     const inputOnChange = (e: any) => {

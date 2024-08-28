@@ -1,47 +1,6 @@
 import {useState} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "@/GlobalRedux/store";
-interface Experience {
-    id: number;
-    title: string;
-    companyName: string;
-    country: string;
-    address:string
-    startDate: string;
-    endDate: string;
-    currentlyWorking: boolean;
-    workSummery: string;
-}
-
-interface Education {
-    id: number;
-    institutionName: string;
-    startDate: string;
-    endDate: string;
-    qualification: string;
-    major: string;
-    description: string;
-}
-
-interface Skill {
-    id: number;
-    name: string;
-    rating: number;
-}
-
-export interface ResumeInfo {
-    firstName: string;
-    lastName: string;
-    jobTitle: string;
-    address: string;
-    phone: string;
-    email: string;
-    themeColor: string;
-    summery: string;
-    experience: Experience[];
-    education: Education[];
-    skills: Skill[];
-}
 export const DummyData = () =>{
     const {userData} = useSelector((state: RootState) => state.login);
     const [dummyData, setDummyData] = useState(

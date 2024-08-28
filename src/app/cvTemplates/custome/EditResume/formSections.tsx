@@ -7,6 +7,7 @@ import {ArrowBack, ArrowForward} from "@mui/icons-material";
 import {LayoutGrid} from "lucide-react";
 import {Summery} from "@/app/cvTemplates/custome/EditResume/form/summery";
 import {Experience} from "@/app/cvTemplates/custome/EditResume/form/experience";
+import {Education} from "@/app/cvTemplates/custome/EditResume/form/education";
 
 export const FormSections = () =>{
     const context = useContext(ResumeInfoContext);
@@ -34,15 +35,12 @@ export const FormSections = () =>{
         </div>
         {/*Personal Details*/}
         {activeIndex ===1 && <Personal resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
-
         {/*Summery*/}
         {activeIndex ===2 && <Summery resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
-
         {/*Experience*/}
         {activeIndex===3&&<Experience resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
         {/*Educational Details*/}
-
-
+        {activeIndex==4&&<Education resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
         {/*Skills*/}
     </div>
 }

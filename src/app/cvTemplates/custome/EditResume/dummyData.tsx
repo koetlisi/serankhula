@@ -15,10 +15,10 @@ interface Experience {
 
 interface Education {
     id: number;
-    universityName: string;
+    institutionName: string;
     startDate: string;
     endDate: string;
-    degree: string;
+    qualification: string;
     major: string;
     description: string;
 }
@@ -91,19 +91,19 @@ export const DummyData = () =>{
             education:[
                 {
                     id:1,
-                    universityName:'Western Illinois University',
+                    institutionName:'Western Illinois University',
                     startDate:'Aug 2018',
                     endDate:'Dec:2019',
-                    degree:'Master',
+                    qualification:'Master',
                     major:'Computer Science',
                     description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
                 },
                 {
                     id:2,
-                    universityName:'Western Illinois University',
+                    institutionName:'Western Illinois University',
                     startDate:'Aug 2018',
                     endDate:'Dec:2019',
-                    degree:'Master',
+                    qualification:'Master',
                     major:'Computer Science',
                     description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
                 }

@@ -8,6 +8,7 @@ import {LayoutGrid} from "lucide-react";
 import {Summery} from "@/app/cvTemplates/custome/EditResume/form/summery";
 import {Experience} from "@/app/cvTemplates/custome/EditResume/form/experience";
 import {Education} from "@/app/cvTemplates/custome/EditResume/form/education";
+import {Skill} from "@/app/cvTemplates/custome/EditResume/form/skill";
 
 export const FormSections = () =>{
     const context = useContext(ResumeInfoContext);
@@ -40,7 +41,8 @@ export const FormSections = () =>{
         {/*Experience*/}
         {activeIndex===3&&<Experience resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
         {/*Educational Details*/}
-        {activeIndex==4&&<Education resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
+        {activeIndex===4&&<Education resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
         {/*Skills*/}
+        {activeIndex===5&&<Skill resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
     </div>
 }

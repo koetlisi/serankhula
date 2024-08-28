@@ -23,6 +23,7 @@
     "@radix-ui/react-toast": "^1.2.1",
     "@reduxjs/toolkit": "^2.2.7",
     "@shadcn/ui": "^0.0.4",
+    "@smastrom/react-rating": "^1.5.0",
     "@types/formidable": "^3.4.5",
     "antd": "^5.20.1",
     "axios": "^1.7.4",

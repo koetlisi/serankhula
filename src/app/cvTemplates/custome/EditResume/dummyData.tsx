@@ -117,17 +117,17 @@ export const DummyData = () =>{
                 {
                     id:1,
                     name:'React',
-                    rating:100,
+                    rating:83,
                 },
                 {
                     id:1,
                     name:'MySql',
-                    rating:80,
+                    rating:70,
                 },
                 {
                     id:1,
                     name:'React Native',
-                    rating:100,
+                    rating:99,
                 }
             ]
         }

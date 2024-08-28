@@ -7,6 +7,7 @@ import Loader from "@/app/loader";
 import InactivityTracker from "@/app/auth/is_active";
 import CreateTemplate from "@/app/cvTemplates/CreateTempate";
 import {EditResume} from "@/app/cvTemplates/custome/editResume";
+import {ReviewResume} from "@/app/cvTemplates/custome/review/reviewResume";
 
 // Lazy-loaded components
 const Home = lazy(() => import("@/app/home/page"));
@@ -26,7 +27,8 @@ const HomePage: React.FC = () => {
         EditProfile: <EditProfile />,
         Login: <Login />,
         Cv_template: <CreateTemplate />,
-        EditResume: <EditResume/>
+        EditResume: <EditResume/>,
+        ViewResume: <ReviewResume/>
     };
 
     // Determine the content to display

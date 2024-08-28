@@ -15,7 +15,7 @@ export const ResumePreview = () =>{
 
     const { resumeInfo, setResumeInfo } = context;
 
-    return <div style={{borderBlockColor:resumeInfo.themeColor}}  className="shadow-lg h-full m-5 p-14 border-t-[20px]">
+    return <div style={{borderBlockColor:resumeInfo.themeColor}} id="print-area"  className="shadow-lg h-full p-14 border-t-[20px]">
         {/*personal resume info*/}
         <PersonalDetails resumeInfo={resumeInfo}/>
 

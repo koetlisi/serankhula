@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
+
 import {
   changeEducations,
   selectEducations,
@@ -13,11 +13,11 @@ import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
 import { ResumeEducation, ResumeProject } from "@/app/lib/types/types";
 import { BulletListTextArea, Input } from "./Form/InputGroup";
-import { BulletListIconButton } from "./Form/IconButton";
+import {useDispatch, useSelector} from "react-redux";
 
 export const ProjectsForm = () => {
-  const projects = useAppSelector(selectProjects);
-  const dispatch = useAppDispatch();
+  const projects = useSelector(selectProjects);
+  const dispatch = useDispatch();
   const showDelete = projects.length > 1;
 
   return (

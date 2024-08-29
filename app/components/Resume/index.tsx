@@ -1,6 +1,5 @@
 "use client";
 
-import { useAppSelector } from "@/app/lib/types/hooks";
 import { selectResume } from "@/app/lib/appRedux/slice/resumeSlice";
 import { selectSettings } from "@/app/lib/appRedux/slice/settingsSlice";
 import { useMemo, useState } from "react";
@@ -13,6 +12,7 @@ import {
   useRegisterReactPDFHypenationCallback,
 } from "../fonts/hooks";
 import { ResumeControlBarCSR } from "./ResumeControlBar";
+import {useAppSelector} from "@/app/lib/appRedux/hooks";
 
 export const Resume = () => {
   const [scale, setScale] = useState(0.8);

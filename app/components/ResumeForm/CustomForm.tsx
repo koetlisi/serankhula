@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
+
 import {
   changeCustom,
   changeSkills,
@@ -14,6 +14,7 @@ import { Form } from "./Form";
 import { BulletListTextArea, InputGroupWrapper } from "./Form/InputGroup";
 import { BulletListIconButton } from "./Form/IconButton";
 import { FeaturedSkillInput } from "./Form/FeaturedSkillInput";
+import {useAppDispatch, useAppSelector} from "@/app/lib/appRedux/hooks";
 
 export const CustomForm = () => {
   const custom = useAppSelector(selectCustom);

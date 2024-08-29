@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
+
 import {
   DEFAULT_THEME_COLOR,
   GeneralSetting,
@@ -16,12 +16,13 @@ import {
   FontSizeSelections,
 } from "./Selection";
 import { FontFamily } from "../../fonts/constants";
+import {useDispatch, useSelector} from "react-redux";
 
 export const ThemeForm = () => {
-  const settings = useAppSelector(selectSettings);
+  const settings = useSelector(selectSettings);
   const { fontSize, fontFamily, documentSize } = settings;
   const themeColor = settings.themeColor || DEFAULT_THEME_COLOR;
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const handleSettingsChange = (field: GeneralSetting, value: string) => {
     dispatch(changeSettings({ field, value }));

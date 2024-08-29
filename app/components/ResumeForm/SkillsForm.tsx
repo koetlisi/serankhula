@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
+
 import { changeSkills, selectSkills } from "@/app/lib/appRedux/slice/resumeSlice";
 import {
   changeShowBulletPoints,
@@ -9,14 +9,15 @@ import { Form } from "./Form";
 import { BulletListTextArea, InputGroupWrapper } from "./Form/InputGroup";
 import { BulletListIconButton } from "./Form/IconButton";
 import { FeaturedSkillInput } from "./Form/FeaturedSkillInput";
+import {useDispatch, useSelector} from "react-redux";
 
 export const SkillsForm = () => {
-  const skills = useAppSelector(selectSkills);
-  const dispatch = useAppDispatch();
+  const skills = useSelector(selectSkills);
+  const dispatch = useDispatch();
   const { featuredSkills, descriptions } = skills;
   const form = "skills";
-  const showBulletPoints = useAppSelector(selectShowBulletPoints(form));
-  const themeColor = useAppSelector(selectThemeColor) || "#38bdf8";
+  const showBulletPoints = useSelector(selectShowBulletPoints(form));
+  const themeColor = useSelector(selectThemeColor) || "#38bdf8";
 
   const handleSkillsChange = (field: "descriptions", value: string[]) => {
     dispatch(changeSkills({ field, value }));

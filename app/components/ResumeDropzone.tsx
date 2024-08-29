@@ -6,11 +6,8 @@ import { LockClosedIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { parseResumeFromPdf } from "../lib/parse-resume-from-pdf";
 import { deepClone } from "../lib/parse-resume-from-pdf/deep-clone";
 import { ShowForm, initialSettings } from "@/app/lib/appRedux/slice/settingsSlice";
-import {
-  getHasUsedAppBefore,
-  saveStateToLocalStorage,
-} from "@/app/lib/types/local-storage";
 import { useRouter } from "next/navigation";
+import {getHasUsedAppBefore, saveStateToLocalStorage} from "@/app/lib/appRedux/local-storage";
 
 const defaultFileState = {
   name: "",
@@ -86,7 +83,7 @@ const ResumeDropzone = ({
         settings.formToShow[section] = sectionToFormToShow[section];
       }
     }
-    saveStateToLocalStorage({ resume, settings });
+    //saveStateToLocalStorage({ resume, settings });
     router.push("/resume-builder");
   };
 

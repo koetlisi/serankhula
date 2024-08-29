@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
 import {
   changeWorkExperience,
   selectWorkExperiences,
@@ -7,10 +6,11 @@ import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
 import { ResumeWorkExperience } from "@/app/lib/types/types";
 import { BulletListTextArea, Input } from "./Form/InputGroup";
+import {useDispatch, useSelector} from "react-redux";
 
 export const WorkExperiencesForm = () => {
-  const workExperiences = useAppSelector(selectWorkExperiences);
-  const dispatch = useAppDispatch();
+  const workExperiences = useSelector(selectWorkExperiences);
+  const dispatch = useDispatch();
 
   const showDelete = workExperiences.length > 1;
 

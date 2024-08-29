@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
+
 import {
   ShowForm,
   changeFormHeading,
@@ -24,6 +24,8 @@ import {
   moveSectionInForm,
 } from "@/app/lib/appRedux/slice/resumeSlice";
 import { PlusSmallIcon } from "@heroicons/react/24/outline";
+import {useDispatch, useSelector} from "react-redux";
+import {useAppDispatch, useAppSelector} from "@/app/lib/appRedux/hooks";
 
 const FORM_TO_ICON: { [section in ShowForm]: typeof BuildingOfficeIcon } = {
   workExperiences: BuildingOfficeIcon,
@@ -56,10 +58,10 @@ export const Form = ({
   addButtonText?: string;
   children: React.ReactNode;
 }) => {
-  const showForm = useAppSelector(selectShowByForm(form));
-  const heading = useAppSelector(selectHeadingByForm(form));
+  const showForm = useSelector(selectShowByForm(form));
+  const heading = useSelector(selectHeadingByForm(form));
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const setShowForm = (showForm: boolean) => {
     dispatch(changeShowForm({ field: form, value: showForm }));

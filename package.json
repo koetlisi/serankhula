@@ -27,6 +27,7 @@
     "@shadcn/ui": "^0.0.4",
     "@smastrom/react-rating": "^1.5.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+<<<<<<< Updated upstream
     "@types/formidable": "^3.4.5",
     "antd": "^5.20.1",
     "axios": "^1.7.4",
@@ -40,12 +41,19 @@
     "moment": "^2.30.1",
     "mui": "^0.0.1",
     "next": "^14.2.7",
+=======
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.436.0",
+    "next": "14.0.4",
+>>>>>>> Stashed changes
     "pdfjs": "^2.5.0",
     "pdfjs-dist": "^4.5.136",
     "react": "^18",
     "react-contenteditable": "^3.3.7",
     "react-dom": "^18",
     "react-frame-component": "^5.2.6",
+<<<<<<< Updated upstream
     "react-helmet": "^6.1.0",
     "react-icons": "^5.3.0",
     "react-redux": "^9.1.2",
@@ -58,6 +66,12 @@
     "tailwind-scrollbar": "^3.0.5",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^10.0.0"
+=======
+    "react-redux": "^9.0.4",
+    "tailwind-merge": "^2.5.2",
+    "tailwind-scrollbar": "^3.0.5",
+    "tailwindcss-animate": "^1.0.7"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
     "@types/node": "^22.5.1",

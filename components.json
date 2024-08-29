@@ -5,7 +5,11 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.ts",
+<<<<<<< Updated upstream
     "css": "src/app/globals.css",
+=======
+    "css": "app/globals.css",
+>>>>>>> Stashed changes
     "baseColor": "slate",
     "cssVariables": true,
     "prefix": ""

@@ -27,9 +27,9 @@ FROM node:18-alpine AS runner
 WORKDIR /app
 
 # Copy the built Next.js app from the builder stage
-COPY --from=builder /app/.next .next
-COPY --from=builder /app/public public
-COPY --from=builder /app/package*.json ./
+COPY --from=builder /src/app/.next .next
+COPY --from=builder /src/app/public public
+COPY --from=builder /src/app/package*.json ./
 
 # Install only production dependencies
 RUN npm install --only=production

@@ -8,7 +8,7 @@
 
 # testing
 /coverage
-/src/apiHandling/consts.ts
+/src/app/apiHandling/consts.ts
 # next.js
 /.next/
 /out/
@@ -35,4 +35,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-src/apiHandling/consts.ts
+src/app/apiHandling/consts.ts

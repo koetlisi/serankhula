@@ -1,8 +1,8 @@
+/*
 "use client"
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import {isLocalhost, socketLocal} from "@/apiHandling/consts";
 import {useSelector} from "react-redux";
-import {RootState} from "@/GlobalRedux/store";
+import {RootState} from "@/app/lib/appRedux/store";
 
 interface WebSocketContextProps {
     notifications: string[];
@@ -90,3 +90,4 @@ export const useWebSocket = () => {
     }
     return context;
 };
+*/

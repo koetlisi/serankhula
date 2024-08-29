@@ -41,7 +41,7 @@
     "mui": "^0.0.1",
     "next": "14.2.5",
     "pdfjs": "^2.5.0",
-    "pdfjs-dist": "^3.7.107",
+    "pdfjs-dist": "^3.11.174",
     "react": "^18",
     "react-contenteditable": "^3.3.7",
     "react-dom": "^18",

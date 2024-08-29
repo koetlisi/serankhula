@@ -1,10 +1,10 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
 import {
   DEFAULT_THEME_COLOR,
   GeneralSetting,
   changeSettings,
   selectSettings,
-} from "@/app/lib/redux/settingsSlice";
+} from "@/app/lib/appRedux/slice/settingsSlice";
 import { BaseForm } from "../Form";
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { InlineInput } from "./InlineInput";

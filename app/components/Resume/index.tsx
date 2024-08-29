@@ -1,8 +1,8 @@
 "use client";
 
-import { useAppSelector } from "@/app/lib/redux/hooks";
-import { selectResume } from "@/app/lib/redux/resumeSlice";
-import { selectSettings } from "@/app/lib/redux/settingsSlice";
+import { useAppSelector } from "@/app/lib/types/hooks";
+import { selectResume } from "@/app/lib/appRedux/slice/resumeSlice";
+import { selectSettings } from "@/app/lib/appRedux/slice/settingsSlice";
 import { useMemo, useState } from "react";
 import { FlexboxSpacer } from "../FlexboxSpacer";
 import { ResumeIFrameCSR } from "./ResumeIFrame";

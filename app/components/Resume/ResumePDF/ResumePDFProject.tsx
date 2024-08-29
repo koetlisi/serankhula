@@ -2,7 +2,7 @@ import {
   ResumeEducation,
   ResumeProject,
   ResumeWorkExperience,
-} from "@/app/lib/redux/types";
+} from "@/app/lib/types/types";
 import { ResumePDFBulletList, ResumePDFSection, ResumePDFText } from "./common";
 import { View } from "@react-pdf/renderer";
 import { spacing, styles } from "./styles";

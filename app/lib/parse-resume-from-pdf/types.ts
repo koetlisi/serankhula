@@ -1,4 +1,4 @@
-import type { ResumeKey } from "../redux/types";
+import type { ResumeKey } from "@/app/lib/types/types";
 export interface TextItem {
   text: string;
   x: number;

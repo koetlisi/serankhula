@@ -1,18 +1,14 @@
 import { cx } from "@/app/lib/cx";
-import {
-  useAppSelector,
-  useSaveStateToLocalStorageOnChange,
-  useSetInitialStore,
-} from "@/app/lib/redux/hooks";
 import { useState } from "react";
 import { ProfileForm } from "./ProfileForm";
-import { ShowForm, selectFormsOrder } from "@/app/lib/redux/settingsSlice";
+import { ShowForm, selectFormsOrder } from "@/app/lib/appRedux/slice/settingsSlice";
 import { WorkExperiencesForm } from "./WorkExperiencesForm";
 import { EducationsForm } from "./EducationsForm";
 import { ProjectsForm } from "./ProjectsForm";
 import { SkillsForm } from "./SkillsForm";
 import { CustomForm } from "./CustomForm";
 import { ThemeForm } from "./ThemeForm";
+import {useSelector} from "react-redux";
 
 const formTypeToComponent: { [type in ShowForm]: () => JSX.Element } = {
   workExperiences: WorkExperiencesForm,
@@ -23,12 +19,10 @@ const formTypeToComponent: { [type in ShowForm]: () => JSX.Element } = {
 };
 
 export const ResumeForm = () => {
-  useSetInitialStore();
-  useSaveStateToLocalStorageOnChange();
 
   const [isHover, setIsHover] = useState(false);
 
-  const formsOrder = useAppSelector(selectFormsOrder);
+  const formsOrder = useSelector(selectFormsOrder);
 
   return (
     <div

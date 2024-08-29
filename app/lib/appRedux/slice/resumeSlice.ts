@@ -7,9 +7,9 @@ import {
   ResumeProject,
   ResumeSkills,
   ResumeWorkExperience,
-} from "./types";
-import { ShowForm } from "./settingsSlice";
-import { RootState } from "./store";
+} from "@/app/lib/types/types";
+import { ShowForm } from "@/app/lib/appRedux/slice/settingsSlice";
+import {RootState} from "@/app/lib/appRedux/store";
 
 export const initialProfile: ResumeProfile = {
   name: "",

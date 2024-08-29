@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/redux/hooks";
-import { changeProfile, selectProfile } from "@/app/lib/redux/resumeSlice";
+import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
+import { changeProfile, selectProfile } from "@/app/lib/appRedux/slice/resumeSlice";
 import { BaseForm } from "./Form";
 import { Input } from "./Form/InputGroup";
-import { ResumeProfile } from "@/app/lib/redux/types";
+import { ResumeProfile } from "@/app/lib/types/types";
 
 export const ProfileForm = () => {
   const profile = useAppSelector(selectProfile);

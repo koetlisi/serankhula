@@ -5,11 +5,11 @@ import addPdfSrc from "@/public/assets/add-pdf.svg";
 import { LockClosedIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { parseResumeFromPdf } from "../lib/parse-resume-from-pdf";
 import { deepClone } from "../lib/parse-resume-from-pdf/deep-clone";
-import { ShowForm, initialSettings } from "../lib/redux/settingsSlice";
+import { ShowForm, initialSettings } from "@/app/lib/appRedux/slice/settingsSlice";
 import {
   getHasUsedAppBefore,
   saveStateToLocalStorage,
-} from "../lib/redux/local-storage";
+} from "@/app/lib/types/local-storage";
 import { useRouter } from "next/navigation";
 
 const defaultFileState = {

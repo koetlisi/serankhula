@@ -1,7 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { act } from "react-dom/test-utils";
-import { RootState } from "./store";
-
+import {RootState} from "@/app/lib/appRedux/store";
 export interface Settings {
   themeColor: string;
   fontFamily: string;

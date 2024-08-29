@@ -1,24 +1,25 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/redux/hooks";
+
 import {
   changeEducations,
   selectEducations,
-} from "@/app/lib/redux/resumeSlice";
+} from "@/app/lib/appRedux/slice/resumeSlice";
 import {
   changeShowBulletPoints,
   selectShowBulletPoints,
-} from "@/app/lib/redux/settingsSlice";
+} from "@/app/lib/appRedux/slice/settingsSlice";
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
-import { ResumeEducation } from "@/app/lib/redux/types";
+import { ResumeEducation } from "@/app/lib/types/types";
 import { BulletListTextArea, Input } from "./Form/InputGroup";
 import { BulletListIconButton } from "./Form/IconButton";
+import {useDispatch, useSelector} from "react-redux";
 
 export const EducationsForm = () => {
-  const educations = useAppSelector(selectEducations);
-  const dispatch = useAppDispatch();
+  const educations = useSelector(selectEducations);
+  const dispatch = useDispatch();
   const showDelete = educations.length > 1;
   const form = "educations";
-  const showBulletPoints = useAppSelector(selectShowBulletPoints(form));
+  const showBulletPoints = useSelector(selectShowBulletPoints(form));
 
   return (
     <Form form={form} addButtonText="Add School">

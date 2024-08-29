@@ -1,4 +1,4 @@
-import { ResumeSkills, ResumeWorkExperience } from "@/app/lib/redux/types";
+import { ResumeSkills, ResumeWorkExperience } from "@/app/lib/types/types";
 import {
   ResumeFeaturedSkill,
   ResumePDFBulletList,

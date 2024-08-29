@@ -1,4 +1,4 @@
-import { ResumeProfile } from "@/app/lib/redux/types";
+import { ResumeProfile } from "@/app/lib/types/types";
 import { ResumePDFLink, ResumePDFSection, ResumePDFText } from "./common";
 import { spacing, styles } from "./styles";
 import { View } from "@react-pdf/renderer";

@@ -4,8 +4,8 @@ import { deepClone } from "../lib/parse-resume-from-pdf/deep-clone";
 import {
   initialEducation,
   initialWorkExperience,
-} from "../lib/redux/resumeSlice";
-import { Resume } from "../lib/redux/types";
+} from "../lib/appRedux/slice/resumeSlice";
+import { Resume } from "@/app/lib/types/types";
 
 const TableRowHeader = ({ children }: { children: React.ReactNode }) => (
   <tr className="divide-x bg-gray-50">

@@ -1,4 +1,4 @@
-import { GeneralSetting } from "@/app/lib/redux/settingsSlice";
+import { GeneralSetting } from "@/app/lib/appRedux/slice/settingsSlice";
 import {
   FONT_FAMILY_TO_DISPLAY_NAME,
   FONT_FAMILY_TO_STANDARD_SIZE_IN_PT,

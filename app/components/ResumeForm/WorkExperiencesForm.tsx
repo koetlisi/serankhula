@@ -1,11 +1,11 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
 import {
   changeWorkExperience,
   selectWorkExperiences,
-} from "@/app/lib/redux/resumeSlice";
+} from "@/app/lib/appRedux/slice/resumeSlice";
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
-import { ResumeWorkExperience } from "@/app/lib/redux/types";
+import { ResumeWorkExperience } from "@/app/lib/types/types";
 import { BulletListTextArea, Input } from "./Form/InputGroup";
 
 export const WorkExperiencesForm = () => {

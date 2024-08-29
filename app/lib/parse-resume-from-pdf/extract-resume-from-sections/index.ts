@@ -1,4 +1,4 @@
-import { Resume } from "../../redux/types";
+import { Resume } from "@/app/lib/types/types";
 import { ResumeSectionToLines } from "../types";
 import { extractEducation } from "./extract-education";
 import { extractProfile } from "./extract-profile";

@@ -1,4 +1,4 @@
-import { ResumeKey } from "../redux/types";
+import { ResumeKey } from "@/app/lib/types/types";
 import { Line, Lines, ResumeSectionToLines, TextItem } from "./types";
 
 export const PROFILE_SECTION: ResumeKey = "profile";

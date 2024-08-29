@@ -1,17 +1,17 @@
-import { useAppDispatch, useAppSelector } from "@/app/lib/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/lib/types/hooks";
 import {
   changeEducations,
   selectEducations,
   selectProjects,
   changeProjects,
-} from "@/app/lib/redux/resumeSlice";
+} from "@/app/lib/appRedux/slice/resumeSlice";
 import {
   changeShowBulletPoints,
   selectShowBulletPoints,
-} from "@/app/lib/redux/settingsSlice";
+} from "@/app/lib/appRedux/slice/settingsSlice";
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
-import { ResumeEducation, ResumeProject } from "@/app/lib/redux/types";
+import { ResumeEducation, ResumeProject } from "@/app/lib/types/types";
 import { BulletListTextArea, Input } from "./Form/InputGroup";
 import { BulletListIconButton } from "./Form/IconButton";
 

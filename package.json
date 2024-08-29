@@ -13,6 +13,9 @@
     "@react-pdf/renderer": "^3.1.14",
     "@reduxjs/toolkit": "^2.0.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.436.0",
     "next": "14.0.4",
     "pdfjs": "^2.5.0",
     "pdfjs-dist": "^3.7.107",
@@ -21,7 +24,9 @@
     "react-dom": "^18",
     "react-frame-component": "^5.2.6",
     "react-redux": "^9.0.4",
-    "tailwind-scrollbar": "^3.0.5"
+    "tailwind-merge": "^2.5.2",
+    "tailwind-scrollbar": "^3.0.5",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",

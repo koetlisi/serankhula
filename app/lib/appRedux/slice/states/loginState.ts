@@ -1,6 +1,6 @@
 import {LoginUserType} from "@/app/lib/types/loginUserType";
 
-const initialLoginState: LoginUserType = {
+export const initialLoginState: LoginUserType = {
     isLogin: false,
     isLoading: false,
     userData: {

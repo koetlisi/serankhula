@@ -11,7 +11,6 @@ export const getAllUser = (toast: any) => {
                 getState().auth.userData.token,
                 'get_all_users/'
             );
-            alert(response?.code)
             // Handle success response
             if (response && response?.code === 200) {
                 dispatch(setAllUsers(response?.data));

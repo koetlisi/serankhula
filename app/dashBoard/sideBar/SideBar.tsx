@@ -10,9 +10,11 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import WalletIcon from '@mui/icons-material/Wallet';
 import {MenuLink} from "@/app/dashBoard/menuLink/MenuLink";
 import {logout} from "@/app/lib/appRedux/slice/loginSlice";
+import {Friends} from "@/app/dashBoard/Fiends/Friends";
 export const SideBar =()=>{
     const dispatch = useDispatch();
     const {userData} = useSelector((state: RootState) => state.auth);
+    const {users} = useSelector((state: RootState) => state.users);
     const handleClick = (page:string) => dispatch(updateSelectedComponent(page))
     return <div className="sidebar">
         <div className="sidebar-wrapper">
@@ -22,14 +24,27 @@ export const SideBar =()=>{
                      className="sidebar-icon"/>
                 <span className="sidebar-list-item-text menu-link-text">{userData.name + ' ' + userData.surname}</span>
             </div>
-            <MenuLink onClick={()=>{}} icon={AccountBalanceIcon} text='Students'/>
-            <MenuLink onClick={()=>{}} icon={SchoolIcon} text='Graduates'/>
-            <MenuLink onClick={()=>{}} icon={BadgeIcon} text='Jobless'/>
-            <MenuLink onClick={()=>{}} icon={AccountBalanceWalletIcon} text='Workers'/>
-            <MenuLink onClick={()=>{}} icon={WalletIcon} text='Entrepreneurs'/>
-            <MenuLink onClick={()=>dispatch(logout())} icon={LogoutOutlined} text='Logout'/>
-            <button onClick={()=>handleClick('Cv_template')} className="sidebar-btn">CV Templates</button>
+            <MenuLink onClick={() => {
+            }} icon={AccountBalanceIcon} text='Students'/>
+            <MenuLink onClick={() => {
+            }} icon={SchoolIcon} text='Graduates'/>
+            <MenuLink onClick={() => {
+            }} icon={BadgeIcon} text='Jobless'/>
+            <MenuLink onClick={() => {
+            }} icon={AccountBalanceWalletIcon} text='Workers'/>
+            <MenuLink onClick={() => {
+            }} icon={WalletIcon} text='Entrepreneurs'/>
+            <MenuLink onClick={() => dispatch(logout())} icon={LogoutOutlined} text='Logout'/>
+            <button onClick={() => handleClick('Cv_template')} className="sidebar-btn">CV Templates</button>
             <hr className="sidebar-hr"/>
+            <ul className="sidebar-friend-list">
+                {users
+                    .filter(user => user.id !== userData.id)
+                    .map(user => (
+                        <Friends key={user.id} user={user}/>
+                    ))
+                }
+            </ul>
         </div>
     </div>
 }

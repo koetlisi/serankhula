@@ -3,8 +3,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import settingReducer from '@/app/lib/appRedux/slice/settingsSlice';
-import resumeReducer from '@/app/lib/appRedux/slice/defaultResumeSlice';
+import {authReducer, resumeReducer, settingReducer} from "@/app/lib/appRedux/slice/exports";
 
 
 // Persist configuration
@@ -17,6 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
     settings: settingReducer,
     resume: resumeReducer,
+    auth: authReducer,
 });
 
 // Create a persisted reducer

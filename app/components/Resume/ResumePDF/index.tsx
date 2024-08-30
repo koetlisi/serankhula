@@ -1,5 +1,5 @@
 import { DEFAULT_FONT_COLOR, Settings } from "@/app/lib/appRedux/slice/settingsSlice";
-import { Resume } from "@/app/lib/types/types";
+import { Resume } from "@/app/lib/types/defaultResume";
 import { Document, Page, View } from "@react-pdf/renderer";
 import { styles, spacing } from "./styles";
 import { ResumePDFProfile } from "./ResumePDFProfile";

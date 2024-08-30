@@ -1,4 +1,4 @@
-import { Resume } from "@/app/lib/types/types";
+import { Resume } from "@/app/lib/types/defaultResume";
 import { ResumeSectionToLines } from "../types";
 import { extractEducation } from "./extract-education";
 import { extractProfile } from "./extract-profile";

@@ -1,4 +1,4 @@
-import { ResumeSkills, ResumeWorkExperience } from "@/app/lib/types/types";
+import { ResumeSkills, ResumeWorkExperience } from "@/app/lib/types/defaultResume";
 import {
   ResumeFeaturedSkill,
   ResumePDFBulletList,

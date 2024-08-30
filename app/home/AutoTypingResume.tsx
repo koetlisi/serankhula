@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { deepClone } from "../lib/parse-resume-from-pdf/deep-clone";
-import { initialResumeState } from "../lib/appRedux/slice/resumeSlice";
+import { initialResumeState } from "../lib/appRedux/slice/defaultResumeSlice";
 import { makeObjectCharIterator } from "../lib/make-object-char-iterator";
 import { END_HOME_RESUME, START_HOME_RESUME } from "./constants";
 import { ResumeIFrameCSR } from "../components/Resume/ResumeIFrame";

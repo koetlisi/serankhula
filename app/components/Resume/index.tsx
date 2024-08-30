@@ -1,6 +1,6 @@
 "use client";
 
-import { selectResume } from "@/app/lib/appRedux/slice/resumeSlice";
+import { selectResume } from "@/app/lib/appRedux/slice/defaultResumeSlice";
 import { selectSettings } from "@/app/lib/appRedux/slice/settingsSlice";
 import { useMemo, useState } from "react";
 import { FlexboxSpacer } from "../FlexboxSpacer";

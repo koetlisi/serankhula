@@ -4,14 +4,14 @@ import {
   selectEducations,
   selectProjects,
   changeProjects,
-} from "@/app/lib/appRedux/slice/resumeSlice";
+} from "@/app/lib/appRedux/slice/defaultResumeSlice";
 import {
   changeShowBulletPoints,
   selectShowBulletPoints,
 } from "@/app/lib/appRedux/slice/settingsSlice";
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
-import { ResumeEducation, ResumeProject } from "@/app/lib/types/types";
+import { ResumeEducation, ResumeProject } from "@/app/lib/types/defaultResume";
 import { BulletListTextArea, Input } from "./Form/InputGroup";
 import {useDispatch, useSelector} from "react-redux";
 

@@ -1,10 +1,10 @@
 import {
   changeWorkExperience,
   selectWorkExperiences,
-} from "@/app/lib/appRedux/slice/resumeSlice";
+} from "@/app/lib/appRedux/slice/defaultResumeSlice";
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
-import { ResumeWorkExperience } from "@/app/lib/types/types";
+import { ResumeWorkExperience } from "@/app/lib/types/defaultResume";
 import { BulletListTextArea, Input } from "./Form/InputGroup";
 import {useDispatch, useSelector} from "react-redux";
 

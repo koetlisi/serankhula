@@ -1,4 +1,4 @@
-import { ResumeWorkExperience } from "@/app/lib/types/types";
+import { ResumeWorkExperience } from "@/app/lib/types/defaultResume";
 import { isBold } from "../group-lines-into-sections";
 import { FeatureSet, ResumeSectionToLines, TextItem } from "../types";
 import { hasNumber } from "./extract-profile";

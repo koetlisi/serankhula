@@ -7,7 +7,7 @@ import {
   ResumeProject,
   ResumeSkills,
   ResumeWorkExperience,
-} from "@/app/lib/types/types";
+} from "@/app/lib/types/defaultResume";
 import { ShowForm } from "@/app/lib/appRedux/slice/settingsSlice";
 import {RootState} from "@/app/lib/appRedux/store";
 
@@ -77,7 +77,7 @@ export type CreateChangeActionWithDescriptions<T> = {
     }
 );
 
-export const resumeSlice = createSlice({
+export const defaultResumeSlice = createSlice({
   name: "resume",
   initialState: initialResumeState,
   reducers: {
@@ -215,7 +215,7 @@ export const {
   moveSectionInForm,
   deleteSectionInFormByIdx,
   setResume,
-} = resumeSlice.actions;
+} = defaultResumeSlice.actions;
 
 export const selectResume = (state: RootState) => state.resume;
 export const selectProfile = (state: RootState) => state.resume.profile;
@@ -226,4 +226,4 @@ export const selectProjects = (state: RootState) => state.resume.projects;
 export const selectSkills = (state: RootState) => state.resume.skills;
 export const selectCustom = (state: RootState) => state.resume.custom;
 
-export default resumeSlice.reducer;
+export default defaultResumeSlice.reducer;

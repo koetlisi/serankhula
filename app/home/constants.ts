@@ -4,8 +4,8 @@ import {
   initialProfile,
   initialProject,
   initialWorkExperience,
-} from "../lib/appRedux/slice/resumeSlice";
-import {Resume} from "@/app/lib/types/types";
+} from "../lib/appRedux/slice/defaultResumeSlice";
+import {Resume} from "@/app/lib/types/defaultResume";
 
 export const END_HOME_RESUME: Resume = {
   profile: {

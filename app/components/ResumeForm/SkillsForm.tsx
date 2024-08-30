@@ -1,5 +1,5 @@
 
-import { changeSkills, selectSkills } from "@/app/lib/appRedux/slice/resumeSlice";
+import { changeSkills, selectSkills } from "@/app/lib/appRedux/slice/defaultResumeSlice";
 import {
   changeShowBulletPoints,
   selectShowBulletPoints,

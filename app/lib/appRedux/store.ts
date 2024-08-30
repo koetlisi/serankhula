@@ -4,7 +4,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import settingReducer from '@/app/lib/appRedux/slice/settingsSlice';
-import resumeReducer from '@/app/lib/appRedux/slice/resumeSlice';
+import resumeReducer from '@/app/lib/appRedux/slice/defaultResumeSlice';
 
 
 // Persist configuration

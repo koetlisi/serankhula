@@ -22,7 +22,7 @@ import {
   addSectionInForm,
   deleteSectionInFormByIdx,
   moveSectionInForm,
-} from "@/app/lib/appRedux/slice/resumeSlice";
+} from "@/app/lib/appRedux/slice/defaultResumeSlice";
 import { PlusSmallIcon } from "@heroicons/react/24/outline";
 import {useDispatch, useSelector} from "react-redux";
 import {useAppDispatch, useAppSelector} from "@/app/lib/appRedux/hooks";

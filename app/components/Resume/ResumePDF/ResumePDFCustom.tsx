@@ -2,7 +2,7 @@ import {
   ResumeCustom,
   ResumeSkills,
   ResumeWorkExperience,
-} from "@/app/lib/types/types";
+} from "@/app/lib/types/defaultResume";
 import {
   ResumeFeaturedSkill,
   ResumePDFBulletList,

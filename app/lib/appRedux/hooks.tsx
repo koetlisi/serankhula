@@ -3,8 +3,8 @@ import {AppDispatch, RootState, store} from "./store";
 import {loadStateFromLocalStorage, saveStateToLocalStorage,} from "./local-storage";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {deepMerge} from "../deep-merge";
-import {initialResumeState, setResume} from "@/app/lib/appRedux/slice/resumeSlice";
-import {Resume} from "@/app/lib/types/types";
+import {initialResumeState, setResume} from "@/app/lib/appRedux/slice/defaultResumeSlice";
+import {Resume} from "@/app/lib/types/defaultResume";
 import {initialSettings, setSettings, Settings} from "@/app/lib/appRedux/slice/settingsSlice";
 
 export const useAppDispatch: () => AppDispatch = useDispatch;

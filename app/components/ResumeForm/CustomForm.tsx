@@ -4,7 +4,7 @@ import {
   changeSkills,
   selectCustom,
   selectSkills,
-} from "@/app/lib/appRedux/slice/resumeSlice";
+} from "@/app/lib/appRedux/slice/defaultResumeSlice";
 import {
   changeShowBulletPoints,
   selectShowBulletPoints,

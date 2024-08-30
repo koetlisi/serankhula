@@ -1,4 +1,4 @@
-import { ResumeProject } from "@/app/lib/types/types";
+import { ResumeProject } from "@/app/lib/types/defaultResume";
 import { isBold } from "../group-lines-into-sections";
 import { FeatureSet, ResumeSectionToLines } from "../types";
 import {

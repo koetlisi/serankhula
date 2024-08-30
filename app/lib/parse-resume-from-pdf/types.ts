@@ -1,4 +1,4 @@
-import type { ResumeKey } from "@/app/lib/types/types";
+import type { ResumeKey } from "@/app/lib/types/defaultResume";
 export interface TextItem {
   text: string;
   x: number;

@@ -1,5 +1,5 @@
-import { initialFeaturedSkills } from "../../appRedux/slice/resumeSlice";
-import { ResumeSkills } from "@/app/lib/types/types";
+import { initialFeaturedSkills } from "../../appRedux/slice/defaultResumeSlice";
+import { ResumeSkills } from "@/app/lib/types/defaultResume";
 import { deepClone } from "../deep-clone";
 import { ResumeSectionToLines } from "../types";
 import {

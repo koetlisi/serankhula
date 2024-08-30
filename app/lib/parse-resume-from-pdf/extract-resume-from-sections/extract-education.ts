@@ -1,4 +1,4 @@
-import { ResumeEducation } from "@/app/lib/types/types";
+import { ResumeEducation } from "@/app/lib/types/defaultResume";
 import { hasLetter } from "../group-lines-into-sections";
 import { FeatureSet, ResumeSectionToLines, TextItem } from "../types";
 import { hasComma, hasNumber } from "./extract-profile";

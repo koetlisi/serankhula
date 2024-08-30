@@ -1,0 +1,129 @@
+.navbar-container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .navbar-left{
+    .logo{
+      font-size: 24px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+  .navbar-center{
+    flex: 5;
+    .search-bar{
+      width: 100%;
+      height: 30px;
+      background-color: white;
+      border-radius: 30px;
+      border: 1px solid white;
+    }
+
+    .search-input{
+      width: 100%;
+      height: 30px;
+      background-color: white;
+      border-radius: 30px;
+      border: 1px solid white;
+    }
+  }
+  .navbar-right{
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+
+    .navbar-links{
+      margin-left: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      gap: 20px
+    }
+
+    .navbar-icons{
+      display: flex;
+      font-size: 20px;
+      gap: 10px;
+      color: white;
+    }
+
+    .navbar-icon-item{
+      display: flex;
+      margin-right: 15px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .navbar-image{
+      display: flex;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid white;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+}
+
+// Responsiveness of the NavBar
+
+@media only screen and (max-width: 992px){
+  .navbar-container{
+    .navbar-left{
+      flex: 2;
+      .logo{
+        font-weight: 500;
+      }
+    }
+    .navbar-center{
+      flex: 5;
+      .search-bar{
+        width: 95%;
+        .search-input{
+          width: 100%;
+        }
+      }
+    }
+    .navbar-right{
+      .navbar-image{
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .navbar-container{
+    .navbar-left{
+      flex: 2;
+
+    }
+    .navbar-right{
+      .navbar-link{
+        display: none;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 576px){
+  .navbar-container{
+    justify-content: space-between;
+    .navbar-left{
+      flex: 1;
+    }
+    .navbar-center{
+      flex: 1;
+      display: none;
+    }
+    .navbar-right{
+      flex: 1;
+    }
+  }
+}
+
+

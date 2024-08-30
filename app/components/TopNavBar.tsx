@@ -1,17 +1,23 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { cx } from "../lib/cx";
-import { Logo } from "@/app/components/widgets/Logo/Logo";
-import { useState } from "react";
-import { Login } from "@/app/auth/Login";
+import {usePathname} from "next/navigation";
+import {cx} from "../lib/cx";
+import {Logo} from "@/app/components/widgets/Logo/Logo";
+import {useState} from "react";
+import {Login} from "@/app/auth/Login";
+import {useSelector} from "react-redux";
+import {RootState} from "@/app/lib/appRedux/store";
+import {LoginHeader} from "@/app/components/LoginHeader/LoginHeader";
 
 export const TopNavBar = () => {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
     const [open, setOpen] = useState(false);
+    const {isLogin} = useSelector((state: RootState) => state.auth);
 
     return (
+        <>
+        {isLogin?<LoginHeader/>:
         <header
             aria-label="Site Header"
             className={cx(
@@ -20,7 +26,7 @@ export const TopNavBar = () => {
             )}
         >
             <div className="flex h-10 w-full items-center justify-between">
-                <Logo />
+                <Logo/>
                 <nav
                     aria-label="Site Nav Bar"
                     className="flex items-center gap-2 text-sm font-medium"
@@ -41,5 +47,7 @@ export const TopNavBar = () => {
             </div>
             <Login open={open} setOpen={setOpen}/>
         </header>
+        }
+        </>
     );
 };

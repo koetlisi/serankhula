@@ -1,16 +1,24 @@
-import Image from "next/image";
-import { Hero } from "./home/Hero";
-import { Steps } from "./home/Steps";
-import {Suspense} from "react";
+"use client"
+import {HomePage} from "@/app/home/homePage";
+import React, {Suspense} from "react";
+import {useSelector} from "react-redux";
+import {RootState} from "@/app/lib/appRedux/store";
 import Loader from "@/app/components/Loader";
 
 export default function Home() {
+  const { isLogin } = useSelector((state: RootState) => state.auth);
+  const { selectedContent } = useSelector((state: RootState) => state.system);
+  const pageMap:{ [key: string]: React.ReactNode }={
+    Home:<HomePage/>
+  }
+  const content = !isLogin
+      ? pageMap.Home
+      : selectedContent === "Login"
+          ? pageMap.Home
+          : pageMap[selectedContent] || <div>Page not found</div>;
   return (
-    <main className="mx-auto max-w-screen-2xl bg-dot px-8 pb-32 text-gray-900 lg:px-12">
-      <Suspense fallback={<Loader/>}>
-          <Hero />
-          <Steps />
+      <Suspense fallback={<Loader />}>
+        {content}
       </Suspense>
-    </main>
   );
 }

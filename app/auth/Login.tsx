@@ -66,7 +66,7 @@ export const Login: React.FC<{ open: boolean, setOpen: (open: boolean) => void }
                 </div>
                 <div className="flex justify-end gap-4">
                     <Button onClick={handleCancel} variant="ghost" className="text-white">Cancel</Button>
-                    <Button  className="bg-green-600 text-white hover:bg-green-700">
+                    <Button onClick={handleSubmit}  className="bg-green-600 text-white hover:bg-green-700">
                         {isLoading?<Spin tip="Loading" size="small"/>:"Login"}
                     </Button>
                 </div>

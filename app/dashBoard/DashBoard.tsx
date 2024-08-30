@@ -6,7 +6,7 @@ import {getAllUser} from "@/app/lib/appRedux/thunks/auth/get-all-user";
 import {Feeds} from "@/app/dashBoard/Feeds/Feeds";
 import {RightBar} from "@/app/dashBoard/RightBar/RightBar";
 
-export const DashBoard =()=>{
+const DashBoard =()=>{
     const { toast } = useToast()
     const dispatch = useDispatch();
     useEffect(() => {
@@ -19,3 +19,5 @@ export const DashBoard =()=>{
         <RightBar profile={false}/>
     </div>
 }
+
+export default DashBoard

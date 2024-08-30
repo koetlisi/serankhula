@@ -1,11 +1,12 @@
 "use client"
-import {HomePage} from "@/app/home/homePage";
-import React, {Suspense} from "react";
+import React, {lazy, Suspense} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import Loader from "@/app/components/Loader";
-import {DashBoard} from "@/app/dashBoard/DashBoard";
 
+
+const HomePage = lazy(() => import("@/app/home/homePage"));
+const DashBoard = lazy(() => import("@/app/dashBoard/DashBoard"));
 export default function Home() {
   const { isLogin } = useSelector((state: RootState) => state.auth);
   const { selectedContent } = useSelector((state: RootState) => state.system);

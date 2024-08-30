@@ -56,6 +56,8 @@ export const LoginSlice = createSlice({
 export default LoginSlice.reducer;
 
 export const {
+    updateIsLoading,
+    updateUserData,
     updateUserName,
     updateUserSurname,
     updateUserEmail,

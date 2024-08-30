@@ -7,7 +7,7 @@ interface Props{
 }
 export const RightBar: React.FC<Props> = ({profile=false}) => {
     return <div className="right-bar mx-2">
-       <div className="right-bar-wrapper">
+       <div className="right-bar-wrapper mx-4">
             <RightBarHome/>
        </div>
     </div>

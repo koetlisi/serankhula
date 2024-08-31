@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .temp-dashboard-body {
+    @apply p-10 md:px-2 lg:px-10;
+
+    .temp-body-add {
+      @apply mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 2xl:grid-cols-12;
+
+      .resume-add {
+        @apply h-[280px] hover:scale-105 transition-all cursor-pointer rounded-lg p-14 py-24 border items-center flex justify-center bg-secondary;
+      }
+    }
+  }
+
+}
+
+.form-scroll {
+  flex: 3;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 5opx;
+  overflow-y: scroll;
+}

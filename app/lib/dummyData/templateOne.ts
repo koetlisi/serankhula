@@ -1,17 +1,16 @@
 import {LoginUserType} from "@/app/lib/types/loginUserType";
 import {ResumeState} from "@/app/lib/types/templateOneInterface";
-import {useState} from "react";
 
 export const TemplateOne = (userData:LoginUserType, resumeInfo:ResumeState) =>{
-    const [dummyData, setDummyData] = useState({
-        firstName: resumeInfo.resumeInfo.firstName.length>0?resumeInfo.resumeInfo.firstName:userData.userData.name,
-        lastName: resumeInfo.resumeInfo.lastName.length>0?resumeInfo.resumeInfo.lastName: userData.userData.surname,
-        jobTitle: resumeInfo.resumeInfo.jobTitle.length>0 ?resumeInfo.resumeInfo.jobTitle: 'Full stack developer',
-        address: resumeInfo.resumeInfo.address.length>0?resumeInfo.resumeInfo.address: 'Matlameng, Leribe Pitseng 320, Box 114',
-        phone: resumeInfo.resumeInfo.phone.length>0 ? `(266) ${resumeInfo.resumeInfo.phone}` : `(266) ${userData.userData.phone}`,
-        email: resumeInfo.resumeInfo.email.length>0?resumeInfo.resumeInfo.email: userData.userData.email,
-        themeColor: resumeInfo.resumeInfo.themeColor.length>0 ?resumeInfo.resumeInfo.themeColor: "#ff6666",
-        summery: resumeInfo.resumeInfo.summery.length>0?resumeInfo.resumeInfo.summery:
+    return {
+        firstName: resumeInfo.resumeInfo.firstName.length > 0 ? resumeInfo.resumeInfo.firstName : userData.userData.name,
+        lastName: resumeInfo.resumeInfo.lastName.length > 0 ? resumeInfo.resumeInfo.lastName : userData.userData.surname,
+        jobTitle: resumeInfo.resumeInfo.jobTitle.length > 0 ? resumeInfo.resumeInfo.jobTitle : 'Full stack developer',
+        address: resumeInfo.resumeInfo.address.length > 0 ? resumeInfo.resumeInfo.address : 'Matlameng, Leribe Pitseng 320, Box 114',
+        phone: resumeInfo.resumeInfo.phone.length > 0 ? `(266) ${resumeInfo.resumeInfo.phone}` : `(266) ${userData.userData.phone}`,
+        email: resumeInfo.resumeInfo.email.length > 0 ? resumeInfo.resumeInfo.email : userData.userData.email,
+        themeColor: resumeInfo.resumeInfo.themeColor.length > 0 ? resumeInfo.resumeInfo.themeColor : "#ff6666",
+        summery: resumeInfo.resumeInfo.summery.length > 0 ? resumeInfo.resumeInfo.summery :
             'I’m a full-stack developer with a strong passion for backend development, particularly in logic analysis and design. My expertise includes Node.js, Python, C++, JavaScript, TypeScript, Django, React, Flutter, and Laravel, enabling me to handle both frontend and backend seamlessly. I thrive on tackling complex backend challenges and am skilled in building robust, scalable, and secure applications using tools like Google Cloud services, containers, and databases. I’m constantly exploring new technologies, including AI, and I prioritize best practices to deliver efficient, well-designed solutions.',
 
         experience: resumeInfo.resumeInfo.experience.length > 0
@@ -105,15 +104,14 @@ export const TemplateOne = (userData:LoginUserType, resumeInfo:ResumeState) =>{
                 rating: skill.rating ?? 70
             }))
             : [
-                { id: 1, name: 'Laravel', rating: 80 },
-                { id: 2, name: 'React', rating: 90 },
-                { id: 3, name: 'MySql', rating: 70 },
-                { id: 4, name: 'React NextJs', rating: 90 },
-                { id: 5, name: 'Django', rating: 60 },
-                { id: 6, name: 'Fast Api', rating: 70 },
-                { id: 7, name: 'Python', rating: 80 },
-                { id: 8, name: 'Php', rating: 80 }
+                {id: 1, name: 'Laravel', rating: 80},
+                {id: 2, name: 'React', rating: 90},
+                {id: 3, name: 'MySql', rating: 70},
+                {id: 4, name: 'React NextJs', rating: 90},
+                {id: 5, name: 'Django', rating: 60},
+                {id: 6, name: 'Fast Api', rating: 70},
+                {id: 7, name: 'Python', rating: 80},
+                {id: 8, name: 'Php', rating: 80}
             ]
-    });
-    return { dummyData, setDummyData };
+    };
 }

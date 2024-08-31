@@ -13,7 +13,7 @@ const TemplatesDah = () => {
             <div className="temp-dashboard-body">
                 <h2 className="font-bold text-3xl">Templates</h2>
                 <p>Choose and Start Creating AI resume to your next Job role</p>
-                <div className="temp-body-add">
+                <div className="temp-body-add gap-3">
                     {templates.map((item,index)=>(
                         <ResumeItemCard resume={item} key={index}/>
                     ))}

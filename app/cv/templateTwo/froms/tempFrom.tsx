@@ -9,7 +9,10 @@ import {Button} from "@/components/ui/button";
 import {EyeIcon, LayoutGrid} from "lucide-react";
 import {IconButton} from "@mui/material";
 import {ArrowBack, ArrowForward} from "@mui/icons-material";
-export const TempFrom = () =>{
+import {Personal} from "@/app/cv/templateTwo/froms/customs/personal";
+import {Experience} from "@/app/cv/templateTwo/froms/customs/experience";
+
+export const TempFrom = () => {
     const dispatch = useDispatch()
     const context = useContext(ResumeInfoContext);
     if (!context) {
@@ -20,8 +23,9 @@ export const TempFrom = () =>{
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [activeIndex, setActiveIndex] = useState(1);
     const handleClick = (e: string) => dispatch(updateSelectedComponent(e))
-    return <div className="form-scroll">
-        <div className="justify-between flex items-center m-5">
+
+    return <div>
+        <div className="justify-between flex items-center m-5 sticky">
             <Button variant="outline" className="flex gap-2" size="sm"><LayoutGrid/>Theme</Button>
             <div className="flex gap-2">
                 {activeIndex > 1 && <IconButton onClick={() => setActiveIndex(activeIndex - 1)}
@@ -36,6 +40,12 @@ export const TempFrom = () =>{
                     <ArrowForward/>
                 </IconButton>}
             </div>
+        </div>
+        <div className="form-scroll">
+            {/*Personal Details*/}
+            {activeIndex === 1 && <Personal resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
+            {activeIndex === 2 && <Experience resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
+            {/*Summery*/}
         </div>
     </div>
 }

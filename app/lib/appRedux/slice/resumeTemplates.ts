@@ -15,15 +15,17 @@ const templatesSlice = createSlice({
     name: "resumeTemplates",
     initialState,
     reducers: {
-        addOrUpdateTemplate: (state, action: PayloadAction<Template>) => {
-            const existingTemplateIndex = state.templates.findIndex(
-                (template) => template.id === action.payload.id
-            )
-            if (existingTemplateIndex !== -1) {
-                state.templates[existingTemplateIndex] = action.payload;
-            } else {
-                state.templates.push(action.payload);
-            }
+        addOrUpdateTemplate: (state, action: PayloadAction<Template[]>) => {
+            action.payload.forEach(newTemplate => {
+                const existingIndex = state.templates.findIndex(template => template.id === newTemplate.id);
+                if (existingIndex >= 0) {
+                    // Update existing template
+                    state.templates[existingIndex] = newTemplate;
+                } else {
+                    // Add new template
+                    state.templates.push(newTemplate);
+                }
+            });
         },
         updateTemplate: (state, action: PayloadAction<Template>) => {
             const index = state.templates.findIndex(template => template.id === action.payload.id);

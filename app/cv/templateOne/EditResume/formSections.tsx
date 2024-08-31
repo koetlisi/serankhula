@@ -6,11 +6,11 @@ import {EyeIcon, LayoutGrid} from "lucide-react";
 import {useDispatch} from "react-redux";
 import ResumeInfoContext from "@/app/cv/context/resumeInfoContext";
 import {updateSelectedComponent} from "@/app/lib/appRedux/slice/systemSlice";
-import {Personal} from "@/app/cv/EditResume/form/personal";
-import {Summery} from "@/app/cv/EditResume/form/summery";
-import {Experience} from "@/app/cv/EditResume/form/experience";
-import {Education} from "@/app/cv/EditResume/form/education";
-import {Skill} from "@/app/cv/EditResume/form/skill";
+import {Personal} from "@/app/cv/templateOne/EditResume/form/personal";
+import {Summery} from "@/app/cv/templateOne/EditResume/form/summery";
+import {Experience} from "@/app/cv/templateOne/EditResume/form/experience";
+import {Education} from "@/app/cv/templateOne/EditResume/form/education";
+import {Skill} from "@/app/cv/templateOne/EditResume/form/skill";
 
 export const FormSections = () => {
     const dispatch = useDispatch()

@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage';
 import {
     authReducer,
     resumeReducer, resumeTemplateOneReducer,
-    resumeTemplatesReducer,
+    resumeTemplatesReducer, resumeTemplateTwoReducer,
     settingReducer,
     systemReducer,
     userReducer
@@ -28,6 +28,7 @@ const rootReducer = combineReducers({
     resumeTemplates: resumeTemplatesReducer,
     users: userReducer,
     resumeTemplateOne: resumeTemplateOneReducer,
+    resumeTemplateTwo: resumeTemplateTwoReducer,
 });
 
 // Create a persisted reducer

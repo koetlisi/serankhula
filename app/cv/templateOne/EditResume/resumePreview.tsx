@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
 import ResumeInfoContext from "@/app/cv/context/resumeInfoContext";
-import {PersonalDetails} from "@/app/cv/EditResume/preview/personalDetails";
-import {Summery} from "@/app/cv/EditResume/preview/summery";
-import {ProfessionalExperience} from "@/app/cv/EditResume/preview/professionalExperience";
-import {Education} from "@/app/cv/EditResume/preview/education";
-import {Skill} from "@/app/cv/EditResume/preview/skill";
+import {PersonalDetails} from "@/app/cv/templateOne/EditResume/preview/personalDetails";
+import {Summery} from "@/app/cv/templateOne/EditResume/preview/summery";
+import {ProfessionalExperience} from "@/app/cv/templateOne/EditResume/preview/professionalExperience";
+import {Education} from "@/app/cv/templateOne/EditResume/preview/education";
+import {Skill} from "@/app/cv/templateOne/EditResume/preview/skill";
 
 export const ResumePreview = () =>{
     const context = useContext(ResumeInfoContext);
@@ -15,7 +15,7 @@ export const ResumePreview = () =>{
 
     const { resumeInfo, setResumeInfo } = context;
 
-    return <div style={{borderBlockColor:resumeInfo.themeColor}} id="print-area"  className="form-scroll shadow-lg h-full p-14 m-5 print:m-0 border-t-[20px]">
+    return <div style={{borderBlockColor:resumeInfo.themeColor}} id="print-area"  className="form-scroll shadow-lg h-full p-5 m-5 print:m-0 border-t-[20px]">
         {/*personal resume info*/}
         <PersonalDetails resumeInfo={resumeInfo}/>
 

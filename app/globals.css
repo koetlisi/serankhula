@@ -61,10 +61,9 @@
 }
 
 .form-scroll {
-  flex: 3;
   height: calc(100vh - 50px);
   position: sticky;
-  top: 5px;
+  top: 0;
   overflow-y: scroll;
 }
 

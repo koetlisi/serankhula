@@ -6,7 +6,7 @@ import ResumeInfoContext from "@/app/cv/context/resumeInfoContext";
 import {FormSections} from "@/app/cv/EditResume/formSections";
 import {ResumePreview} from "@/app/cv/EditResume/resumePreview";
 
-export const EditResume: React.FC = () => {
+const EditResume: React.FC = () => {
     const {selectedResumeId} = useSelector((state: RootState) => state.system);
     const {templates} = useSelector((state: RootState) => state.resumeTemplates);
     const selectedResume = templates.find(resume => resume.id === selectedResumeId);
@@ -21,3 +21,5 @@ export const EditResume: React.FC = () => {
         </div>
     </ResumeInfoContext.Provider>
 }
+
+export default EditResume

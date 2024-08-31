@@ -3,12 +3,12 @@ import React, {lazy, Suspense} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import Loader from "@/app/components/Loader";
-import {EditResume} from "@/app/cv/editResume";
 
 
 const HomePage = lazy(() => import("@/app/home/homePage"));
 const DashBoard = lazy(() => import("@/app/dashBoard/DashBoard"));
 const TemplatesDah = lazy(() => import("@/app/cv/templatesDash"));
+const EditResume = lazy(() => import("@/app/cv/editResume"));
 export default function Home() {
   const { isLogin } = useSelector((state: RootState) => state.auth);
   const { selectedContent } = useSelector((state: RootState) => state.system);

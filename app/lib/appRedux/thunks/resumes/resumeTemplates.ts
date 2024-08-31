@@ -8,7 +8,7 @@ export const ResumeTemplates = () => async (dispatch: Dispatch, getState: () => 
     const newTemplate = [
         {
             id: 1,
-            name: "Others",
+            name: "default",
             qualification: "Postgraduate",
             requiredData: dummyData,
         }

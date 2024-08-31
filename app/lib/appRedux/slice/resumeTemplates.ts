@@ -19,10 +19,8 @@ const templatesSlice = createSlice({
             action.payload.forEach(newTemplate => {
                 const existingIndex = state.templates.findIndex(template => template.id === newTemplate.id);
                 if (existingIndex >= 0) {
-                    // Update existing template
                     state.templates[existingIndex] = newTemplate;
                 } else {
-                    // Add new template
                     state.templates.push(newTemplate);
                 }
             });
@@ -33,7 +31,7 @@ const templatesSlice = createSlice({
                 state.templates[index] = action.payload;
             }
         },
-        removeTemplate: (state, action: PayloadAction<string>) => {
+        removeTemplate: (state, action: PayloadAction<number>) => {
             state.templates = state.templates.filter(template => template.id !== action.payload);
         },
     },

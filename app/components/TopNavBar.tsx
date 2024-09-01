@@ -8,10 +8,13 @@ import {Login} from "@/app/auth/Login";
 import {useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import {LoginHeader} from "@/app/components/LoginHeader/LoginHeader";
+import {Register} from "@/app/auth/Register";
+import {AuthControls} from "@/app/auth/thunks/register/register";
 
 export const TopNavBar = () => {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
+    const {isDialogOpen, setDialogOpen} = AuthControls()
     const {isLogin,isDialog} = useSelector((state: RootState) => state.auth);
     const [open, setOpen] = useState(isDialog);
     return (
@@ -32,7 +35,7 @@ export const TopNavBar = () => {
                 >
                     <button
                         className="rounded-md px-1.5 py-2 text-gray-500 hover:bg-gray-100 focus-visible:bg-gray-100 lg:px-4"
-                        onClick={() => console.log('Register button clicked')}
+                        onClick={() =>setDialogOpen(true)}
                     >
                         Register
                     </button>
@@ -45,6 +48,7 @@ export const TopNavBar = () => {
                 </nav>
             </div>
             <Login open={open} setOpen={setOpen}/>
+            <Register isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen}/>
         </header>
         }
         </>

@@ -6,6 +6,7 @@ import ContactsInfo from "@/app/cv/templateTwo/preview/custome/contacts";
 import SkillsInfo from "@/app/cv/templateTwo/preview/custome/skills";
 import AboutMe from "@/app/cv/templateTwo/preview/custome/aboutMe";
 import ExperienceInfo from "@/app/cv/templateTwo/preview/custome/experience";
+import EducationInfo from "@/app/cv/templateTwo/preview/custome/education";
 export const TempReview = () =>{
     const context = useContext(ResumeInfoContextTwo);
     if (!context) {
@@ -22,6 +23,7 @@ export const TempReview = () =>{
         <div className="col-span-8">
             <AboutMe userInfo={resumeInfo}/>
             <ExperienceInfo userInfo={resumeInfo}/>
+            <EducationInfo userInfo={resumeInfo}/>
         </div>
     </div>
 }

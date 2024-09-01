@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
-import {ResumeInfo} from "@/app/lib/types/templateOneInterface";
-import ResumeInfoContext from "@/app/cv/context/resumeInfoContext";
 import {Index} from "@/app/cv/templateOne";
 import {TemplateTwo} from "@/app/cv/templateTwo/templateTwo";
 

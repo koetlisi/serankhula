@@ -15,7 +15,7 @@ const ExperienceInfo: React.FC<{ userInfo: ResumeInfo }> = ({ userInfo }) => {
                     <div className="flex border-gray-300 justify-between py-2">
                         <div className="flex flex-col">
                             <h5 className=" font-semibold text-gray-900 capitalize">{work.companyName}</h5>
-                            <p className="text-gray-600 text-xs">{work.startDate + " - " + work.endDate}</p>
+                            <p className="text-gray-600 text-xs justify-end">{work.startDate + " - " + work.endDate}</p>
                         </div>
                         <div className="pl-2 relative">
                             <h5 className="text-sm font-semibold text-blue-500 capitalize">{work.title}</h5>
@@ -24,8 +24,8 @@ const ExperienceInfo: React.FC<{ userInfo: ResumeInfo }> = ({ userInfo }) => {
                         </div>
 
                     </div>
-                    <div className="pl-2 relative pb-4">
-                        <p className="text-sm">{work.workSummery}</p>
+                    <div className="pb-4">
+                        <p className="text-xs text-gray-600">{work.workSummery}</p>
                     </div>
                 </div>
             ))}

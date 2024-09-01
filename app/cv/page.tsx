@@ -3,7 +3,7 @@ import './index.scss'
 import {RootState} from "@/app/lib/appRedux/store";
 import {useSelector} from "react-redux";
 import {ResumeItemCard} from "@/app/cv/templateOne/customes/resumeItemCard";
-import {SideBar} from "@/app/dashBoard/sideBar/SideBar";
+import {SideBar} from "@/app/dashboard/sideBar/SideBar";
 
 const TemplatesDah = () => {
     const {templates} = useSelector((state: RootState) => state.resumeTemplates);

@@ -8,9 +8,9 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import BadgeIcon from '@mui/icons-material/Badge';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import WalletIcon from '@mui/icons-material/Wallet';
-import {MenuLink} from "@/app/dashBoard/menuLink/MenuLink";
+import {MenuLink} from "@/app/dashboard/menuLink/MenuLink";
 import {logout} from "@/app/lib/appRedux/slice/loginSlice";
-import {Friends} from "@/app/dashBoard/Fiends/Friends";
+import {Friends} from "@/app/dashboard/Fiends/Friends";
 export const SideBar =()=>{
     const dispatch = useDispatch();
     const {userData} = useSelector((state: RootState) => state.auth);

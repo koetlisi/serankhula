@@ -5,11 +5,11 @@ import {RootState} from "@/app/lib/appRedux/store";
 import Loader from "@/app/components/Loader";
 
 
-const HomePage = lazy(() => import("@/app/home/homePage"));
-const DashBoard = lazy(() => import("@/app/dashBoard/DashBoard"));
-const TemplatesDah = lazy(() => import("@/app/cv/templatesDash"));
-const EditResume = lazy(() => import("@/app/cv/editResume"));
-export default function Home() {
+const HomePage = lazy(() => import("@/app/home/page"));
+const DashBoard = lazy(() => import("@/app/dashboard/page"));
+const TemplatesDah = lazy(() => import("@/app/cv/page"));
+const EditResume = lazy(() => import("@/app/cv/edit/page"));
+export default function Page() {
   const { isLogin } = useSelector((state: RootState) => state.auth);
   const { selectedContent } = useSelector((state: RootState) => state.system);
   const pageMap:{ [key: string]: React.ReactNode }={

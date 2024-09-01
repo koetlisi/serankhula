@@ -1,7 +1,7 @@
 import { PlusIcon } from "lucide-react";
 import React from "react";
 import './storycard.css.scss';
-import {User} from "@/app/dashBoard/Fiends/dummyData";
+import {User} from "@/app/dashboard/Fiends/dummyData";
 
 
 // Define a Props interface for the component

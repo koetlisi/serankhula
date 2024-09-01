@@ -1,8 +1,8 @@
 import React from 'react';
 import './stories.css.scss';
-import {Users} from "@/app/dashBoard/Fiends/dummyData";
+import {Users} from "@/app/dashboard/Fiends/dummyData";
 import {CarouselSize} from "@/app/components/Slider";
-import {StoryCard} from "@/app/dashBoard/Feeds/Stories/StoryCard/StoryCard";
+import {StoryCard} from "@/app/dashboard/Feeds/Stories/StoryCard/StoryCard";
 
 export const Stories: React.FC = () => {
     return (

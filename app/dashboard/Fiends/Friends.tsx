@@ -2,7 +2,7 @@ import React from "react";
 import './friends.css.scss'
 import {Button, Popover} from "antd";
 import {User} from "@/app/lib/types/loginUserType";
-import {ActionOnPerson} from "@/app/dashBoard/Fiends/actionOnPerson";
+import {ActionOnPerson} from "@/app/dashboard/Fiends/actionOnPerson";
 export const Friends: React.FC<{ user: User }> = ({ user }) =>{
 
     const shouldShowIcon = !user.profileImage || user.profileImage === '' || user.profileImage===null;

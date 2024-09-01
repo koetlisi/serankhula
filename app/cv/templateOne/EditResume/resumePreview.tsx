@@ -1,13 +1,13 @@
 import React, {useContext} from "react";
-import ResumeInfoContext from "@/app/cv/context/resumeInfoContext";
 import {PersonalDetails} from "@/app/cv/templateOne/EditResume/preview/personalDetails";
 import {Summery} from "@/app/cv/templateOne/EditResume/preview/summery";
 import {ProfessionalExperience} from "@/app/cv/templateOne/EditResume/preview/professionalExperience";
 import {Education} from "@/app/cv/templateOne/EditResume/preview/education";
 import {Skill} from "@/app/cv/templateOne/EditResume/preview/skill";
+import {ResumeInfoContextOne} from "@/app/cv/templateOne";
 
 export const ResumePreview = () =>{
-    const context = useContext(ResumeInfoContext);
+    const context = useContext(ResumeInfoContextOne);
 
     if (!context) {
         return <div>Error: Resume information is not available.</div>;

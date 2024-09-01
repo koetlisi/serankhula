@@ -4,17 +4,17 @@ import {IconButton} from "@mui/material";
 import {ArrowBack, ArrowForward, ViewAgenda} from "@mui/icons-material";
 import {EyeIcon, LayoutGrid} from "lucide-react";
 import {useDispatch} from "react-redux";
-import ResumeInfoContext from "@/app/cv/context/resumeInfoContext";
 import {updateSelectedComponent} from "@/app/lib/appRedux/slice/systemSlice";
 import {Personal} from "@/app/cv/templateOne/EditResume/form/personal";
 import {Summery} from "@/app/cv/templateOne/EditResume/form/summery";
 import {Experience} from "@/app/cv/templateOne/EditResume/form/experience";
 import {Education} from "@/app/cv/templateOne/EditResume/form/education";
 import {Skill} from "@/app/cv/templateOne/EditResume/form/skill";
+import {ResumeInfoContextOne} from "@/app/cv/templateOne";
 
 export const FormSections = () => {
     const dispatch = useDispatch()
-    const context = useContext(ResumeInfoContext);
+    const context = useContext(ResumeInfoContextOne);
     const [activeIndex, setActiveIndex] = useState(1);
     if (!context) {
         return <div>Error: Resume information is not available.</div>;

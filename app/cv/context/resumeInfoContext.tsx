@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction, createContext } from "react";
-import {ResumeInfo} from "@/app/lib/types/templateOneInterface";
-export interface ResumeInfoContextType {
-    resumeInfo: ResumeInfo;
-    setResumeInfo: Dispatch<SetStateAction<ResumeInfo>>;
+
+export interface ResumeInfoContextType<T> {
+    resumeInfo: T;
+    setResumeInfo: Dispatch<SetStateAction<T>>;
 }
 
-const ResumeInfoContext = createContext<ResumeInfoContextType | null>(null);
+// Use a function to create a generic context
+export function createResumeInfoContext<T>() {
+    return createContext<ResumeInfoContextType<T> | null>(null);
+}
 
-export default ResumeInfoContext;

@@ -29,7 +29,7 @@ export interface Skill {
 export interface ResumeInfo {
     firstName: string;
     lastName: string;
-    profileImg:string;
+    userImage:string;
     jobTitle: string;
     address: string;
     phone: string;

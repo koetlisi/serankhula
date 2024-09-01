@@ -9,7 +9,7 @@ import {
     ThumbUp,
     ThumbUpAltOutlined
 } from "@mui/icons-material";
-import {Posts, User, Users} from "@/app/dashBoard/Fiends/dummyData";
+import {Posts, User, Users} from "@/app/dashboard/Fiends/dummyData";
 interface Props{
     posts: Posts
     users : User[]

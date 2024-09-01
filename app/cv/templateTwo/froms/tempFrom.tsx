@@ -8,17 +8,19 @@ import {ArrowBack, ArrowForward} from "@mui/icons-material";
 import {Personal} from "@/app/cv/templateTwo/froms/customs/personal";
 import {Experience} from "@/app/cv/templateTwo/froms/customs/experience";
 import {ResumeInfoContextTwo} from "@/app/cv/templateTwo/templateTwo";
+import {Summery} from "@/app/cv/templateTwo/froms/customs/summery";
+import {Education} from "@/app/cv/templateTwo/froms/customs/education";
+import {Skill} from "@/app/cv/templateTwo/froms/customs/skill";
 
 export const TempFrom = () => {
     const dispatch = useDispatch()
     const context = useContext(ResumeInfoContextTwo);
+    const [activeIndex, setActiveIndex] = useState(1);
     if (!context) {
         return <div>Error: Resume information is not available.</div>;
     }
     // @ts-ignore
     const {resumeInfo, setResumeInfo} = context;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [activeIndex, setActiveIndex] = useState(1);
     const handleClick = (e: string) => dispatch(updateSelectedComponent(e))
 
     return <div>
@@ -41,7 +43,10 @@ export const TempFrom = () => {
         <div className="form-scroll">
             {/*Personal Details*/}
             {activeIndex === 1 && <Personal resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
-            {activeIndex === 2 && <Experience resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
+            {activeIndex === 2 && <Summery resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
+            {activeIndex === 3 && <Experience resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
+            {activeIndex === 4 && <Education resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
+            {activeIndex === 5 && <Skill resumeInfo={resumeInfo} setResumeInfo={setResumeInfo}/>}
             {/*Summery*/}
         </div>
     </div>

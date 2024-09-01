@@ -7,7 +7,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
-import {StoryCard} from "@/app/dashBoard/Feeds/Stories/StoryCard/StoryCard";
+import {StoryCard} from "@/app/dashboard/Feeds/Stories/StoryCard/StoryCard";
 
 export const CarouselSize: React.FC<{ data: any[] }> = ({ data }) => {
     return (

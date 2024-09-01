@@ -1,9 +1,9 @@
 import './feeds.css.scss'
 import React from "react";
-import {Posts, Users} from "@/app/dashBoard/Fiends/dummyData";
-import {Post} from "@/app/dashBoard/Feeds/Post/Post";
-import {Share} from "@/app/dashBoard/Feeds/Share/Share";
-import {Stories} from "@/app/dashBoard/Feeds/Stories/Stories";
+import {Posts, Users} from "@/app/dashboard/Fiends/dummyData";
+import {Post} from "@/app/dashboard/Feeds/Post/Post";
+import {Share} from "@/app/dashboard/Feeds/Share/Share";
+import {Stories} from "@/app/dashboard/Feeds/Stories/Stories";
 interface Prop {
     stories:boolean
 }

@@ -1,6 +1,6 @@
 import './home.css.scss';
-import {OnlineFriends} from "@/app/dashBoard/Fiends/OnlineFriends/OnlineFriends";
-import {Users} from "@/app/dashBoard/Fiends/dummyData";
+import {OnlineFriends} from "@/app/dashboard/Fiends/OnlineFriends/OnlineFriends";
+import {Users} from "@/app/dashboard/Fiends/dummyData";
 
 export const RightBarHome = () =>{
     return <div className="right-bar-home">

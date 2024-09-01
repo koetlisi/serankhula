@@ -1,6 +1,6 @@
 import React from "react";
 import './rightbar.css.scss'
-import {RightBarHome} from "@/app/dashBoard/RightBar/RightBarHome/RightBarHome";
+import {RightBarHome} from "@/app/dashboard/RightBar/RightBarHome/RightBarHome";
 
 interface Props{
     profile: boolean

@@ -1,6 +1,6 @@
 import './online.css.scss'
 import React from "react";
-import {User} from "@/app/dashBoard/Fiends/dummyData";
+import {User} from "@/app/dashboard/Fiends/dummyData";
 
 export const OnlineFriends:  React.FC<{ user: User }> = ({ user }) =>{
     return <div className="online">

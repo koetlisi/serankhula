@@ -12,9 +12,8 @@ import {LoginHeader} from "@/app/components/LoginHeader/LoginHeader";
 export const TopNavBar = () => {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
-    const [open, setOpen] = useState(false);
-    const {isLogin} = useSelector((state: RootState) => state.auth);
-
+    const {isLogin,isDialog} = useSelector((state: RootState) => state.auth);
+    const [open, setOpen] = useState(isDialog);
     return (
         <>
         {isLogin?<LoginHeader/>:
@@ -39,7 +38,7 @@ export const TopNavBar = () => {
                     </button>
                     <button
                         className="rounded-md px-1.5 py-2 text-gray-500 hover:bg-gray-100 focus-visible:bg-gray-100 lg:px-4"
-                        onClick={() => setOpen(true)}
+                        onClick={() => setOpen(!isLogin)}
                     >
                         Login
                     </button>

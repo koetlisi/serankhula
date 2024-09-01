@@ -1,9 +1,12 @@
 import { Dispatch, SetStateAction, createContext } from "react";
-export interface ResumeInfoContextType {
-    resumeInfo: any;
-    setResumeInfo: Dispatch<SetStateAction<any>>;
+
+export interface ResumeInfoContextType<T> {
+    resumeInfo: T;
+    setResumeInfo: Dispatch<SetStateAction<T>>;
 }
 
-const ResumeInfoContext = createContext<ResumeInfoContextType | null>(null);
+// Use a function to create a generic context
+export function createResumeInfoContext<T>() {
+    return createContext<ResumeInfoContextType<T> | null>(null);
+}
 
-export default ResumeInfoContext;

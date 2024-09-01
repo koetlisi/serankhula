@@ -1,20 +1,17 @@
 import {useDispatch} from "react-redux";
 import React, {useContext, useState} from "react";
-// @ts-ignore
-import ResumeInfoContext from "@/app/cv/context/resumeInfoContext";
-// @ts-ignore
 import {updateSelectedComponent} from "@/app/lib/appRedux/slice/systemSlice";
-// @ts-ignore
 import {Button} from "@/components/ui/button";
 import {EyeIcon, LayoutGrid} from "lucide-react";
 import {IconButton} from "@mui/material";
 import {ArrowBack, ArrowForward} from "@mui/icons-material";
 import {Personal} from "@/app/cv/templateTwo/froms/customs/personal";
 import {Experience} from "@/app/cv/templateTwo/froms/customs/experience";
+import {ResumeInfoContextTwo} from "@/app/cv/templateTwo/templateTwo";
 
 export const TempFrom = () => {
     const dispatch = useDispatch()
-    const context = useContext(ResumeInfoContext);
+    const context = useContext(ResumeInfoContextTwo);
     if (!context) {
         return <div>Error: Resume information is not available.</div>;
     }

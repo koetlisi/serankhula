@@ -3,7 +3,7 @@ import {ResumeState} from "@/app/lib/types/templateTwoInterface";
 
 export const TemplateTwo = (userData:LoginUserType, resumeInfo:ResumeState) =>{
     return {
-        userImage:resumeInfo.resumeInfo.profileImg.length>0?resumeInfo.resumeInfo.profileImg: userData.userData.profileImage,
+        userImage:resumeInfo.resumeInfo.userImage.length>0?resumeInfo.resumeInfo.userImage: userData.userData.profileImage,
         firstName: resumeInfo.resumeInfo.firstName.length > 0 ? resumeInfo.resumeInfo.firstName : userData.userData.name,
         lastName: resumeInfo.resumeInfo.lastName.length > 0 ? resumeInfo.resumeInfo.lastName : userData.userData.surname,
         jobTitle: resumeInfo.resumeInfo.jobTitle.length > 0 ? resumeInfo.resumeInfo.jobTitle : 'Full stack developer',
@@ -11,9 +11,7 @@ export const TemplateTwo = (userData:LoginUserType, resumeInfo:ResumeState) =>{
         phone: resumeInfo.resumeInfo.phone.length > 0 ? `(266) ${resumeInfo.resumeInfo.phone}` : `(266) ${userData.userData.phone}`,
         email: resumeInfo.resumeInfo.email.length > 0 ? resumeInfo.resumeInfo.email : userData.userData.email,
         themeColor: resumeInfo.resumeInfo.themeColor.length > 0 ? resumeInfo.resumeInfo.themeColor : "#ff6666",
-        summery: resumeInfo.resumeInfo.summery.length > 0 ? resumeInfo.resumeInfo.summery :
-            'I’m a full-stack developer with a strong passion for backend development, particularly in logic analysis and design. My expertise includes Node.js, Python, C++, JavaScript, TypeScript, Django, React, Flutter, and Laravel, enabling me to handle both frontend and backend seamlessly. I thrive on tackling complex backend challenges and am skilled in building robust, scalable, and secure applications using tools like Google Cloud services, containers, and databases. I’m constantly exploring new technologies, including AI, and I prioritize best practices to deliver efficient, well-designed solutions.',
-
+        summery: resumeInfo.resumeInfo.summery.length > 0 ? resumeInfo.resumeInfo.summery : 'I’m a full-stack developer with a strong passion for backend development, particularly in logic analysis and design. My expertise spans Node.js, Python, C++, JavaScript, TypeScript, Django, React, Flutter, and Laravel, allowing me to handle both frontend and backend seamlessly. I thrive on tackling complex backend challenges, building robust, scalable, and secure applications. I utilize tools like Google Cloud, containers, and databases to deliver efficient solutions. I\'m also exploring new technologies, including AI, and I prioritize best practices in my work.',
         experience: resumeInfo.resumeInfo.experience.length > 0
             ? resumeInfo.resumeInfo.experience.map((experience, index) => ({
                 id: index + 1,
@@ -93,7 +91,7 @@ export const TemplateTwo = (userData:LoginUserType, resumeInfo:ResumeState) =>{
                     startDate: 'Jul 2014',
                     endDate: 'May 2019',
                     qualification: 'Bachelor of Science (B.Sc)',
-                    major: 'Computer Science & Mathematics',
+                    major: 'Comp Science & Maths',
                     description: 'At NUL is where I developed a deep understanding of mathematical theories and their application to computer science. The rigorous curriculum equipped me with strong analytical and problem-solving skills, enabling me to tackle complex computational challenges. My studies at NUL provided a solid foundation in both theoretical and practical aspects of computing, preparing me for a successful career in the tech industry. This experience also fostered my passion for continuous learning and innovation.'
                 }
             ],

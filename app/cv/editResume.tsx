@@ -13,7 +13,7 @@ const EditResume: React.FC = () => {
         default:<Index/>,
         templateTwo:<TemplateTwo/>
     }
-    return pageMap[selectedResume?.name??'null'] 
+    return pageMap[selectedResume?.name??'null']
 
 }
 

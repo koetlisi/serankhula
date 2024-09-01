@@ -14,6 +14,6 @@ export const TemplateTwoInterfaceInitialState: ResumeState = {
         experience: [],
         education: [],
         skills: [],
-        profileImg: ""
+        userImage: ""
     }
 };

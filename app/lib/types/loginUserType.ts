@@ -15,6 +15,7 @@ export interface User {
 export interface LoginUserType {
     isLogin: boolean;
     isLoading: boolean;
+    isDialog:boolean;
     userData: {
         token: string;
         name: string;

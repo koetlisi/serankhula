@@ -8,6 +8,7 @@ export const LoginSlice = createSlice({
     reducers:{
         logout: (state) => {
             state.isLogin = false;
+            state.isDialog = false;
             state.userData = initialLoginState.userData;
         },
 
@@ -48,6 +49,7 @@ export const LoginSlice = createSlice({
             state.isLoading = action.payload
         },
         updateIsLogin: (state, action: PayloadAction<LoginUserType['isLogin']>) => {
+            state.isDialog = false;
             state.isLogin = action.payload
         },
     }

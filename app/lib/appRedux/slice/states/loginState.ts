@@ -3,6 +3,7 @@ import {LoginUserType} from "@/app/lib/types/loginUserType";
 export const initialLoginState: LoginUserType = {
     isLogin: false,
     isLoading: false,
+    isDialog: false,
     userData: {
         token: '',
         name: '',

@@ -127,7 +127,7 @@ export const Register: React.FC<Prop> = ({ isDialogOpen, setDialogOpen }) => {
                 </AlertDialogHeader>
                 {!isLoading && (
                     <div className="flex justify-between mt-4">
-                        <AlertDialogCancel>Login</AlertDialogCancel>
+                        <AlertDialogCancel className="text-black">Login</AlertDialogCancel>
                         <Button onClick={() => Submit(form, toast, dispatch, setDialogOpen)}>Continue</Button>
                     </div>
                 )}

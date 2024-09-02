@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/LoginHeader/LoginHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/LoginHeader/LoginHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/sideBar/SideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/sideBar/SideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/slice/systemSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/systemSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/types/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,31 +50,46 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "makhaola",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/nalane/Documents/GitHub/serankhula/app/cv/templateTwo/froms/customs",
+    "last_opened_file_path": "/home/nalane/Documents/GitHub/serankhula/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/nalane/Documents/GitHub/serankhula/node_modules/typescript/lib",
+    "ts.external.directory.path": "/snap/intellij-idea-ultimate/525/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/app/cv/templateTwo/froms/customs" />
       <recent name="$PROJECT_DIR$/app/cv/templateTwo/preview/custome" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/components/widgets" />
-      <recent name="$PROJECT_DIR$/app/cv" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/auth/thunks/register" />
       <recent name="$PROJECT_DIR$/app/cv/edit" />
       <recent name="$PROJECT_DIR$/app/cv/[edit]" />
       <recent name="$PROJECT_DIR$/app/pages" />
       <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/page" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="resumebuilderparser-main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="resumebuilderparser-main" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -95,7 +114,8 @@
       <workItem from="1725038235943" duration="10545000" />
       <workItem from="1725080785798" duration="47462000" />
       <workItem from="1725144061845" duration="12838000" />
-      <workItem from="1725185967434" duration="10175000" />
+      <workItem from="1725185967434" duration="27794000" />
+      <workItem from="1725257310240" duration="759000" />
     </task>
     <servers />
   </component>
@@ -116,8 +136,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/lib/appRedux/slice/systemSlice.ts</url>
-          <line>7</line>
-          <properties lambdaOrdinal="-1" />
+          <line>8</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

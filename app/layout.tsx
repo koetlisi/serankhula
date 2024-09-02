@@ -7,6 +7,7 @@ import React from "react";
 import Head from "next/head";
 import {Providers} from "@/app/lib/appRedux/provider";
 import {TopNavBar} from "@/app/components/TopNavBar";
+import {WebSocketProvider} from "@/lib/webSocket/webSocketProvider";
 
 const fontSans = FontSans({
     subsets: ["latin"],
@@ -39,7 +40,9 @@ export default function RootLayout({
         <Providers>
             <TopNavBar/>
             <Toaster/>
-            {children}
+            <WebSocketProvider>
+                {children}
+            </WebSocketProvider>
         </Providers>
         </body>
         </html>

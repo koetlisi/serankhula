@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {UserRequest, UserRequestList } from "../../types/userRequest";
+import { UserRequest } from "@/app/lib/types/userRequest";
+
 
 interface SystemState {
     selectedContent: string;
@@ -23,14 +24,11 @@ export const systemSlice = createSlice({
     name: 'system',
     initialState,
     reducers: {
-        updateUserRequestNotification:(state, action:PayloadAction<UserRequest>)=>{
-            console.log('Current friendRequestList:', state.friendRequestList);
-            console.log('Incoming payload:', action.payload);
-
+        updateUserRequestNotification: (state, action: PayloadAction<UserRequest>) => {
+            console.log(state.forwardContent);
             if (!state.friendRequestList) {
                 state.friendRequestList = []; // Fallback to an empty array if it's undefined
             }
-
             state.friendRequestList.push(action.payload);
         },
         updateSelectedComponent: (state, action: PayloadAction<string>) => {

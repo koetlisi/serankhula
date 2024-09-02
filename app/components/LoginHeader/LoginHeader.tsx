@@ -19,8 +19,7 @@ export const LoginHeader = () => {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
     const {userData} = useSelector((state: RootState) => state.auth);
-    const {friendRequestNot} = useSelector((state: RootState) => state.system);
-    const {notifications} = useWebSocket();
+    const {friendRequestNot,friendRequestList} = useSelector((state: RootState) => state.system);
     const [open, setOpen] = useState(false);
     const isOpen = () => {
         setOpen(prevState => !open);
@@ -42,7 +41,7 @@ export const LoginHeader = () => {
             <div className='navbar-right'>
                 <NavigationButtons/>
                 <div className="navbar-icons">
-                    <CustomProver node={<UserRequest notification={notifications}/>} count={friendRequestNot} icon={<Person style={{backgroundColor: "grey", color: "white", borderRadius: "50%"}}/>}/>
+                    <CustomProver node={<UserRequest />} count={friendRequestNot} icon={<Person style={{backgroundColor: "grey", color: "white", borderRadius: "50%"}}/>}/>
                     <Badge badgeContent={4} color="primary" className="navbar-icon-item">
                         <ChatBubble style={{backgroundColor: "grey", color: "white", borderRadius: "50%"}}/>
                     </Badge>

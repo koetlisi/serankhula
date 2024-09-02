@@ -5,13 +5,15 @@ interface SystemState {
     prevContent: string[];
     forwardContent: string[];
     selectedResumeId: number;
+    friendRequestNot: number;
 }
 
 const initialState: SystemState = {
     selectedContent: "Login",
     prevContent: [],
     forwardContent: [],
-    selectedResumeId: 0
+    selectedResumeId: 0,
+    friendRequestNot:0
 };
 
 export const systemSlice = createSlice({
@@ -27,6 +29,9 @@ export const systemSlice = createSlice({
         },
         updateSelectedResumeId: (state, action: PayloadAction<number>) => {
             state.selectedResumeId = action.payload;
+        },
+        updateFriendRequestCount: (state, action: PayloadAction<number>) => {
+            state.friendRequestNot = state.friendRequestNot+action.payload;
         },
         popPreviousContent: (state) => {
             if (state.prevContent.length > 0) {
@@ -52,6 +57,7 @@ export const systemSlice = createSlice({
 export default systemSlice.reducer;
 export const {
     updateSelectedComponent,
+    updateFriendRequestCount,
     updateSelectedResumeId,
     popPreviousContent,
     popForwardContent

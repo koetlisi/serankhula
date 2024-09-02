@@ -16,6 +16,7 @@ export const LoginHeader = () => {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
     const {userData} = useSelector((state: RootState) => state.auth);
+    const {friendRequestNot} = useSelector((state: RootState) => state.system);
     const [open, setOpen] = useState(false);
     const isOpen = () => {
         setOpen(prevState => !open);
@@ -37,7 +38,7 @@ export const LoginHeader = () => {
             <div className='navbar-right'>
                 <NavigationButtons/>
                 <div className="navbar-icons">
-                    <Badge sx={{color: "white"}} badgeContent={4} color="primary" className="navbar-icon-item">
+                    <Badge sx={{color: "white"}} badgeContent={friendRequestNot} color="primary" className="navbar-icon-item">
                         <Person style={{backgroundColor: "white", color: "black", borderRadius: "50%"}}/>
                     </Badge>
                     <Badge badgeContent={4} color="primary" className="navbar-icon-item">

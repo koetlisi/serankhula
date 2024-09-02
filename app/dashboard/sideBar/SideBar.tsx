@@ -11,8 +11,10 @@ import WalletIcon from '@mui/icons-material/Wallet';
 import {MenuLink} from "@/app/dashboard/menuLink/MenuLink";
 import {logout} from "@/app/lib/appRedux/slice/loginSlice";
 import {Friends} from "@/app/dashboard/Fiends/Friends";
+import {useWebSocket} from "@/lib/webSocket/webSocketProvider";
 export const SideBar =()=>{
     const dispatch = useDispatch();
+    const { sendMessage } = useWebSocket();
     const {userData} = useSelector((state: RootState) => state.auth);
     const {users} = useSelector((state: RootState) => state.users);
     const handleClick = (page:string) => dispatch(updateSelectedComponent(page))
@@ -24,8 +26,10 @@ export const SideBar =()=>{
                      className="sidebar-icon"/>
                 <span className="sidebar-list-item-text menu-link-text">{userData.name + ' ' + userData.surname}</span>
             </div>
-            <MenuLink onClick={() => {
-            }} icon={AccountBalanceIcon} text='Students'/>
+            <MenuLink onClick={() => sendMessage({
+                receiver_id: 2,
+                message: "d"
+            })} icon={AccountBalanceIcon} text='Students'/>
             <MenuLink onClick={() => {
             }} icon={SchoolIcon} text='Graduates'/>
             <MenuLink onClick={() => {

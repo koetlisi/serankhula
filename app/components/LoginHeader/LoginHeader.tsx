@@ -1,22 +1,26 @@
+"use client"
 import {useDispatch, useSelector} from "react-redux";
 import {popForwardContent, popPreviousContent, updateSelectedComponent} from "@/app/lib/appRedux/slice/systemSlice";
 import {cx} from "@/app/lib/cx";
 import {usePathname} from "next/navigation";
 import {Logo} from "@/app/components/widgets/Logo/Logo";
-import {Input} from "antd";
+import {Input, Popover} from "antd";
 import {ChatBubble, Notifications, Person, Search} from "@mui/icons-material";
 import {Badge, IconButton} from "@mui/material";
 import './login.scss'
 import {useState} from "react";
 import {RootState} from "@/app/lib/appRedux/store";
-import {FaArrowLeft, FaArrowRight} from "react-icons/fa";
 import {NavigationButtons} from "@/app/components/LoginHeader/navigatorBtn";
+import { UserRequest } from "@/app/dashboard/Fiends/userRequest";
+import { CustomProver } from "./customProver";
+import { useWebSocket } from "@/lib/webSocket/webSocketProvider";
 
 export const LoginHeader = () => {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
     const {userData} = useSelector((state: RootState) => state.auth);
     const {friendRequestNot} = useSelector((state: RootState) => state.system);
+    const {notifications} = useWebSocket();
     const [open, setOpen] = useState(false);
     const isOpen = () => {
         setOpen(prevState => !open);
@@ -38,9 +42,7 @@ export const LoginHeader = () => {
             <div className='navbar-right'>
                 <NavigationButtons/>
                 <div className="navbar-icons">
-                    <Badge sx={{color: "white"}} badgeContent={friendRequestNot} color="primary" className="navbar-icon-item">
-                        <Person style={{backgroundColor: "white", color: "black", borderRadius: "50%"}}/>
-                    </Badge>
+                    <CustomProver node={<UserRequest notification={notifications}/>} count={friendRequestNot} icon={<Person style={{backgroundColor: "grey", color: "white", borderRadius: "50%"}}/>}/>
                     <Badge badgeContent={4} color="primary" className="navbar-icon-item">
                         <ChatBubble style={{backgroundColor: "grey", color: "white", borderRadius: "50%"}}/>
                     </Badge>

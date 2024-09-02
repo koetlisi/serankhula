@@ -3,11 +3,12 @@ import React, {createContext, useContext, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {isLocalhost, socketLocal} from "@/app/lib/types/constants";
 import {RootState} from "@/app/lib/appRedux/store";
-import {updateFriendRequestCount} from "@/app/lib/appRedux/slice/systemSlice";
+import {updateFriendRequestCount, updateUserRequestNotification} from "@/app/lib/appRedux/slice/systemSlice";
 import { playSystemBeep } from '@/app/sounds';
+import {UserRequest, UserRequestList } from '@/app/lib/types/userRequest';
 
 interface WebSocketContextProps {
-    notifications: string[];
+    notifications: UserRequest[];
     sendMessage: (message: any) => void;
 }
 
@@ -15,7 +16,8 @@ const WebSocketContext = createContext<WebSocketContextProps | undefined>(undefi
 
 export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
     const {userData, isLogin} = useSelector((state: RootState) => state.auth);
-    const [notifications, setNotifications] = useState<string[]>([]);
+    const {friendRequestList} = useSelector((state: RootState) => state.system);
+    const [notifications, setNotifications] = useState<UserRequest[]>(friendRequestList);
     const [ws, setWs] = useState<WebSocket | null>(null);
     const dispatch = useDispatch()
     useEffect(() => {
@@ -69,12 +71,12 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({chil
     const handleReceiveMessage = (message: string) => {
         try {
             const parsedMessage = JSON.parse(message);
-            JSON.stringify(parsedMessage)
             const content = JSON.parse(parsedMessage.data)
             if(content.receiver_id === userData.id){
                 if(content.operation === 'friendRequest'){
                     dispatch(updateFriendRequestCount(1))
-                    setNotifications(prevNotifications => [...prevNotifications, content.message]);
+                    const data:UserRequest = content.message
+                    dispatch(updateUserRequestNotification(data))
                     if (Notification.permission === "granted") {
                         playSystemBeep()
                     }

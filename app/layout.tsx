@@ -38,9 +38,9 @@ export default function RootLayout({
             fontSans.variable
         )}>
         <Providers>
-            <TopNavBar/>
-            <Toaster/>
             <WebSocketProvider>
+                <TopNavBar/>
+                <Toaster/>
                 {children}
             </WebSocketProvider>
         </Providers>

@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/sounds.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/LoginHeader/LoginHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/LoginHeader/LoginHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/Fiends/Friends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/Fiends/Friends.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/Fiends/actionOnPerson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/Fiends/actionOnPerson.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/sideBar/SideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/sideBar/SideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/slice/systemSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/systemSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/types/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/webSocket/webSocketProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webSocket/webSocketProvider.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -48,7 +49,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "makhaola",
+    "git-widget-placeholder": "Mofoka",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/nalane/Documents/GitHub/serankhula/lib",
     "node.js.detected.package.eslint": "true",
@@ -69,11 +70,11 @@
       <recent name="$PROJECT_DIR$/app/components/widgets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/auth/thunks/register" />
       <recent name="$PROJECT_DIR$/app/cv/edit" />
       <recent name="$PROJECT_DIR$/app/cv/[edit]" />
       <recent name="$PROJECT_DIR$/app/pages" />
-      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
   <component name="RunManager">
@@ -116,6 +117,7 @@
       <workItem from="1725144061845" duration="12838000" />
       <workItem from="1725185967434" duration="27794000" />
       <workItem from="1725257310240" duration="759000" />
+      <workItem from="1725260868401" duration="9592000" />
     </task>
     <servers />
   </component>

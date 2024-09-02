@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {isLocalhost, socketLocal} from "@/app/lib/types/constants";
 import {RootState} from "@/app/lib/appRedux/store";
 import {updateFriendRequestCount} from "@/app/lib/appRedux/slice/systemSlice";
+import { playSystemBeep } from '@/app/sounds';
 
 interface WebSocketContextProps {
     notifications: string[];
@@ -18,6 +19,9 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({chil
     const [ws, setWs] = useState<WebSocket | null>(null);
     const dispatch = useDispatch()
     useEffect(() => {
+        if ("Notification" in window) {
+            Notification.requestPermission();
+        }
         if (isLogin && userData.id) {
             const webSocket = isLocalhost
                 ? new WebSocket('ws://' + socketLocal + '/ws/' + userData.id)
@@ -65,11 +69,17 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({chil
     const handleReceiveMessage = (message: string) => {
         try {
             const parsedMessage = JSON.parse(message);
-            const alertMessage = `Message from User ${parsedMessage.sender_id}: ${parsedMessage.content}`;
-            // Add the received message to the notifications array
-            setNotifications(prevNotifications => [...prevNotifications, alertMessage]);
-            dispatch(updateFriendRequestCount(1))
-            console.log(alertMessage)
+            JSON.stringify(parsedMessage)
+            const content = JSON.parse(parsedMessage.data)
+            if(content.receiver_id === userData.id){
+                if(content.operation === 'friendRequest'){
+                    dispatch(updateFriendRequestCount(1))
+                    setNotifications(prevNotifications => [...prevNotifications, content.message]);
+                    if (Notification.permission === "granted") {
+                        playSystemBeep()
+                    }
+                }
+            }
         } catch (error) {
             console.error('Failed to parse message:', error);
         }

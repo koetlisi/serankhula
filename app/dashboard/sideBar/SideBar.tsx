@@ -28,7 +28,7 @@ export const SideBar =()=>{
             </div>
             <MenuLink onClick={() => sendMessage({
                 receiver_id: 2,
-                message: "d"
+                message: "d",
             })} icon={AccountBalanceIcon} text='Students'/>
             <MenuLink onClick={() => {
             }} icon={SchoolIcon} text='Graduates'/>

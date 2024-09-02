@@ -6,7 +6,7 @@ import {ActionOnPerson} from "@/app/dashboard/Fiends/actionOnPerson";
 export const Friends: React.FC<{ user: User }> = ({ user }) =>{
 
     const shouldShowIcon = !user.profileImage || user.profileImage === '' || user.profileImage===null;
-    return <Popover content={<ActionOnPerson user_id={user.id}/>} trigger="hover">
+    return <Popover content={<ActionOnPerson user={user}/>} trigger="hover">
         <div className="friend hover-me" >
             <li className="sidebar-friend">
                 <img src={shouldShowIcon ? 'assets/img.png' : user.profileImage} alt={user.name}

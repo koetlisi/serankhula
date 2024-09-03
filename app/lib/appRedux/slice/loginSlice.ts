@@ -7,6 +7,7 @@ export const LoginSlice = createSlice({
     initialState: initialLoginState,
     reducers:{
         logout: (state) => {
+            localStorage.clear();
             state.isLogin = false;
             state.isDialog = false;
             state.userData = initialLoginState.userData;

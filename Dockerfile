@@ -18,6 +18,7 @@ RUN npm install
 # Copy the entire project into the container
 COPY . .
 
+
 # Build the Next.js application
 RUN npm run build
 

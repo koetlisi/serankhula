@@ -32,7 +32,9 @@ export const ActionOnPerson: React.FC<{ user: User }> = ({user}) => {
                 description: `${response.msg} to ${user.name} ${user.surname}`,
             })
         } else {
-            alert(response.msg)
+            toast({
+                description: ` Already friends ${user.name} ${user.surname}`,
+            })
         }
     }
     return (

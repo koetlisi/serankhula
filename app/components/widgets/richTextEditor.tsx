@@ -14,7 +14,7 @@ import {AIChatSession} from "@/service/AIModel";
 interface ExperienceData {
     experience: string[];
 }
-export const RichTextEditor: React.FC<{setResumeInfo: any,resumeInfo: ResumeInfo, value: string, onChange: (value: string) => void }> = ({ value, onChange, resumeInfo, setResumeInfo }) => {
+export const RichTextEditor: React.FC<{setResumeInfo: any,resumeInfo: ResumeInfo|any, value: string, onChange: (value: string) => void }> = ({ value, onChange, resumeInfo, setResumeInfo }) => {
     const skills = JSON.stringify(resumeInfo?.skills);
     const [isLoading, setLoading] = useState(false);
     const [aiGeneratedSummery, setAIGeneratedSummery] = useState('')

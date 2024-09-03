@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/Like.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/comment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/post.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/comments.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/likes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/post.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/types/post.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/axiosDelete.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/axiosPut.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dashboard/Feeds/Post/postCreation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dashboard/Feeds/Post/postingFunction.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/widgets/richTextEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/widgets/richTextEditor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/Feeds/Share/Share.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/Feeds/Share/Share.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/types/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/types/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/post.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -54,23 +50,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Mofoka",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/nalane/Documents/GitHub/serankhula/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/nalane/Documents/GitHub/serankhula/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Mofoka&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nalane/Documents/GitHub/serankhula/lib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/nalane/Documents/GitHub/serankhula/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
@@ -102,14 +98,6 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
-        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -130,7 +118,9 @@
       <workItem from="1725260868401" duration="23061000" />
       <workItem from="1725288719361" duration="6003000" />
       <workItem from="1725340278217" duration="3407000" />
-      <workItem from="1725347329151" duration="3934000" />
+      <workItem from="1725347329151" duration="8712000" />
+      <workItem from="1725358236382" duration="2000" />
+      <workItem from="1725367539585" duration="2000" />
     </task>
     <servers />
   </component>

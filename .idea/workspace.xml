@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/Fiends/actionOnPerson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/Fiends/actionOnPerson.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/slice/loginSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/loginSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/types/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +114,7 @@
       <workItem from="1725257310240" duration="759000" />
       <workItem from="1725260868401" duration="23061000" />
       <workItem from="1725288719361" duration="6003000" />
-      <workItem from="1725340278217" duration="2486000" />
+      <workItem from="1725340278217" duration="3407000" />
     </task>
     <servers />
   </component>

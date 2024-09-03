@@ -9,21 +9,23 @@ import {
     ThumbUp,
     ThumbUpAltOutlined
 } from "@mui/icons-material";
-import {Posts, User, Users} from "@/app/dashboard/Fiends/dummyData";
+import {User, Post} from "@/app/lib/types/post";
+import {useSelector} from "react-redux";
+import {RootState} from "@/app/lib/appRedux/store";
 interface Props{
-    posts: Posts
-    users : User[]
+    posts: Post
 }
-export const Post: React.FC<Props> = ({posts, users = Users}) =>{
+export const Posts: React.FC<Props> = ({posts}) =>{
+    const {users} = useSelector((state: RootState) => state.users);
     const user = users.find((user) => user.id === posts.userId);
     return <div className="post">
         <div className="post-wrapper">
             <div className="post-top">
                 <div className="post-top-left">
-                    <img src={user?.profilePicture} className="post-profile-image" key={posts.id} alt={posts.date} />
+                    <img src={user?.profileImage} className="post-profile-image" key={posts.id} alt={posts.createdAt} />
                     <div className="post-date-name">
-                        <span className="post-user-name">{user?.username}</span>
-                        <span className="post-date">{posts.date}</span>
+                        <span className="post-user-name">{user?.surname} {user?.name}</span>
+                        <span className="post-date">{posts.createdAt}</span>
                     </div>
                 </div>
                 <div className="post-top-right">
@@ -33,17 +35,17 @@ export const Post: React.FC<Props> = ({posts, users = Users}) =>{
                 </div>
             </div>
             <div className="post-center">
-                <p className="post-text">{posts?.desc}</p>
-                <img className="post-image" src={posts?.photo} key={posts.id} alt={posts.date} />
+                <p className="post-text">{posts?.text}</p>
+                <img className="post-image" src={posts?.imageUrl} key={posts.id} alt={posts.createdAt} />
             </div>
             <div className="post-bottom">
                 <div className="post-bottom-left">
                     <Favorite className="bottom-left-icon" style={{color:'red'}} />
                     <ThumbUp className="bottom-left-icon" style={{color: '#011631'}} />
-                    <span className="post-like-counter">{posts.like}</span>
+                    <span className="post-like-counter">{posts.likes?.length}</span>
                 </div>
                 <div className="post-bottom-right">
-                    <span className="post-comment-text">{posts.comment} - comments -shares</span>
+                    <span className="post-comment-text">{posts.comments?.length} - comments -shares</span>
                 </div>
             </div>
             <hr className="post-bottom-hr"/>

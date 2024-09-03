@@ -4,25 +4,13 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import {
-    authReducer,
+    authReducer, postReducer,
     resumeReducer, resumeTemplateOneReducer,
     resumeTemplatesReducer, resumeTemplateTwoReducer,
     settingReducer,
     systemReducer,
     userReducer
 } from "@/app/lib/appRedux/slice/exports";
-
-// Function to check if localStorage is available
-const isLocalStorageAvailable = () => {
-    try {
-        const test = '__storage_test__';
-        localStorage.setItem(test, test);
-        localStorage.removeItem(test);
-        return true;
-    } catch (e) {
-        return false;
-    }
-};
 
 // Persist configuration
 const persistConfig = {
@@ -41,6 +29,7 @@ const rootReducer = combineReducers({
     users: userReducer,
     resumeTemplateOne: resumeTemplateOneReducer,
     resumeTemplateTwo: resumeTemplateTwoReducer,
+    posts:postReducer
 });
 
 // Create a persisted reducer

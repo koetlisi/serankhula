@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PictureAsPdf, PermMedia, EmojiEmotions } from '@mui/icons-material';
 import {Post} from "@/app/lib/types/post";
+import {useAppDispatch} from "@/app/lib/appRedux/hooks";
+import {addPost} from "@/app/lib/appRedux/slice/post";
+import {useDispatch} from "react-redux";
 
 const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, userData:any,input:Post,onChange:any}> = ({ open, setOpen, userData, input, onChange }) => {
+    const dispatch = useDispatch();
+    const submitPost = () =>{
+        dispatch(addPost(input)) ;
+        setOpen(false)
+    }
     if (!open) return null;
-
-    
-
     return (
         <div className="fixed bg-dot inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
             <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-4">
@@ -54,9 +59,7 @@ const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, u
                 </div>
                 <button
                     className="w-full py-2 mt-4 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-all"
-                    onClick={() => {
-                        /* handle post submission */
-                    }}
+                    onClick={submitPost}
                 >
                     Post
                 </button>

@@ -7,7 +7,7 @@ import userReducer from "@/app/lib/appRedux/slice/users";
 import resumeTemplatesReducer from "@/app/lib/appRedux/slice/resumeTemplates";
 import resumeTemplateOneReducer from "@/app/lib/appRedux/slice/templateSlice/templateOne";
 import resumeTemplateTwoReducer from "@/app/lib/appRedux/slice/templateSlice/templateTwo";
-
+import postReducer from "@/app/lib/appRedux/slice/post";
 export {
     settingReducer,
     resumeReducer,
@@ -16,5 +16,6 @@ export {
     userReducer,
     resumeTemplatesReducer,
     resumeTemplateOneReducer,
-    resumeTemplateTwoReducer
+    resumeTemplateTwoReducer,
+    postReducer
 };

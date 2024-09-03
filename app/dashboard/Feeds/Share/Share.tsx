@@ -1,8 +1,4 @@
 "use client";
-import {
-    Dialog,
-    DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
-} from "@/components/ui/dialog"
 import './share.css.scss'
 import {Edit, EmojiEmotions, PermMedia, PictureAsPdf, VideoCameraFront} from "@mui/icons-material";
 import {Input} from "antd";
@@ -21,14 +17,27 @@ export const Share = () =>{
                     <img alt="share-profile-image"
                          src={!(userData.profileImage === '' || userData.profileImage === null) ? userData.profileImage : '/assets/person/7.jpeg'}
                          className="share-profile-image"/>
-                    <Input value={input.text} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)}
-                           placeholder={"what's in your mind " + userData.surname} className='share-input'
-                           suffix={!isFocused && <Edit className='edit-icon'/>} name='text' onChange={onChange}/>
+                    <div className="w-full flex">
+                        <Input
+                            style={{width: "100%"}}
+                            value={input.text}
+                            onFocus={() => setIsFocused(true)}
+                            onBlur={() => setIsFocused(false)}
+                            placeholder={`What's in your mind, ${userData.surname}`}
+                            className="share-input w-full" // Add padding to the right to make space for the icon
+                            name="text"
+                            onChange={onChange}
+                        />
+                        <div
+                            className={`absolute inset-y-0 right-0 flex items-center pr-3 ${isFocused ? 'hidden' : 'block'}`}>
+                            <Edit className="text-gray-500 text-xl"/>
+                        </div>
+                    </div>
                 </div>
                 <hr className="share-hr"/>
                 <div className="share-bottom">
                     <div className="share-options">
-                        <div className="share-option">
+                    <div className="share-option">
                             <PictureAsPdf style={{color: "#bb0000f2"}} className="share-icon"/>
                             <span className="share-option-text">Pdf Share</span>
                         </div>

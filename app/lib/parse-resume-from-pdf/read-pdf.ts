@@ -1,9 +1,11 @@
 import { TextItem, TextItems } from "./types";
 import * as pdfjs from "pdfjs-dist";
+import { GlobalWorkerOptions } from "pdfjs-dist";
 
+// Import the worker script
 // @ts-ignore
-import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min.js";
+GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 import type { TextItem as PdfjsTextItem } from "pdfjs-dist/types/src/display/api";
 
@@ -50,7 +52,7 @@ export const readPdf = async (fileUrl: string): Promise<TextItems> => {
   }
 
   const isEmptySpace = (textItem: TextItem) =>
-    !textItem.hasEOL && textItem.text.trim() === "";
+      !textItem.hasEOL && textItem.text.trim() === "";
 
   textItems = textItems.filter((textItem) => !isEmptySpace(textItem));
 

@@ -17,6 +17,7 @@ RUN npm install
 
 # Copy the entire project into the container
 COPY . .
+RUN mkdir -p public && cp node_modules/pdfjs-dist/build/pdf.worker.min.js public/pdf.worker.js
 
 # Build the Next.js application
 RUN npm run build

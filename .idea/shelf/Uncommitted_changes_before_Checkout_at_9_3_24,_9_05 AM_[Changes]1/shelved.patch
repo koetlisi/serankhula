@@ -1,0 +1,29 @@
+Index: app/lib/types/constants.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import axios from 'axios';\n\nexport const apiClient = axios.create({\n    //baseURL: 'http://127.0.0.1:8001', // on development before push\n    baseURL: 'https://fast-api-eskm4g3dcq-ue.a.run.app', // on production after a push\n});\n\n//export const socketLocal = '127.0.0.1:8001'\nexport const socketLocal = 'fast-api-eskm4g3dcq-ue.a.run.app' // on production after a push\n\nexport const isLocalhost = false
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/lib/types/constants.ts b/app/lib/types/constants.ts
+--- a/app/lib/types/constants.ts	(revision 603efdddd1e9f73eee0959127b905921596f708d)
++++ b/app/lib/types/constants.ts	(date 1725346787545)
+@@ -1,11 +1,11 @@
+ import axios from 'axios';
+ 
+ export const apiClient = axios.create({
+-    //baseURL: 'http://127.0.0.1:8001', // on development before push
+-    baseURL: 'https://fast-api-eskm4g3dcq-ue.a.run.app', // on production after a push
++    baseURL: 'http://127.0.0.1:8001', // on development before push
++    //baseURL: 'https://fast-api-eskm4g3dcq-ue.a.run.app', // on production after a push
+ });
+ 
+-//export const socketLocal = '127.0.0.1:8001'
+-export const socketLocal = 'fast-api-eskm4g3dcq-ue.a.run.app' // on production after a push
++export const socketLocal = '127.0.0.1:8001'
++//export const socketLocal = 'fast-api-eskm4g3dcq-ue.a.run.app' // on production after a push
+ 
+-export const isLocalhost = false
+\ No newline at end of file
++export const isLocalhost = true
+\ No newline at end of file

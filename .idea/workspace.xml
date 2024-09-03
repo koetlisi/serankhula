@@ -5,6 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/Like.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/comment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/comments.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/likes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/types/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/axiosDelete.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/axiosPut.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/parse-resume-from-pdf/read-pdf.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/parse-resume-from-pdf/read-pdf.ts" afterDir="false" />
@@ -27,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
@@ -38,6 +52,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -46,7 +61,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Mofoka",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/nalane/Documents/GitHub/serankhula/lib",
     "node.js.detected.package.eslint": "true",
@@ -92,8 +107,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
+        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
       </set>
     </attachedChunks>
   </component>
@@ -116,7 +131,8 @@
       <workItem from="1725257310240" duration="759000" />
       <workItem from="1725260868401" duration="23061000" />
       <workItem from="1725288719361" duration="6003000" />
-      <workItem from="1725340278217" duration="5243000" />
+      <workItem from="1725340278217" duration="3407000" />
+      <workItem from="1725347329151" duration="3934000" />
     </task>
     <servers />
   </component>

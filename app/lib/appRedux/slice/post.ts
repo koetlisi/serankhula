@@ -20,6 +20,7 @@ const postsSlice = createSlice({
             state.posts = action.payload;
         },
         addPost(state, action: PayloadAction<Post>) {
+            console.log(action.payload)
             state.posts.push(action.payload);
         },
         updatePost(state, action: PayloadAction<Post>) {

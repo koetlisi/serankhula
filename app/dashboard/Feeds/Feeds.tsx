@@ -1,19 +1,21 @@
 import './feeds.css.scss'
 import React from "react";
-import {Posts, Users} from "@/app/dashboard/Fiends/dummyData";
-import {Post} from "@/app/dashboard/Feeds/Post/Post";
+import {Posts} from "@/app/dashboard/Feeds/Post/Post";
 import {Share} from "@/app/dashboard/Feeds/Share/Share";
 import {Stories} from "@/app/dashboard/Feeds/Stories/Stories";
+import {useSelector} from "react-redux";
+import {RootState} from "@/app/lib/appRedux/store";
 interface Prop {
     stories:boolean
 }
 export const Feeds: React.FC<Prop> = ({stories = true}) => {
+    const {posts} = useSelector((state: RootState) => state.posts);
     return <div className="feeds">
         <div className="feed-wrapper">
             {stories && <Stories/>}
             <Share/>
-            {Posts.map((post)=>(
-                <Post posts={post} key={post.id}  users={Users}/>
+            {posts.map((post)=>(
+                <Posts posts={post} key={post.id}/>
             ))}
 
         </div>

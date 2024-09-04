@@ -1,82 +1,129 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import { PictureAsPdf, PermMedia, EmojiEmotions } from '@mui/icons-material';
-import {Post} from "@/app/lib/types/post";
-import {useAppDispatch} from "@/app/lib/appRedux/hooks";
-import {addPost} from "@/app/lib/appRedux/slice/post";
-import {useDispatch} from "react-redux";
-import {createPost} from "@/app/lib/appRedux/thunks/post/post";
-import {UrlAccessible} from "@/service/urlAccessible";
-import {AvataImages} from "@/service/hooks/avataImages";
+import { Post } from "@/app/lib/types/post";
+import { useDispatch } from "react-redux";
+import { createPost } from "@/app/lib/appRedux/thunks/post/post";
+import { AvataImages } from "@/service/hooks/avataImages";
 
-const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, userData:any,input:Post,onChange:any}> = ({ open, setOpen, userData, input, onChange }) => {
+interface PostCreationModalProps {
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    userData: any;
+    input: Post;
+    onChange: any;
+}
+
+const PostCreationModal: React.FC<PostCreationModalProps> = ({ open, setOpen, userData, input, onChange }) => {
     const dispatch = useDispatch();
     const [error, setError] = useState<string | null>(null);
-    const submitPost = async () =>{
+    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+    const submitPost = async () => {
         setError(null);
         try {
+            const formData = new FormData();
+            formData.append('content', input.content);
+            if (selectedFile) {
+                formData.append('file', selectedFile);
+            }
             // @ts-ignore
-            dispatch(createPost(input));
+            dispatch(createPost(formData));
+            setOpen(false);
         } catch (error) {
             if (error instanceof Error) {
                 setError(error.message);
             } else {
                 setError('An unexpected error occurred');
             }
-        } finally {
-            setOpen(false);
         }
-    }
+    };
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files) {
+            setSelectedFile(event.target.files[0]);
+        }
+    };
+
     if (!open) return null;
+
     return (
-        <div className="fixed bg-dot inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-4">
-                <div className="flex justify-between items-center pb-2">
-                    <h2 className="text-lg font-semibold text-center">Create Post</h2>
-                    <button className="text-gray-600" onClick={() => setOpen(false)}>
-                        ✖
-                    </button>
-                </div>
-                <hr className="my-2" />
-                <div>
-                    <div className="flex items-center space-x-4 mb-4">
-                        <AvataImages imgPath={userData.profileImage}
+        <div className="fixed inset-0 bg-dot flex items-center justify-center z-50 bg-black bg-opacity-50">
+            <div
+                className="bg-white rounded-lg shadow-lg w-full max-w-lg flex flex-col h-96"> {/* Adjust height as needed */}
+                {/* Header */}
+                <div className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center px-4 py-2 border-b">
+                        <h2 className="text-lg font-semibold text-center">Create Post</h2>
+                        <button className="text-gray-600 text-xl" onClick={() => setOpen(false)}>
+                            &times;
+                        </button>
+                    </div>
+
+                    <div className="flex items-center space-x-4 m-4">
+                        <AvataImages
+                            imgPath={userData.profileImage}
                             className="w-10 h-10 rounded-full"
                         />
                         <span className="font-medium">{`${userData.name} ${userData.surname}`}</span>
                     </div>
+                </div>
+                {/* Body */}
+                <div className="overflow-y-auto p-4">
                     <textarea
                         value={input.content}
-                        autoFocus={false}
-                        onFocus={() => {}}
-                        onBlur={() => {}}
                         placeholder={`What's on your mind, ${userData.surname}?`}
-                        className="w-full h-28 p-4 focus:border-none focused"
+                        className="w-full h-24 p-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                         name="content"
                         onChange={onChange}
-                        style={{ resize: "none" }} // Disable resizing to mimic Facebook's textarea
-                    />
-                    <div className="flex justify-between items-center border-t border-gray-300 pt-4 mt-4">
-                        <div className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-                            <PermMedia style={{ color: "#42b72a" }} className="text-2xl" />
-                            <span className="text-sm font-medium">Photo/Video</span>
+                    ></textarea>
+                    {selectedFile && (
+                        <div className="mt-2">
+                            <img
+                                style={{objectFit: 'contain'}}
+                                src={URL.createObjectURL(selectedFile)}
+                                alt="Selected"
+                                className="w-full rounded-lg"
+                            />
                         </div>
-                        <div className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-                            <EmojiEmotions style={{ color: "#f7b928" }} className="text-2xl" />
-                            <span className="text-sm font-medium">Feeling/Activity</span>
-                        </div>
-                        <div className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-                            <PictureAsPdf style={{ color: "#f02849" }} className="text-2xl" />
-                            <span className="text-sm font-medium">PDF</span>
+                    )}
+                </div>
+
+                {/* Footer */}
+                <div className="px-4 py-2 border-t">
+                    <div className="flex justify-between items-center">
+                        {/* Action Buttons */}
+                        <div className="flex space-x-2">
+                            <label
+                                className="flex items-center space-x-1 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
+                                <PermMedia style={{color: "#42b72a"}} className="text-2xl"/>
+                                <span className="text-sm font-medium">Photo/Video</span>
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleFileChange}
+                                    className="hidden"
+                                />
+                            </label>
+                            <div
+                                className="flex items-center space-x-1 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
+                                <EmojiEmotions style={{color: "#f7b928"}} className="text-2xl"/>
+                                <span className="text-sm font-medium">Feeling/Activity</span>
+                            </div>
+                            <div
+                                className="flex items-center space-x-1 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
+                                <PictureAsPdf style={{color: "#f02849"}} className="text-2xl"/>
+                                <span className="text-sm font-medium">PDF</span>
+                            </div>
                         </div>
                     </div>
+                    <button
+                        className="bg-blue-500 text-white px-4 my-4 py-2 w-full rounded-lg font-medium hover:bg-blue-600 transition"
+                        onClick={submitPost}
+                    >
+                        Post
+                    </button>
+                    {error && <p className="text-red-500 mt-2">{error}</p>}
                 </div>
-                <button
-                    className="w-full py-2 mt-4 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-all"
-                    onClick={submitPost}
-                >
-                    Post
-                </button>
-                {error && <p>{error}</p>}
             </div>
         </div>
     );

@@ -20,12 +20,12 @@ export const Share = () =>{
                     <div className="w-full flex">
                         <Input
                             style={{width: "100%"}}
-                            value={input.text}
+                            value={input.content}
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)}
                             placeholder={`What's in your mind, ${userData.surname}`}
                             className="share-input w-full" // Add padding to the right to make space for the icon
-                            name="text"
+                            name="content"
                             onChange={onChange}
                         />
                         <div

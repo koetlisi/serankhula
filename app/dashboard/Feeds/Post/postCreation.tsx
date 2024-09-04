@@ -1,15 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { PictureAsPdf, PermMedia, EmojiEmotions } from '@mui/icons-material';
 import {Post} from "@/app/lib/types/post";
 import {useAppDispatch} from "@/app/lib/appRedux/hooks";
 import {addPost} from "@/app/lib/appRedux/slice/post";
 import {useDispatch} from "react-redux";
+import {createPost} from "@/app/lib/appRedux/thunks/post/post";
 
 const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, userData:any,input:Post,onChange:any}> = ({ open, setOpen, userData, input, onChange }) => {
     const dispatch = useDispatch();
-    const submitPost = () =>{
-        dispatch(addPost(input)) ;
-        setOpen(false)
+    const [error, setError] = useState<string | null>(null);
+    const submitPost = async () =>{
+        setError(null);
+        try {
+            // @ts-ignore
+            dispatch(createPost(input));
+        } catch (error) {
+            if (error instanceof Error) {
+                setError(error.message);
+            } else {
+                setError('An unexpected error occurred');
+            }
+        } finally {
+            setOpen(false);
+        }
     }
     if (!open) return null;
     return (
@@ -32,13 +45,13 @@ const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, u
                         <span className="font-medium">{`${userData.name} ${userData.surname}`}</span>
                     </div>
                     <textarea
-                        value={input.text}
+                        value={input.content}
                         autoFocus={false}
                         onFocus={() => {}}
                         onBlur={() => {}}
                         placeholder={`What's on your mind, ${userData.surname}?`}
                         className="w-full h-28 p-4 focus:border-none focused"
-                        name="text"
+                        name="content"
                         onChange={onChange}
                         style={{ resize: "none" }} // Disable resizing to mimic Facebook's textarea
                     />
@@ -63,6 +76,7 @@ const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, u
                 >
                     Post
                 </button>
+                {error && <p>{error}</p>}
             </div>
         </div>
     );

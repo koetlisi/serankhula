@@ -65,10 +65,10 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                 </div>
                 <div className="post-center">
                     <p className="post-text">{posts?.content}</p>
-                    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div className="overflow-hidden">
                         {!img && <img
                             style={{maxHeight: "420px", objectFit: "cover"}}
-                            className="w-full rounded-t-lg"
+                            className="w-full"
                             src={posts?.imageUrl}
                             key={posts.id}
                             alt=""

@@ -6,6 +6,8 @@ import {Stories} from "@/app/dashboard/Feeds/Stories/Stories";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import {getPost} from "@/app/lib/appRedux/thunks/post/post";
+import {shuffleArray} from "@/service/shuffleArray";
+import {Post} from "@/app/lib/types/post";
 
 interface Prop {
     stories: boolean
@@ -22,7 +24,7 @@ export const Feeds: React.FC<Prop> = ({stories = true}) => {
         <div className="feed-wrapper">
             {stories && <Stories/>}
             <Share/>
-            {posts.map((post) => (
+            {shuffleArray<Post>(posts).map((post) => (
                 <Posts posts={post} key={post.id}/>
             ))}
 

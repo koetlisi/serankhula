@@ -2,7 +2,7 @@
 import { Like } from '@/app/lib/types/post';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {addLike, removeLike, setLikes} from "@/app/lib/appRedux/slice/Like";
+import {addLike, removeLike, setLikes} from "@/app/lib/appRedux/Like";
 
 export const fetchLikes = createAsyncThunk('likes/fetchLikes', async (_, { dispatch }) => {
     const response = await axios.get<Like[]>('/api/likes');

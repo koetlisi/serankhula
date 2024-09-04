@@ -43,8 +43,8 @@ export const Education: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: any }>
         });
     };
     return <div className="p-5 shadow-lg rounded-lg border-t-primary border-t-4 m-5">
-        <h2 className="font-bold text-lg">Professional Experience</h2>
-        <p>Add your job experiences</p>
+        <h2 className="font-bold text-lg">Schools</h2>
+        <p>Add your Schools</p>
         <div>
             {resumeInfo.education.map((education, index) => (
                 <div key={index} className="relative">

@@ -18,7 +18,7 @@ export const getPost = ()=>async (dispatch: Dispatch, getState: () => RootState)
     try{
         const response = await AxiosGet<InstitutionsResponse>(getState().auth.userData.token, 'get_all_post/');
         if (response && response?.code === 200) {
-            dispatch(setPosts(response.data.data))
+            dispatch(setPosts(response.data))
         }else {
             console.error("Error creating post:", response?.data);
         }

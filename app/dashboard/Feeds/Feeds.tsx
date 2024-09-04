@@ -14,7 +14,7 @@ interface Prop {
 }
 
 export const Feeds: React.FC<Prop> = ({stories = true}) => {
-    const {posts} = useSelector((state: RootState) => state.posts);
+    const { posts = [] } = useSelector((state: RootState) => state.posts);
     const dispatch = useDispatch();
     useEffect(() => {
         // @ts-ignore
@@ -24,10 +24,9 @@ export const Feeds: React.FC<Prop> = ({stories = true}) => {
         <div className="feed-wrapper">
             {stories && <Stories/>}
             <Share/>
-            {shuffleArray<Post>(posts).map((post) => (
-                <Posts posts={post} key={post.id}/>
+            {posts.length > 0 && shuffleArray<Post>(posts).map((post) => (
+                <Posts posts={post} key={post.id} />
             ))}
-
         </div>
     </div>
 }

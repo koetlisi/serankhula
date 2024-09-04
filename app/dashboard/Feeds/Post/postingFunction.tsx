@@ -6,7 +6,7 @@ import {RootState} from "@/app/lib/appRedux/store";
 export const PostingFunction = ()=>{
     const { userData } = useSelector((state: RootState) => state.auth);
     const [open, setOpen] = useState(false);
-    const [input, setInput] = useState<Post>({id: 0, user_id: userData.id, content: '', imageUrl: '', created_at: '', updated_at: '', comments: [], likes:[],})
+    const [input, setInput] = useState<Post>({id: '0', user_id: userData.id, content: '', imageUrl: '', created_at: '', updated_at: '', comments: [], likes:[],})
     const onChange = (typing:any) =>{
         const {name, value} = typing.target;
         if(value.length >1 && !open){

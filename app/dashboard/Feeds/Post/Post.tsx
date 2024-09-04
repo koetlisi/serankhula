@@ -15,7 +15,6 @@ import {RootState} from "@/app/lib/appRedux/store";
 import {TimeAgo} from "@/service/timeAgo";
 import {AvataImages} from "@/service/hooks/avataImages";
 import {resizeImages} from "@/service/resizeImage";
-import {UrlAccessible} from "@/service/urlAccessible";
 interface Props{
     posts: Post
 }
@@ -24,13 +23,8 @@ export const Posts: React.FC<Props> = ({ posts }) => {
     const user = users.find((user) => user.id === posts.user_id);
 
     const [timeAgoText, setTimeAgoText] = useState(TimeAgo(posts.created_at));
-    const [img, setImg] =useState(false)
 
     useEffect(() => {
-        const isAccessible =async ()=>{
-           const acc =  await UrlAccessible(posts?.imageUrl) && posts?.imageUrl !== ''
-            setImg(!acc);
-        };
         window.addEventListener('resize', () => {
             resizeImages();
         });
@@ -65,14 +59,14 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                 </div>
                 <div className="post-center">
                     <p className="post-text">{posts?.content}</p>
-                    <div className="overflow-hidden">
-                        {!img && <img
+                    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img
                             style={{maxHeight: "420px", objectFit: "cover"}}
-                            className="w-full"
+                            className="w-full rounded-t-lg"
                             src={posts?.imageUrl}
                             key={posts.id}
-                            alt=""
-                        />}
+                            alt="Post Image"
+                        />
                     </div>
                 </div>
                 <div className="post-bottom">

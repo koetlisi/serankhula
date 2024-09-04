@@ -15,6 +15,7 @@ import { UserRequest } from "@/app/dashboard/Fiends/userRequest";
 import { CustomProver } from "./customProver";
 import { useWebSocket } from "@/lib/webSocket/webSocketProvider";
 import {UrlAccessible} from "@/service/urlAccessible";
+import {AvataImages} from "@/service/hooks/avataImages";
 
 export const LoginHeader = () => {
 
@@ -62,7 +63,7 @@ export const LoginHeader = () => {
                     </Badge>
                 </div>
                 <button onClick={isOpen}>
-                    <img src={profileImage} alt="" className="navbar-image"/>
+                    <AvataImages imgPath={profileImage} className="navbar-image"/>
                 </button>
             </div>
         </div>

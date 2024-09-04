@@ -13,6 +13,7 @@ import {logout} from "@/app/lib/appRedux/slice/loginSlice";
 import {Friends} from "@/app/dashboard/Fiends/Friends";
 import {useWebSocket} from "@/lib/webSocket/webSocketProvider";
 import {UrlAccessible} from "@/service/urlAccessible";
+import {AvataImages} from "@/service/hooks/avataImages";
 export const SideBar = async ()=>{
     const dispatch = useDispatch();
     const { sendMessage } = useWebSocket();
@@ -22,9 +23,7 @@ export const SideBar = async ()=>{
     return <div className="sidebar">
         <div className="sidebar-wrapper">
             <div onClick={() => handleClick('Profile')} className="menu-link">
-                <img alt={userData.name} style={{width: "40px", height: "40px", borderRadius: "500%"}}
-                     src={(userData.profileImage === null || userData.profileImage === '' || !userData.profileImage || !await UrlAccessible(userData.profileImage)) ? 'assets/img.png' : userData.profileImage}
-                     className="sidebar-icon"/>
+                <AvataImages imgPath={userData.profileImage} className="sidebar-icon" style={{width: "40px", height: "40px", borderRadius: "500%"}}/>
                 <span className="sidebar-list-item-text menu-link-text">{userData.name + ' ' + userData.surname}</span>
             </div>
             <MenuLink onClick={() => sendMessage({

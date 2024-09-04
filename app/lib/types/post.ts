@@ -17,11 +17,11 @@ export interface Comment {
 
 export interface Post {
     id: string;
-    userId: number;
-    text: string;
+    user_id: number;
+    content: string;
     imageUrl?: string;
-    createdAt: string;
-    updatedAt: string;
+    created_at: string;
+    updated_at: string;
     comments?: Comment[];
     likes?: Like[];
 }

@@ -39,7 +39,7 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                             src={user?.profileImage}
                             className="post-profile-image"
                             key={posts.id}
-                            alt={posts.created_at}
+                            alt={''}
                         />
                         <div className="post-date-name">
                             <span className="post-user-name">

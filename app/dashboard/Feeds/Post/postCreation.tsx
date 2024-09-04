@@ -1,14 +1,25 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { PictureAsPdf, PermMedia, EmojiEmotions } from '@mui/icons-material';
 import {Post} from "@/app/lib/types/post";
 import {useAppDispatch} from "@/app/lib/appRedux/hooks";
 import {addPost} from "@/app/lib/appRedux/slice/post";
 import {useDispatch} from "react-redux";
 import {createPost} from "@/app/lib/appRedux/thunks/post/post";
+import {UrlAccessible} from "@/service/urlAccessible";
 
 const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, userData:any,input:Post,onChange:any}> = ({ open, setOpen, userData, input, onChange }) => {
     const dispatch = useDispatch();
     const [error, setError] = useState<string | null>(null);
+    const [profileImage, setProfileImage] = useState("/assets/person/7.jpeg");
+
+    useEffect(() => {
+        const checkProfileImage = async () => {
+            const isAccessible = await UrlAccessible(userData.profileImage);
+            setProfileImage(isAccessible ? userData.profileImage : "/assets/person/7.jpeg");
+        };
+
+        checkProfileImage().then(r => {});
+    }, [userData.profileImage]);
     const submitPost = async () =>{
         setError(null);
         try {
@@ -39,7 +50,7 @@ const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, u
                     <div className="flex items-center space-x-4 mb-4">
                         <img
                             alt="User Profile"
-                            src={userData.profileImage || "/assets/person/7.jpeg"}
+                            src={profileImage}
                             className="w-10 h-10 rounded-full"
                         />
                         <span className="font-medium">{`${userData.name} ${userData.surname}`}</span>

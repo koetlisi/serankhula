@@ -13,6 +13,7 @@ import {User, Post} from "@/app/lib/types/post";
 import {useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import {TimeAgo} from "@/service/timeAgo";
+import {AvataImages} from "@/service/hooks/avataImages";
 interface Props{
     posts: Post
 }
@@ -35,11 +36,9 @@ export const Posts: React.FC<Props> = ({ posts }) => {
             <div className="post-wrapper">
                 <div className="post-top">
                     <div className="post-top-left">
-                        <img
-                            src={user?.profileImage}
+                        <AvataImages imgPath={user?.profileImage}
                             className="post-profile-image"
                             key={posts.id}
-                            alt={''}
                         />
                         <div className="post-date-name">
                             <span className="post-user-name">

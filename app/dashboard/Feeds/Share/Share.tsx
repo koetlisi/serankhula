@@ -2,33 +2,22 @@
 import './share.css.scss';
 import { Edit, EmojiEmotions, PermMedia, PictureAsPdf } from "@mui/icons-material";
 import { Input } from "antd";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { PostingFunction } from "@/app/dashboard/Feeds/Post/postingFunction";
 import PostCreationModal from "@/app/dashboard/Feeds/Post/postCreation";
 import { UrlAccessible } from "@/service/urlAccessible";
+import {AvataImages} from "@/service/hooks/avataImages";
 
 export const Share = () => {
     const [isFocused, setIsFocused] = useState(false);
     const { onChange, input, open, setOpen, userData } = PostingFunction();
-    const [profileImage, setProfileImage] = useState("/assets/person/7.jpeg");
-
-    useEffect(() => {
-        const checkProfileImage = async () => {
-            const isAccessible = await UrlAccessible(userData.profileImage);
-            setProfileImage(isAccessible ? userData.profileImage : "/assets/person/7.jpeg");
-        };
-
-        checkProfileImage().then(r => {});
-    }, [userData.profileImage]);
 
     return (
         <div className="share">
             <div className="share-wrapper">
                 <div className="share-top">
-                    <img
-                        alt="share-profile-image"
-                        src={profileImage}
-                        className="share-profile-image"
+                    <AvataImages imgPath={userData.profileImage}
+                                 className="share-profile-image"
                     />
                     <div className="w-full flex">
                         <Input

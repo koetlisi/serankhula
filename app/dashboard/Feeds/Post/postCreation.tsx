@@ -6,20 +6,11 @@ import {addPost} from "@/app/lib/appRedux/slice/post";
 import {useDispatch} from "react-redux";
 import {createPost} from "@/app/lib/appRedux/thunks/post/post";
 import {UrlAccessible} from "@/service/urlAccessible";
+import {AvataImages} from "@/service/hooks/avataImages";
 
 const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, userData:any,input:Post,onChange:any}> = ({ open, setOpen, userData, input, onChange }) => {
     const dispatch = useDispatch();
     const [error, setError] = useState<string | null>(null);
-    const [profileImage, setProfileImage] = useState("/assets/person/7.jpeg");
-
-    useEffect(() => {
-        const checkProfileImage = async () => {
-            const isAccessible = await UrlAccessible(userData.profileImage);
-            setProfileImage(isAccessible ? userData.profileImage : "/assets/person/7.jpeg");
-        };
-
-        checkProfileImage().then(r => {});
-    }, [userData.profileImage]);
     const submitPost = async () =>{
         setError(null);
         try {
@@ -48,9 +39,7 @@ const PostCreationModal: React.FC<{open:boolean, setOpen:(open:boolean)=>void, u
                 <hr className="my-2" />
                 <div>
                     <div className="flex items-center space-x-4 mb-4">
-                        <img
-                            alt="User Profile"
-                            src={profileImage}
+                        <AvataImages imgPath={userData.profileImage}
                             className="w-10 h-10 rounded-full"
                         />
                         <span className="font-medium">{`${userData.name} ${userData.surname}`}</span>

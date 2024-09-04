@@ -16,7 +16,7 @@ export interface Comment {
 }
 
 export interface Post {
-    id: string;
+    id: number;
     user_id: number;
     content: string;
     imageUrl?: string;

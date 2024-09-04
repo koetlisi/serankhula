@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/Feeds/Feeds.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/Feeds/Feeds.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/Feeds/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/Feeds/Post/Post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/Feeds/Post/postingFunction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/Feeds/Post/postingFunction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/Like.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/slice/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/likes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/likes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/thunks/post/post.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/types/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/types/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/urlAccessible.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/urlAccessible.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +63,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Mofoka&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nalane/Documents/GitHub/serankhula/lib&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nalane/Documents/GitHub/statch/1/serankhula&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -156,6 +167,9 @@
       <workItem from="1725458860504" duration="4599000" />
       <workItem from="1725463531449" duration="5902000" />
       <workItem from="1725476182720" duration="1825000" />
+      <workItem from="1725478426918" duration="1132000" />
+      <workItem from="1725479648377" duration="1016000" />
+      <workItem from="1725481422484" duration="499000" />
     </task>
     <servers />
   </component>

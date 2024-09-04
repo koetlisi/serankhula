@@ -1,16 +1,13 @@
 // postsSlice.ts
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {Post} from "@/app/lib/types/post";
-import {createPost, fetchPosts} from "@/app/lib/appRedux/thunks/post/post";
 
 interface PostsState {
     posts: Post[];
-    status: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: PostsState = {
     posts: [],
-    status: 'idle',
 };
 
 const postsSlice = createSlice({
@@ -18,7 +15,10 @@ const postsSlice = createSlice({
     initialState,
     reducers: {
         setPosts(state, action: PayloadAction<Post[]>) {
-            state.posts = action.payload;
+            return {
+                ...state,
+                posts: action.payload
+            };
         },
         addPost(state, action: PayloadAction<Post>) {
             console.log(action.payload)
@@ -30,7 +30,7 @@ const postsSlice = createSlice({
                 state.posts[index] = action.payload;
             }
         },
-        deletePost(state, action: PayloadAction<string>) {
+        deletePost(state, action: PayloadAction<number>) {
             state.posts = state.posts.filter(post => post.id !== action.payload);
         },
     }

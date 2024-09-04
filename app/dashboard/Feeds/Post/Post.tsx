@@ -14,6 +14,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import {TimeAgo} from "@/service/timeAgo";
 import {AvataImages} from "@/service/hooks/avataImages";
+import {resizeImages} from "@/service/resizeImage";
 interface Props{
     posts: Post
 }
@@ -24,6 +25,9 @@ export const Posts: React.FC<Props> = ({ posts }) => {
     const [timeAgoText, setTimeAgoText] = useState(TimeAgo(posts.created_at));
 
     useEffect(() => {
+        window.addEventListener('resize', () => {
+            resizeImages();
+        });
         const interval = setInterval(() => {
             setTimeAgoText(TimeAgo(posts.created_at));
         }, 60000);
@@ -55,18 +59,21 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                 </div>
                 <div className="post-center">
                     <p className="post-text">{posts?.content}</p>
-                    <img
-                        className="post-image"
-                        src={posts?.imageUrl}
-                        key={posts.id}
-                        alt=""
-                    />
+                    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img
+                            style={{maxHeight: "420px", objectFit: "cover"}}
+                            className="w-full rounded-t-lg"
+                            src={posts?.imageUrl}
+                            key={posts.id}
+                            alt="Post Image"
+                        />
+                    </div>
                 </div>
                 <div className="post-bottom">
                     <div className="post-bottom-left">
                         <Favorite
                             className="bottom-left-icon"
-                            style={{ color: 'red' }}
+                            style={{color: 'red'}}
                         />
                         <ThumbUp
                             className="bottom-left-icon"

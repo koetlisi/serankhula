@@ -19,7 +19,7 @@ export const Feeds: React.FC<Prop> = ({stories = true}) => {
     useEffect(() => {
         // @ts-ignore
         dispatch(posts.length>0?()=>{}:getPost())
-    }, []);
+    }, [dispatch, posts.length]);
     return <div className="feeds">
         <div className="feed-wrapper">
             {stories && <Stories/>}

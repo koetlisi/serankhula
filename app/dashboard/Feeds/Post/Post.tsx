@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import {IconButton} from "@mui/material";
 import {
     ChatBubbleOutline,
-    ChatBubbleOutlined,
     Favorite,
     MoreVert, ShareOutlined,
     ThumbUp,
@@ -16,13 +15,16 @@ import {TimeAgo} from "@/service/timeAgo";
 import {AvataImages} from "@/service/hooks/avataImages";
 import {resizeImages} from "@/service/resizeImage";
 import {UrlAccessible} from "@/service/urlAccessible";
+import {useWebSocket} from "@/lib/webSocket/webSocketProvider";
+import {UserRequest} from "@/app/lib/types/userRequest";
 interface Props{
     posts: Post
 }
 export const Posts: React.FC<Props> = ({ posts }) => {
     const { users } = useSelector((state: RootState) => state.users);
+    const { newPost } = useSelector((state: RootState) => state.posts);
     const user = users.find((user) => user.id === posts.user_id);
-
+    const {sendMessage} = useWebSocket();
     const [timeAgoText, setTimeAgoText] = useState(TimeAgo(posts.created_at));
     const [img, setImg] =useState(false)
 
@@ -36,11 +38,21 @@ export const Posts: React.FC<Props> = ({ posts }) => {
             resizeImages();
         });
         const interval = setInterval(() => {
+            if(newPost.id !== 0){
+                const broadCastPost = {
+                    operation: 'createPost',
+                    message: {
+                        content: 'createPost',
+                        msg: newPost
+                    }
+                }
+                sendMessage(broadCastPost);
+            }
             setTimeAgoText(TimeAgo(posts.created_at));
         }, 60000);
 
         return () => clearInterval(interval); // Clean up the interval on unmount
-    }, [posts.created_at]);
+    }, [newPost, posts.created_at, posts?.imageUrl, sendMessage]);
 
     return (
         <div className="post">

@@ -1,7 +1,7 @@
 // postsThunks.ts
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {addPost, setPosts} from "@/app/lib/appRedux/slice/post";
+import {addNewPost, addPost, setPosts} from "@/app/lib/appRedux/slice/post";
 import {Post} from "@/app/lib/types/post";
 import {AxiosPost} from "@/service/axiosPost";
 import {Dispatch} from "redux";
@@ -33,10 +33,9 @@ export const createPost = (post: Post) => async (dispatch: Dispatch, getState: (
         const token = getState().auth.userData.token;
         const endPoint = 'create_post/';
         const response = await AxiosPost(token, endPoint, post);
-        console.log(response);
-
         if (response.code === 201) {
             dispatch(addPost(response.data));
+            dispatch(addNewPost(response.data));
             return response.data;
         } else {
             throw new Error(response.msg || 'Failed to create post');

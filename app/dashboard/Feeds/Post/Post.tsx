@@ -9,7 +9,7 @@ import {
     ThumbUpAltOutlined
 } from "@mui/icons-material";
 import {User, Post} from "@/app/lib/types/post";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import {TimeAgo} from "@/service/timeAgo";
 import {AvataImages} from "@/service/hooks/avataImages";
@@ -17,37 +17,42 @@ import {resizeImages} from "@/service/resizeImage";
 import {UrlAccessible} from "@/service/urlAccessible";
 import {useWebSocket} from "@/lib/webSocket/webSocketProvider";
 import {UserRequest} from "@/app/lib/types/userRequest";
-interface Props{
+import {destroyNewPost} from "@/app/lib/appRedux/slice/post";
+
+interface Props {
     posts: Post
 }
-export const Posts: React.FC<Props> = ({ posts }) => {
-    const { users } = useSelector((state: RootState) => state.users);
-    const { newPost } = useSelector((state: RootState) => state.posts);
+
+export const Posts: React.FC<Props> = ({posts}) => {
+    const {users} = useSelector((state: RootState) => state.users);
+    const {newPost} = useSelector((state: RootState) => state.posts);
     const user = users.find((user) => user.id === posts.user_id);
     const {sendMessage} = useWebSocket();
     const [timeAgoText, setTimeAgoText] = useState(TimeAgo(posts.created_at));
-    const [img, setImg] =useState(false)
-
+    const [img, setImg] = useState(false)
+    const dispatch = useDispatch()
+    if (newPost.id !== 0) {
+        const broadCastPost = {
+            operation: 'createPost',
+            message: {
+                content: 'createPost',
+                msg: newPost
+            }
+        }
+        sendMessage(broadCastPost);
+        dispatch(destroyNewPost());
+    }
     useEffect(() => {
-        const isAccessible =async ()=>{
-           const acc =  await UrlAccessible(posts?.imageUrl) && posts?.imageUrl !== ''
+        const isAccessible = async () => {
+            const acc = await UrlAccessible(posts?.imageUrl) && posts?.imageUrl !== ''
             setImg(!acc);
         };
-        isAccessible().then(r => {})
+        isAccessible().then(r => {
+        })
         window.addEventListener('resize', () => {
             resizeImages();
         });
         const interval = setInterval(() => {
-            if(newPost.id !== 0){
-                const broadCastPost = {
-                    operation: 'createPost',
-                    message: {
-                        content: 'createPost',
-                        msg: newPost
-                    }
-                }
-                sendMessage(broadCastPost);
-            }
             setTimeAgoText(TimeAgo(posts.created_at));
         }, 60000);
 
@@ -60,8 +65,8 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                 <div className="post-top">
                     <div className="post-top-left">
                         <AvataImages imgPath={user?.profileImage}
-                            className="post-profile-image"
-                            key={posts.id}
+                                     className="post-profile-image"
+                                     key={posts.id}
                         />
                         <div className="post-date-name">
                             <span className="post-user-name">
@@ -72,7 +77,7 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                     </div>
                     <div className="post-top-right">
                         <IconButton>
-                            <MoreVert className="post-vert-btn" />
+                            <MoreVert className="post-vert-btn"/>
                         </IconButton>
                     </div>
                 </div>
@@ -96,7 +101,7 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                         />
                         <ThumbUp
                             className="bottom-left-icon"
-                            style={{ color: '#011631' }}
+                            style={{color: '#011631'}}
                         />
                         <span className="post-like-counter">
                             {posts.likes?.length}
@@ -108,18 +113,18 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                         </span>
                     </div>
                 </div>
-                <hr className="post-bottom-hr" />
+                <hr className="post-bottom-hr"/>
                 <div className="post-bottom-footer">
                     <div className="post-bottom-footer-item">
-                        <ThumbUpAltOutlined className="post-footer-icon" />
+                        <ThumbUpAltOutlined className="post-footer-icon"/>
                         <span className="post-footer-text">Like</span>
                     </div>
                     <div className="post-bottom-footer-item">
-                        <ChatBubbleOutline className="post-footer-icon" />
+                        <ChatBubbleOutline className="post-footer-icon"/>
                         <span className="post-footer-text">Comment</span>
                     </div>
                     <div className="post-bottom-footer-item">
-                        <ShareOutlined className="post-footer-icon" />
+                        <ShareOutlined className="post-footer-icon"/>
                         <span className="post-footer-text">Share</span>
                     </div>
                 </div>

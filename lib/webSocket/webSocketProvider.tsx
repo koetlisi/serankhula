@@ -83,7 +83,7 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({chil
                     }
                 }
             }
-            if(content.operation === 'createPost'){
+            if(content.operation === 'createPost' && parsedMessage.client_id !==userData.id){
                 dispatch(addPost(content.message.msg));
                 dispatch(destroyNewPost());
             }

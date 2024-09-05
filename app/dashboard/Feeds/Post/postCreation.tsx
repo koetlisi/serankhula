@@ -28,6 +28,7 @@ const PostCreationModal: React.FC<PostCreationModalProps> = ({ open, setOpen, us
             }
             // @ts-ignore
             dispatch(createPost(formData));
+            //console.log(JSON.stringify(see))
             setOpen(false);
         } catch (error) {
             if (error instanceof Error) {

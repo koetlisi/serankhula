@@ -6,6 +6,7 @@ import {RootState} from "@/app/lib/appRedux/store";
 import {updateFriendRequestCount, updateUserRequestNotification} from "@/app/lib/appRedux/slice/systemSlice";
 import { playSystemBeep } from '@/app/sounds';
 import {UserRequest, UserRequestList } from '@/app/lib/types/userRequest';
+import {addPost, destroyNewPost} from "@/app/lib/appRedux/slice/post";
 
 interface WebSocketContextProps {
     notifications: UserRequest[];
@@ -81,6 +82,10 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({chil
                         playSystemBeep()
                     }
                 }
+            }
+            if(content.operation === 'createPost'){
+                dispatch(addPost(content.message.msg));
+                dispatch(destroyNewPost());
             }
         } catch (error) {
             console.error('Failed to parse message:', error);

@@ -17,7 +17,7 @@ export const Education: React.FC<{ resumeInfo: ResumeInfo, setResumeInfo: any }>
             ...resumeInfo,
             education: updatedExperience,
         });
-    };
+    }; 
     const addMoreQualification = () => {
         setResumeInfo({
             ...resumeInfo,

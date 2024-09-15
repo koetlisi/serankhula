@@ -5,12 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_9_3_24,_9_05 AM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_9_3_24__9_05AM__Changes_1.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/home/hero/Blog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/home/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/github-finder-screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/hero-img-Copy.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/icons8-css3-96.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/icons8-git-96.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/icons8-html-5-96.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/icons8-javascript-96.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/icons8-react-80.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/macbook-frame.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/omnifood.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/paytm-screenshot.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/project-09.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/project-11.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/project-12.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/project-13.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/project-14.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/project-15.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/rode-website-clone.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/shopify.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/tailwind-css.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/images/todo-screenshot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/cv/templateOne/EditResume/form/education.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cv/templateOne/EditResume/form/education.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/appRedux/slice/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/appRedux/slice/post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/home/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/home/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/types/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/types/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -56,7 +82,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Mofoka&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nalane/Documents/GitHub/statch/1/serankhula&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nalane/Documents/GitHub/serankhula/app/home&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,11 +94,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/home" />
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/app/cv/templateTwo/froms/customs" />
       <recent name="$PROJECT_DIR$/app/cv/templateTwo/preview/custome" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/app/components/widgets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/lib/appRedux/slice" />
@@ -171,7 +197,12 @@
       <workItem from="1725900925156" duration="6396000" />
       <workItem from="1725978262774" duration="593000" />
       <workItem from="1726305582666" duration="2607000" />
-      <workItem from="1726311785045" duration="3377000" />
+      <workItem from="1726311785045" duration="10514000" />
+      <workItem from="1726334670334" duration="1467000" />
+      <workItem from="1726391035562" duration="262000" />
+      <workItem from="1726394757899" duration="897000" />
+      <workItem from="1726401533000" duration="124000" />
+      <workItem from="1726403900506" duration="1448000" />
     </task>
     <servers />
   </component>

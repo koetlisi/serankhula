@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b09a8b0-5649-4e85-a73b-65b47ea876f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cv/templateOne/EditResume/formSections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cv/templateOne/EditResume/formSections.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cv/templateOne/EditResume/resumePreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cv/templateOne/EditResume/resumePreview.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,7 @@
       <workItem from="1726403900506" duration="6158000" />
       <workItem from="1726420235317" duration="598000" />
       <workItem from="1726508989418" duration="1827000" />
-      <workItem from="1726744495070" duration="735000" />
+      <workItem from="1726744495070" duration="1758000" />
     </task>
     <servers />
   </component>
@@ -190,11 +189,6 @@
           <url>file://$PROJECT_DIR$/app/cv/templateTwo/preview/custome/skills.tsx</url>
           <line>9</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/page.tsx</url>
-          <line>25</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/cv/templateOne/EditResume/form/education.tsx</url>

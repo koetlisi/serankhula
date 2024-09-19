@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "@/app/lib/appRedux/store";
 import Loader from "@/app/components/Loader";
 import useDailyHardReload from "@/service/hooks/lastVisit";
+import {ResumePreview} from "@/app/cv/templateOne/EditResume/resumePreview";
 
 
 const HomePage = lazy(() => import("@/app/home/page"));
@@ -19,6 +20,7 @@ export default function Page() {
     Dashboard:<DashBoard/>,
     Cv_template:<TemplatesDah/>,
     EditResume: <EditResume/>,
+    ViewResume: <ResumePreview/>,
   }
   const content = !isLogin
       ? pageMap.Home

@@ -10,7 +10,7 @@ import {RootState} from "@/app/lib/appRedux/store";
 import {ResumeInfo} from "@/app/lib/types/templateOneInterface";
 
 export const ResumePreview = () => {
-    
+
     const {selectedResumeId} = useSelector((state: RootState) => state.system);
     const {templates} = useSelector((state: RootState) => state.resumeTemplates);
     const selectedResume = templates.find(resume => resume.id === selectedResumeId);

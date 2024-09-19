@@ -26,12 +26,10 @@ export const FormSections = () => {
         <div className="justify-between flex items-center mx-5">
             <Button variant="outline" className="flex gap-2" size="sm"><LayoutGrid/>Theme</Button>
             <div className="flex gap-2">
-                {activeIndex > 1 && <IconButton onClick={() => setActiveIndex(activeIndex - 1)}
-                                                className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 shadow-md transition-all">
+                {activeIndex > 1 && <IconButton onClick={() => setActiveIndex(activeIndex - 1)} className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 shadow-md transition-all">
                     <ArrowBack/>
                 </IconButton>}
-                {activeIndex === 5 ? <IconButton onClick={() => handleClick('ViewResume')}
-                                                 className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 shadow-md transition-all">
+                {activeIndex === 5 ? <IconButton onClick={() => handleClick('ViewResume')} className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 shadow-md transition-all">
                     <EyeIcon/>
                 </IconButton> : <IconButton onClick={() => setActiveIndex(activeIndex + 1)}
                                             className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 shadow-md transition-all">
